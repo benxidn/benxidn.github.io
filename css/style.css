@@ -398,6 +398,10 @@ img {
   border-radius: 40px;
   text-align: center;
 }
+.myLink-area .images {
+  border-radius: 30px;
+  height: 340px;
+}
 .myLink-area h3,
 .myLink-area p {
   margin: 0 2.5%;
