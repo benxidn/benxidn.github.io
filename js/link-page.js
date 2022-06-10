@@ -222,11 +222,42 @@
    window.open("https://cararegistrasi.com/agevgY8z5n","_self");
    }
    function MainLN() {
-   window.open("https://ponselharian.com/5ou4ZxTlm6Y","_self");
+   window.open("#","_self");
    }
    
-   function LinkLbAu() {
-   window.open("../../menu/lulubox-au.html");
+   function SFr2() {
+   window.open("#");
+   }
+   function MainSFr2() {
+   window.open("#","_self");
+   }
+   
+   function SFr3() {
+   window.open("#");
+   }
+   function MainSFr3() {
+   window.open("#","_self");
+   }
+   
+   function SFr4() {
+   window.open("#");
+   }
+   function MainSFr4() {
+   window.open("#","_self");
+   }
+   
+   function SFr5() {
+   window.open("#");
+   }
+   function MainSFr5() {
+   window.open("#","_self");
+   }
+   
+   function SFrBu() {
+   window.open("#");
+   }
+   function MainSFrBu() {
+   window.open("#","_self");
    }
    
    /*⭐⭐⭐
