@@ -57,7 +57,7 @@
    window.open("https://cararegistrasi.com/AvIwkCNss","_self");
    }
    function MainMF() {
-   window.open("https://ponselharian.com/XjmYyOyAE","_self");
+   window.open("https://ponselharian.com/UP2Nm7qcO9x","_self");
    }
    function FtrMhFc() {
    window.open("https://t.me/segawonchannel/219","_self");
