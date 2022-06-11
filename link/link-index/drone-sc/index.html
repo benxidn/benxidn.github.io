@@ -1,1 +1,37 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Segawon Official</title>
+  <link href="../../../css/style.css" rel="stylesheet">
+  <link href="../../../file/logo.png" rel="shortcut icon">
+</head>
+<body>
+<!--HEADER-->
+  <div id="header"></div>
+<!--CONTENT-->
+  <div class="content">
+    <div class="myLink">
+      <h1>Link Download</h1>
+      <h2 style="width:100%">Pilih Link Download Dibawah</h2>
+      <div class="myLink-area">
+        <h3>Silahlan pilih salah satu versi apk berikut</h3>
+        <button onclick="location.href='32bit.html'" class="btn-1">APK VERSI 32BIT</button>
+        <button onclick="location.href='64bit.html'" class="btn-1">APK VERSI 64BIT</button>
+        <p>Copyright©Segawon</p>
+      </div>
+    </div>
+  </div>
+<!--JAVA SCRIPT-->
+<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+<script> 
+$(function(){
+  $("#header").load("../../../user/header.html");
+});
+</script>
+<script src="../../../js/link-page.js"></script>
+</body>
+</html>
