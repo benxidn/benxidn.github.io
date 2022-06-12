@@ -4,8 +4,18 @@
   <title>Segawon Official</title>
   <link href="css/style.css" rel="stylesheet">
   <link href="file/logo.png" rel="shortcut icon">
+  <style>/*
+    .group-area a {
+      text-decoration: none;
+      color: #000;
+  -webkit-tap-highlight-color: transparent;
+    }*/
+  </style>
 </head>
 <body>
+<!--SCROLL DOWN UP-->
+  <div id="bg-hide1"></div>
+  <div id="bg-hide2"></div>
 <!--HEADER-->
   <div id="header"></div>
 <!--SLIDESHOW-->
@@ -64,7 +74,14 @@
 <!--CONTENT-->
   <div class="content" style="margin:3%">
     <div class="group-area">
-      <h1>Silahkan pilih file/apk berikut <i class="arrow"></i></h1>
+<!--SCROLL-->
+        <h1>Silahkan pilih file/apk berikut <a href="#bg-hide2" id="down">&#9660;</a><a style="display:none" href="#bg-hide1" id="up">&#9650;</a></h1><!--
+      <div class="scroll">
+        <h1>Silahkan pilih file/apk berikut</h1>
+        <a href="#bg-hide2" id="down">&#9660;</a>
+        <a href="#bg-hide1" id="up">&#9650;</a>
+      </div>-->
+<!--LIST-->
       <div class="menu-area">
         <div class="menu">
           <img class="images" src="file/mhaa.jpg">
@@ -223,5 +240,6 @@ $(function(){
 });
 </script>
 <script src="js/slide.js"></script>
+<script src="js/scroll.js"></script>
 </body>
 </html>
