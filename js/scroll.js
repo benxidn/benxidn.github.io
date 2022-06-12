@@ -7,4 +7,4 @@ down.addEventListener('click', () => {
 up.addEventListener('click', () => {
   up.style.display = 'none';
   down.style.display = 'block';
-});/**/
+});
