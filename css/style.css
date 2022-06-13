@@ -218,14 +218,20 @@ img {
 .slide {
   margin: 5%;
   margin-bottom: 0;
+  height: 500px;
 }
 .mySlides {
-  margin-bottom: 4%;
-  position: cover;
+  text-align: left;/*
+  margin-bottom: 4%;*/
 }
 .mySlides .images {
+  width: 90%;
   height: 500px;
   border-radius: 30px;
+  position: absolute;
+}
+.myDot {
+  margin-top: 4%;
 }
 .dot {
   width: 20px;
