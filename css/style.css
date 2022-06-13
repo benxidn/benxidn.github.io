@@ -64,6 +64,9 @@ body {
 .group-area h1 a {
   color: #000;
 }
+.group-area p {
+  color: #cbc9cd;
+}
 .menu {
   background: #F3F3F3;
 }
