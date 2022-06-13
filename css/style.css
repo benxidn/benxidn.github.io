@@ -316,7 +316,7 @@ img {
 .group-area p {
   width: 100%;
   text-align: center;
-  padding-top: 5% 0;
+  padding: 5% 0;
   font-size: 30px;
   font-weight: bold;
 }
