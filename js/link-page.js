@@ -6,6 +6,9 @@
    function MTManager() {
    window.open("https://ponselharian.com/toNp7");
    }
+   function Brave() {
+   window.open("https://ponselharian.com/nnhAB");
+   }
    
    /*⭐⭐⭐
    MAPHACK AA*/
