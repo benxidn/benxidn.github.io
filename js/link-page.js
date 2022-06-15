@@ -273,7 +273,7 @@
    window.open("https://cararegistrasi.com/mzLRtlBPd0","_self");
    }
    function MainIS() {
-   window.open("https://ponselharian.com/1vOw","_self");
+   window.open("https://ponselharian.com/1FPCUVg","_self");
    }
    
    /*⭐⭐⭐
