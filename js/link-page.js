@@ -66,13 +66,6 @@
    window.open("https://t.me/segawonchannel/219","_self");
    }
    
-   /*function KeyFc() {
-   window.open("../more-link/key-fakecez.html");
-   }
-   function MainKL() {
-   window.open("https://go.gets4link.com/newgetkeyfakecez");
-   }*/
-   
    /*⭐⭐⭐
    MAPHACK DV APK*/
    function DvApkSkin() {
