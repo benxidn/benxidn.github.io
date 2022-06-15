@@ -324,5 +324,5 @@
    window.open("https://ponselharian.com/cSGyE","_self");
    }
    function LinkHokApk() {
-   window.open("../../menu/mh-kn.html");
+   window.open("mh-kn.html");
    }
