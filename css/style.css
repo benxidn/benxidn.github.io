@@ -334,7 +334,8 @@ img {
   margin-bottom: 3%;
 }
 .menu h1 {
-  font-size: 29px;
+  width: 100%;
+  font-size: 26px;
   text-align: left;
   font-weight: bold;
   margin: 0 5%;
@@ -348,7 +349,7 @@ img {
 }
 .menu-text h2,
 .menu-text h3 {
-  font-size: 27px;
+  font-size: 25px;
   margin: 4px 0;
   width: 100%;
 }
