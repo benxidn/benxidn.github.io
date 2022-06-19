@@ -158,7 +158,7 @@
    window.open("https://cararegistrasi.com/0H7cBZfC0","_self");
    }
    function MainLAu() {
-   window.open("https://ponselharian.com/sY9KyWtVxQqo","_self");
+   window.open("https://ponselharian.com/MFXK","_self");
    }
    
    function KeyLb() {
@@ -172,7 +172,7 @@
    window.open("https://ponselharian.com/8LECWnm6GVJx");
    }
    function MainS1() {
-   window.open("https://cararegistrasi.com/xFF3KPNz","_self");
+   window.open("https://semawur.com/xFF3KPNz","_self");
    }
    
    function Sc2() {
