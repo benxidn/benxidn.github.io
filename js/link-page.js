@@ -328,7 +328,7 @@
    window.open("https://cararegistrasi.com/0lvWlljWA","_self");
    }
    function MainHS() {
-   window.open("https://ponselharian.com/cSGyE","_self");
+   window.open("https://ponselharian.com/QuYMQp","_self");
    }
    function LinkHokApk() {
    window.open("mh-kn.html");
