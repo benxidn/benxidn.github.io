@@ -316,7 +316,7 @@
    window.open("https://cararegistrasi.com/RoZfIpc1DUaL","_self");
    }
    function MainDuS() {
-   window.open("https://ponselharian.com/hunN","_self");
+   window.open("https://ponselharian.com/I3YusiVKIFL","_self");
    }
    
    /*⭐⭐⭐
