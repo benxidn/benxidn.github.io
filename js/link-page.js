@@ -67,7 +67,7 @@
    }
    
    /*⭐⭐⭐
-   MAPHACK DV APK*/
+   DV APK*/
    function DvApkSkin() {
    window.open("https://ponselharian.com/4d21");
    }
@@ -75,7 +75,7 @@
    window.open("https://cararegistrasi.com/wjPyDa","_self");
    }
    function MainDAS() {
-   window.open("https://ponselharian.com/3NQZ4","_self");
+   window.open("https://ponselharian.com/ugJhecELJeJ","_self");
    }
    
    function DvApk() {
@@ -89,7 +89,7 @@
    }
    
    /*⭐⭐⭐
-   MAPHACK DV SC*/
+   DV SC*/
    function DvSc() {
    window.open("https://ponselharian.com/nHNKtR5kG");
    }
