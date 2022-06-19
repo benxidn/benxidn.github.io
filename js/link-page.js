@@ -292,7 +292,7 @@
    window.open("https://cararegistrasi.com/kpPbT1pR","_self");
    }
    function MainRA() {
-   window.open("https://ponselharian.com/pMbcyhBGT7Z","_self");
+   window.open("https://ponselharian.com/YkNZuD","_self");
    }
    
    /*⭐⭐⭐
