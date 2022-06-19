@@ -97,56 +97,56 @@
    window.open("https://cararegistrasi.com/z5likCtCvF","_self");
    }
    function MainDS() {
-   window.open("https://ponselharian.com/6TVMSAOnmR","_self");
+   window.open("https://ponselharian.com/qHkYR8kC","_self");
    }
    
    function Lib1() {
    window.open("https://ponselharian.com/0hkk66vFZ");
    }
    function MainL1() {
-   window.open("https://cararegistrasi.com/1udxU8oO","_self");
+   window.open("https://cararegistrasi.com/eN6eH8Tr","_self");
    }
    
    function Lib2() {
    window.open("https://ponselharian.com/VRxWQUj");
    }
    function MainL2() {
-   window.open("https://cararegistrasi.com/PMuaWaCZ9um","_self");
+   window.open("https://cararegistrasi.com/UbLHiau","_self");
    }
    
    function Lib3() {
    window.open("https://ponselharian.com/25UYvOeemAs");
    }
    function MainL3() {
-   window.open("https://cararegistrasi.com/uFQ52","_self");
+   window.open("https://cararegistrasi.com/ZCAt2RokitRV","_self");
    }
    
    function Lib4() {
    window.open("https://ponselharian.com/sYhpgICs");
    }
    function MainL4() {
-   window.open("https://cararegistrasi.com/7U46HqgYX","_self");
+   window.open("https://cararegistrasi.com/aLQejEg","_self");
    }
    
    function Lib5() {
    window.open("https://ponselharian.com/ubCpBsCZT");
    }
    function MainL5() {
-   window.open("https://cararegistrasi.com/5LOT4F9","_self");
+   window.open("https://cararegistrasi.com/EknXeOIGG","_self");
    }
    
    function Lib6() {
    window.open("https://ponselharian.com/QaH6");
    }
    function MainL6() {
-   window.open("https://cararegistrasi.com/2gkYL","_self");
+   window.open("https://cararegistrasi.com/yM2U1NPF1","_self");
    }
    
    function Lib7() {
    window.open("https://ponselharian.com/nxJJUgM");
    }
    function MainL7() {
-   window.open("https://cararegistrasi.com/YKABl","_self");
+   window.open("https://cararegistrasi.com/FbJWwvHc","_self");
    }
    
    /*⭐⭐⭐
