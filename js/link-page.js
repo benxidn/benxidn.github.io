@@ -171,13 +171,13 @@
    function MainLAu() {
    window.open("https://ponselharian.com/MFXK","_self");
    }
-   
+   /*
    function KeyLb() {
    window.open("https://ponselharian.com/T1sBC1EYM");
    }
    function MainKL() {
    window.open("https://aachannelhost.ga/Lulubox/index.php","_self");
-   }
+   }*/
    
    function Sc1() {
    window.open("https://ponselharian.com/8LECWnm6GVJx");
