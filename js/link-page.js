@@ -13,7 +13,7 @@
    window.open("https://ponselharian.com/0aOycce");
    }
    function MoreKLb() {
-   window.open("#");
+   window.open("https://ponselharian.com/Muk1vnBum");
    }
    
    /*⭐⭐⭐
