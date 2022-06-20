@@ -9,6 +9,12 @@
    function Brave() {
    window.open("https://ponselharian.com/nnhAB");
    }
+   function MoreKFc() {
+   window.open("https://ponselharian.com/0aOycce");
+   }
+   function MoreKLb() {
+   window.open("#");
+   }
    
    /*⭐⭐⭐
    MAPHACK AA*/
@@ -62,10 +68,10 @@
    function MainMF() {
    window.open("https://ponselharian.com/YpBNaY","_self");
    }
-   
+   /*
    function KeyFc() {
    window.open("https://ponselharian.com/S6SrER");
-   }
+   }*/
    
    function FtrMhFc() {
    window.open("https://t.me/segawonchannel/219","_self");
