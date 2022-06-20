@@ -62,6 +62,11 @@
    function MainMF() {
    window.open("https://ponselharian.com/qRNa","_self");
    }
+   
+   function KeyFc() {
+   window.open("https://ponselharian.com/S6SrER");
+   }
+   
    function FtrMhFc() {
    window.open("https://t.me/segawonchannel/219","_self");
    }
