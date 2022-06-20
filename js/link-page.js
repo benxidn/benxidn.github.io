@@ -60,7 +60,7 @@
    window.open("https://cararegistrasi.com/AvIwkCNss","_self");
    }
    function MainMF() {
-   window.open("https://ponselharian.com/qRNa","_self");
+   window.open("https://ponselharian.com/YpBNaY","_self");
    }
    
    function KeyFc() {
