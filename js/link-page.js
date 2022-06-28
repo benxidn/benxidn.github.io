@@ -96,7 +96,7 @@
    window.open("https://benxidn.github.io/link/link-main/drone-apk/drone-apk.html","_self");
    }
    function MainDA() {
-   window.open("https://ponselharian.com/5d9tEeBJ6","_self");
+   window.open("https://ponselharian.com/2JiQigb","_self");
    }
    
    /*⭐⭐⭐
