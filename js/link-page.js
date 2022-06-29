@@ -86,7 +86,7 @@
    window.open("https://cararegistrasi.com/wjPyDa","_self");
    }
    function MainDAS() {
-   window.open("https://ponselharian.com/3NQZ4","_self");
+   window.open("https://ponselharian.com/pgg4dDdE","_self");
    }
    
    function DvApk() {
