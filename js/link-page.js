@@ -93,7 +93,7 @@
    window.open("https://ponselharian.com/xzrE0QGi");
    }
    function SubDA() {
-   window.open("https://benxidn.github.io/link/link-main/drone-apk/drone-apk.html","_self");
+   window.open("https://cararegistrasi.com/DsAELZ4O","_self");
    }
    function MainDA() {
    window.open("https://ponselharian.com/d7NDf","_self");
