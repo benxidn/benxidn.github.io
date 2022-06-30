@@ -1,5 +1,5 @@
    /*⭐⭐⭐
-   MORE LINK*/
+   MORE LINK*/o
    function ZArchiver() {
    window.open("https://ponselharian.com/xRFvrfw8CE");
    }
