@@ -66,7 +66,7 @@
    window.open("https://cararegistrasi.com/AvIwkCNss","_self");
    }
    function MainMF() {
-   window.open("https://ponselharian.com/YpBNaY","_self");
+   window.open("https://ponselharian.com/LA8MvB","_self");
    }
    /*
    function KeyFc() {
