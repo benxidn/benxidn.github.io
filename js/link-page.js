@@ -35,7 +35,7 @@
    window.open("https://cararegistrasi.com/UYfeD77zWDvu","_self");
    }
    function MainMA() {
-   window.open("https://ponselharian.com/EPRvIL","_self");
+   window.open("https://ponselharian.com/0MOGP96u9UFd","_self");
    }
    
    function FtrMhAa() {
