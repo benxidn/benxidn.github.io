@@ -107,8 +107,8 @@
    function SubDS() {
    window.open("https://cararegistrasi.com/z5likCtCvF","_self");
    }
-   function MainDS() {
-   window.open("https://ponselharian.com/Z8bgL","_self");
+   function MainDS() { /*32bit*/
+   window.open("https://ponselharian.com/Ql2Wi","_self");
    }
    
    function Lib1() {
