@@ -86,7 +86,7 @@
    window.open("https://cararegistrasi.com/wjPyDa","_self");
    }
    function MainDAS() {
-   window.open("https://ponselharian.com/pgg4dDdE","_self");
+   window.open("https://ponselharian.com/yA6","_self");
    }
    
    function DvApk() {
@@ -96,7 +96,7 @@
    window.open("https://cararegistrasi.com/DsAELZ4O","_self");
    }
    function MainDA() {
-   window.open("https://ponselharian.com/d7NDf","_self");
+   window.open("https://ponselharian.com/XG61sRmAZirU","_self");
    }
    
    /*⭐⭐⭐
