@@ -70,7 +70,7 @@
    }
    
    function KeyFc() {
-   window.open("https://ponselharian.com/vRxbhb");
+   window.open("https://ponselharian.com/S6SrER");
    }
    
    function FtrMhFc() {
