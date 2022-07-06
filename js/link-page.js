@@ -41,6 +41,7 @@ function MainSFrBu() { window.open("https://cararegistrasi.com/xm3NbrDFe0t","_se
 /*LBX AU*/
 function MainLAu() { window.open("https://ponselharian.com/MFXK","_self"); }
 /*Key LBX AU*/
+function MoreKLB() { window.open("https://ponselharian.com/0aOycce","_self"); }
 /*Sc LAU 1X*/
 function MainS1() { window.open("https://semawur.com/xFF3KPNz","_self"); }
 /*Sc LAU 2X*/
@@ -65,6 +66,7 @@ function MainMK() { window.open("https://ponselharian.com/sbKZPhHM","_self"); }
 /*MH FC*/
 function MainMF() { window.open("https://ponselharian.com/LA8MvB","_self"); }
 /*Key MH FC*/
+function MoreKLB() { window.open("https://ponselharian.com/0aOycce","_self"); }
 
 /*UAS APK*/
 function MainIS() { window.open("https://ponselharian.com/1mJ7XUfon","_self"); }
