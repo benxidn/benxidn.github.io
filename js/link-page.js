@@ -40,7 +40,7 @@
    
    function MainLAu() { /*LBX AU*/
    window.open("https://ponselharian.com/MFXK","_self"); }
-/*Key LBX AU*/
+   /*Key LBX AU*/
    function MainS1() { /*Sc LAU 1X*/
    window.open("https://semawur.com/xFF3KPNz","_self"); }
    function MainS2() { /*Sc LAU 2X*/
@@ -64,7 +64,7 @@
    
    function MainMF() { /*MH FC*/
    window.open("https://ponselharian.com/LA8MvB","_self"); }
-/*Key MH FC*/
+   /*Key MH FC*/
    
    function MainIS() { /*UAS APK*/
    window.open("https://ponselharian.com/1mJ7XUfon","_self"); }
