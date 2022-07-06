@@ -16,6 +16,23 @@ function MainL6() { window.open("https://cararegistrasi.com/qqCHb6O6kvH","_self"
 /*Sc DV 7X 32bit*/
 function MainL7() { window.open("https://cararegistrasi.com/T8VKpTnxe","_self"); }
 
+/*DV SC 64bit*/
+function MainDS64() { window.open("https://ponselharian.com/Ql2Wi","_self"); }
+/*Sc DV 1X 64bit*/
+function MainL1X64() { window.open("https://cararegistrasi.com/F54P","_self"); }
+/*Sc DV 2X 64bit*/
+function MainL2X64() { window.open("https://cararegistrasi.com/umQ4gy","_self"); }
+/*Sc DV 3X 64bit*/
+function MainL3X64() { window.open("https://cararegistrasi.com/jiyg","_self"); }
+/*Sc DV 4X 64bit*/
+function MainL4X64() { window.open("https://cararegistrasi.com/qVqoNzKlgeb2","_self"); }
+/*Sc DV 5X 64bit*/
+function MainL5X64() { window.open("https://cararegistrasi.com/JxDL7IAD","_self"); }
+/*Sc DV 6X 64bit*/
+function MainL6X64() { window.open("https://cararegistrasi.com/qqCHb6O6kvH","_self"); }
+/*Sc DV 7X 64bit*/
+function MainL7X64() { window.open("https://cararegistrasi.com/T8VKpTnxe","_self"); }
+
 /*DV APK 32bit*/
 function MainDAS() { window.open("https://ponselharian.com/mQj0","_self"); }
 /*DV APK 64bit*/
@@ -155,6 +172,32 @@ function Lib6() {
 
 function Lib7() {
   window.open("https://ponselharian.com/nxJJUgM"); }
+
+function DvSc64() {
+  window.open("https://ponselharian.com/nHNKtR5kG"); }
+function SubDS64() {
+  window.open("https://cararegistrasi.com/z5likCtCvF","_self"); }
+
+function Lib1X6() {
+  window.open("https://ponselharian.com/0hkk66vFZ"); }
+
+function Lib2X64() {
+  window.open("https://ponselharian.com/0hkk66vFZ"); }
+
+function Lib3X64() {
+  window.open("https://ponselharian.com/0hkk66vFZ"); }
+
+function Lib4X64() {
+  window.open("https://ponselharian.com/0hkk66vFZ"); }
+
+function Lib5X64() {
+  window.open("https://ponselharian.com/0hkk66vFZ"); }
+
+function Lib6X64() {
+  window.open("https://ponselharian.com/0hkk66vFZ"); }
+
+function Lib7X64() {
+  window.open("https://ponselharian.com/0hkk66vFZ"); }
 
 /* ### LULUBOX AU ### */
 function LbAu() {
