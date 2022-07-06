@@ -64,7 +64,7 @@
    
    function MainMF() { /*MH FC*/
    window.open("https://ponselharian.com/LA8MvB","_self"); }
-/*Key LBX AU*/
+/*Key MH FC*/
    
    function MainIS() { /*UAS APK*/
    window.open("https://ponselharian.com/1mJ7XUfon","_self"); }
