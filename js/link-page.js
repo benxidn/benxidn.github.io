@@ -116,7 +116,7 @@ function SubMF() {
   window.open("https://cararegistrasi.com/AvIwkCNss","_self"); }
 
 function MoreKFc() {
-  window.open("https://ponselharian.com/0aOycce","_self"); }
+  window.open("https://ponselharian.com/S6SrER","_self"); }
 
 /* ### DV APK ### */
 function DvApkSkin() {
@@ -163,7 +163,7 @@ function SubLAu() {
   window.open("https://cararegistrasi.com/0H7cBZfC0","_self"); }
 
 function MoreKLb() {
-  window.open("https://ponselharian.com/Muk1vnBum","_self"); }
+  window.open("https://ponselharian.com/T1sBC1EYM","_self"); }
 
 function Sc1() {
   window.open("https://ponselharian.com/8LECWnm6GVJx"); }
