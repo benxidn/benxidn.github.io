@@ -93,7 +93,7 @@ function MainRA() { window.open("https://ponselharian.com/YkNZuD","_self"); }
 function MainRS() { window.open("https://ponselharian.com/2cEix3","_self"); }
 
 /*DU SC*/
-function MainDuS() { window.open("https://ponselharian.com/I3YusiVKIFL","_self"); }
+function MainDuS() { window.open("https://ponselharian.com/8v19aOttqP","_self"); }
 
 /*HOOK SC*/
 function MainHS() { window.open("https://ponselharian.com/QuYMQp","_self"); }
