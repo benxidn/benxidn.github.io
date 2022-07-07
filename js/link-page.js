@@ -31,7 +31,7 @@ function MainL5X64() { window.open("https://cararegistrasi.com/BOIeVF6n","_self"
 /*Sc DV 6X 64bit*/
 function MainL6X64() { window.open("https://cararegistrasi.com/NKa7hwSb","_self"); }
 /*Sc DV 7X 64bit*/
-function MainL7X64() { window.open("https://www.mediafire.com/file/hb77hhmmszu4kqm/7X_64bit.zip/file","_self"); }
+function MainL7X64() { window.open("https://cararegistrasi.com/f1bUR","_self"); }
 
 /*DV APK 32bit*/
 function MainDAS() { window.open("https://ponselharian.com/mQj0","_self"); }
