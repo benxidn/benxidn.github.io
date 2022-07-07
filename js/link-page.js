@@ -173,31 +173,31 @@ function Lib6() {
 function Lib7() {
   window.open("https://ponselharian.com/nxJJUgM"); }
 
-function DvSc64() {
-  window.open("https://ponselharian.com/nHNKtR5kG"); }
+function DvSc64() { /*64 BIT*/
+  window.open("https://ponselharian.com/NZQfy2Kmk"); }
 function SubDS64() {
-  window.open("https://cararegistrasi.com/z5likCtCvF","_self"); }
+  window.open("https://cararegistrasi.com/DSE6Xz6tDVS","_self"); }
 
-function Lib1X6() {
-  window.open("https://ponselharian.com/0hkk66vFZ"); }
+function Lib1X64() {
+  window.open("https://ponselharian.com/8UQOExKW4Fz"); }
 
 function Lib2X64() {
-  window.open("https://ponselharian.com/0hkk66vFZ"); }
+  window.open("https://ponselharian.com/8gbF2CarZa"); }
 
 function Lib3X64() {
-  window.open("https://ponselharian.com/0hkk66vFZ"); }
+  window.open("https://ponselharian.com/8IaLyiNui3"); }
 
 function Lib4X64() {
-  window.open("https://ponselharian.com/0hkk66vFZ"); }
+  window.open("https://ponselharian.com/slm3P"); }
 
 function Lib5X64() {
-  window.open("https://ponselharian.com/0hkk66vFZ"); }
+  window.open("https://ponselharian.com/aRwe4"); }
 
 function Lib6X64() {
-  window.open("https://ponselharian.com/0hkk66vFZ"); }
+  window.open("https://ponselharian.com/Mfmnb"); }
 
 function Lib7X64() {
-  window.open("https://ponselharian.com/0hkk66vFZ"); }
+  window.open("https://ponselharian.com/js61B"); }
 
 /* ### LULUBOX AU ### */
 function LbAu() {
