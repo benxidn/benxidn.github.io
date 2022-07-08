@@ -140,6 +140,12 @@ function SubMF() {
 function MoreKFc() {
   window.open("https://ponselharian.com/0aOycce","_self"); }
 
+/* ### MAPHACK TD ### */
+function MhTd() {
+  window.open("https://ponselharian.com/M2DNtoZJ"); }
+function SubMT() {
+  window.open("https://cararegistrasi.com/AvIwkCNss","_self"); }
+
 /* ### DV APK ### */
 function DvApkSkin() {
   window.open("https://ponselharian.com/4d21"); }
