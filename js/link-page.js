@@ -84,7 +84,7 @@ function MainMK() { window.open("https://ponselharian.com/sbKZPhHM","_self"); }
 function MainMF() { window.open("https://ponselharian.com/LA8MvB","_self"); }
 
 /*MH TD*/
-function MainMT() { window.open("https://ponselharian.com/LA8MvB","_self"); }
+function MainMT() { window.open("https://ponselharian.com/wdPWThb0","_self"); }
 
 /*UAS APK*/
 function MainIS() { window.open("https://ponselharian.com/1mJ7XUfon","_self"); }
@@ -142,9 +142,9 @@ function MoreKFc() {
 
 /* ### MAPHACK TD ### */
 function MhTd() {
-  window.open("https://ponselharian.com/M2DNtoZJ"); }
+  window.open("https://ponselharian.com/Hyc7"); }
 function SubMT() {
-  window.open("https://cararegistrasi.com/AvIwkCNss","_self"); }
+  window.open("https://cararegistrasi.com/EOrJuBMyoyuf","_self"); }
 
 /* ### DV APK ### */
 function DvApkSkin() {
