@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Segawon Official</title>
+  <link href="../../../css/style.css" rel="stylesheet">
+  <link href="../../../file/logo.png" rel="shortcut icon">
+</head>
+<style>
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 4%;
+}
+.key h5, .key h6 {
+  margin: 0;
+  color: #fff;
+  font-size: 30px;
+  padding: 25px;
+}
+.key h5 {
+  background: #7800F7;
+  border-radius: 50px 0 0 50px;
+  border: 5px solid transparent;
+  border-right: 0;
+}
+.key h6 {
+  text-align: center;
+  flex: 1;
+  color: #000;
+  border: 5px solid #7800F7;
+  border-left: 0;
+  border-radius: 0 50px 50px 0;
+}
+.copy {
+  margin: 0;
+  background: #7800F7;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 10px;
+  padding: 25px 40px;
+  font-size: 30px;
+  border: 5px solid transparent;
+  border-radius: 50px;
+}
+.key input {
+  display: none;
+}
+</style>
+<body>
+<!--HEADER-->
+  <div id="header"></div>
+<!--CONTENT-->
+  <div class="content">
+    <div class="myLink">
+      <h1>Link Download</h1>
+      <h2 style="width:100%">Pilih Link Download Dibawah</h2>
+      <div class="myLink-area">
+        <button onclick="LbAu()" class="btn-1">APK LULUBOX AUTO UPDATE</button>
+        <h3>Aplikasi ini menggunakan key login yang aktif selama 30 hari</h3>
+        <div class="key">
+          <h5>Key Login</h5>
+          <h6 id="salin">crystal</h6>
+          <button class="copy" type="button" onclick="copyToClipboard('#salin');alert('Copy Success!')">Copy</button>
+          <input type="text" />
+        </div>
+        <button onclick="ZArchiver()" class="btn-1">ZARCHIVER PRO</button>
+        <h3>Butuh tutorial? Cek disini</h3>
+        <button onclick="location.href='https://youtu.be/rlTDUrwxMIY'" class="btn-2">CARA DOWNLOAD TANPA IKLAN</button>
+        <button onclick="location.href='https://youtu.be/aClS278TeTg'" class="btn-2">CARA PEMASANGAN</button>
+        <p>Copyright©Segawon</p>
+      </div>
+    </div>
+  </div>
+<!--JAVA SCRIPT-->
+<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+<script> 
+$(function(){
+  $("#header").load("../../../user/header.html");
+});
+</script>
+<script src="../../../js/link-page.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</script>
+</body>
+</html>
