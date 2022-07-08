@@ -83,6 +83,9 @@ function MainMK() { window.open("https://ponselharian.com/sbKZPhHM","_self"); }
 /*MH FC*/
 function MainMF() { window.open("https://ponselharian.com/LA8MvB","_self"); }
 
+/*MH TD*/
+function MainMT() { window.open("https://ponselharian.com/LA8MvB","_self"); }
+
 /*UAS APK*/
 function MainIS() { window.open("https://ponselharian.com/1mJ7XUfon","_self"); }
 
