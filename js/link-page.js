@@ -39,6 +39,9 @@ function MainDAS() { window.open("https://ponselharian.com/mQj0","_self"); }
 /*DV APK 64bit*/
 function MainDA() { window.open("https://ponselharian.com/ydVR","_self"); }
 
+/*DV APK IG*/
+function MainDI() { window.open("https://ponselharian.com/lIw3","_self"); }
+
 /*LBX MU*/
 function MainLN() { window.open("https://ponselharian.com/tpTf","_self"); }
 /*Sc LMU 2X*/
@@ -156,6 +159,17 @@ function DvApk() {
   window.open("https://ponselharian.com/xzrE0QGi"); }
 function SubDA() {
   window.open("https://cararegistrasi.com/DsAELZ4O","_self"); }
+
+/* ### DV APK IG ### */
+function DvIg() {
+  window.open("https://ponselharian.com/nE8NkZXZ"); }
+function SubDI() {
+  window.open("https://semawur.com/roGgS","_self"); }
+
+function MoreKIg() {
+  window.open("https://ponselharian.com/SUUJvEncGZ","_self"); }
+function SubKIg() {
+  window.open("https://cararegistrasi.com/21hg","_self"); }
 
 /* ### DV SC ### */
 function DvSc() {
