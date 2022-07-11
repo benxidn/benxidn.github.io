@@ -162,7 +162,7 @@ function SubDA() {
 
 /* ### DV APK IG ### */
 function DvIg() {
-  window.open("https://ponselharian.com/nE8NkZXZ","_self"); }
+  window.open("https://ponselharian.com/nE8NkZXZ"); }
 function SubDI() {
   window.open("https://semawur.com/roGgS","_self"); }
 
