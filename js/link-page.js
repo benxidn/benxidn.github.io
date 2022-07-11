@@ -167,7 +167,7 @@ function SubDI() {
   window.open("https://semawur.com/roGgS","_self"); }
 
 function MoreKIg() {
-  window.open("https://ponselharian.com/SUUJvEncGZ","_self"); }
+  window.open("https://ponselharian.com/SUUJvEncGZ"); }
 function SubKIg() {
   window.open("https://cararegistrasi.com/21hg","_self"); }
 
