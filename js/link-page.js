@@ -33,11 +33,11 @@ function MainL6X64() { window.open("https://cararegistrasi.com/NKa7hwSb","_self"
 /*Sc DV 7X 64bit*/
 function MainL7X64() { window.open("https://cararegistrasi.com/f1bUR","_self"); }
 
-/*DV APK 32bit*/
-function MainDAS() { window.open("https://ponselharian.com/mQj0","_self"); }
+/*DV APK 32bit (120MB)*/
+function MainDAS() { window.open("https://ponselharian.com/sMgAQ0zIKt","_self"); }
 /* ########## */
-/*DV APK 64bit*/
-function MainDA() { window.open("https://ponselharian.com/ydVR","_self"); }
+/*DV APK 64bit (LITE 25MB)*/
+function MainDA() { window.open("https://ponselharian.com/VqhT4fvE","_self"); }
 
 /*DV APK IG*/
 function MainDI() { window.open("https://ponselharian.com/lIw3","_self"); }
