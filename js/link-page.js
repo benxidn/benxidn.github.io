@@ -74,10 +74,10 @@ function MainS5() { window.open("https://cararegistrasi.com/YwTYqa","_self"); }
 /*Sc LAU BU*/
 function MainBU() { window.open("https://cararegistrasi.com/9UPml3k","_self"); }
 
-/*MH AA SKIN*/
-function MainMAS() { window.open("https://ponselharian.com/MxEBfQTQ","_self"); }
+/*MH AA SKIN (Lite)*/
+function MainMAS() { window.open("https://ponselharian.com/VqhT4fvE","_self"); }
 /* ########## */
-/*MH AA*/
+/*MH AA (Apk)*/
 function MainMA() { window.open("https://ponselharian.com/sMgAQ0zIKt","_self"); }
 
 /*MH KN*/
