@@ -78,7 +78,7 @@ function MainBU() { window.open("https://cararegistrasi.com/9UPml3k","_self"); }
 function MainMAS() { window.open("https://ponselharian.com/MxEBfQTQ","_self"); }
 /* ########## */
 /*MH AA*/
-function MainMA() { window.open("https://ponselharian.com/0MOGP96u9UFd","_self"); }
+function MainMA() { window.open("https://ponselharian.com/sMgAQ0zIKt","_self"); }
 
 /*MH KN*/
 function MainMK() { window.open("https://ponselharian.com/sbKZPhHM","_self"); }
