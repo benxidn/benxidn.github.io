@@ -90,7 +90,7 @@ function MainMF() { window.open("https://ponselharian.com/LA8MvB","_self"); }
 function MainMT() { window.open("https://ponselharian.com/wdPWThb0","_self"); }
 
 /*UAS APK*/
-function MainIS() { window.open("https://ponselharian.com/1mJ7XUfon","_self"); }
+function MainIS() { window.open("https://ponselharian.com/A7f7Vp40Hv","_self"); }
 
 /*RB APK*/
 function MainRA() { window.open("https://ponselharian.com/YkNZuD","_self"); }
