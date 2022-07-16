@@ -34,10 +34,10 @@ function MainL6X64() { window.open("https://cararegistrasi.com/8e0qN","_self"); 
 function MainL7X64() { window.open("https://cararegistrasi.com/PZBmL1xEdhKq","_self"); }
 
 /*DV APK 32bit*/
-function MainDAS() { window.open("https://ponselharian.com/mQj0","_self"); }
+function MainDAS() { window.open("https://ponselharian.com/JHtO1yt4","_self"); }
 /* ########## */
 /*DV APK 64bit*/
-function MainDA() { window.open("https://ponselharian.com/ydVR","_self"); }
+function MainDA() { window.open("https://ponselharian.com/d4BUfY","_self"); }
 
 /*DV APK IG*/
 function MainDI() { window.open("https://ponselharian.com/lIw3","_self"); }
