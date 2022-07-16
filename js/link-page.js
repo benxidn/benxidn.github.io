@@ -1,37 +1,37 @@
 /* ### MAIN LINK ### */
 /*DV SC 32bit*/
-function MainDS() { window.open("https://ponselharian.com/Ql2Wi","_self"); }
+function MainDS() { window.open("https://ponselharian.com/qaS1iYRJujI4","_self"); }
 /*Sc DV 1X 32bit*/
-function MainL1() { window.open("https://cararegistrasi.com/eLFtWmW1WIn","_self"); }
+function MainL1() { window.open("https://cararegistrasi.com/cuRGoDTN","_self"); }
 /*Sc DV 2X 32bit*/
-function MainL2() { window.open("https://cararegistrasi.com/qRjF","_self"); }
+function MainL2() { window.open("https://cararegistrasi.com/lWkmDbjpnU","_self"); }
 /*Sc DV 3X 32bit*/
-function MainL3() { window.open("https://cararegistrasi.com/uU0OLttsy5ak","_self"); }
+function MainL3() { window.open("https://cararegistrasi.com/DGUC4xey7H","_self"); }
 /*Sc DV 4X 32bit*/
-function MainL4() { window.open("https://cararegistrasi.com/fZZNB","_self"); }
+function MainL4() { window.open("https://cararegistrasi.com/pckDLIMe","_self"); }
 /*Sc DV 5X 32bit*/
-function MainL5() { window.open("https://cararegistrasi.com/oyq8xPSBcu","_self"); }
+function MainL5() { window.open("https://cararegistrasi.com/JvWnsAly","_self"); }
 /*Sc DV 6X 32bit*/
-function MainL6() { window.open("https://cararegistrasi.com/TWv4","_self"); }
+function MainL6() { window.open("https://cararegistrasi.com/SYfqTJ","_self"); }
 /*Sc DV 7X 32bit*/
-function MainL7() { window.open("https://cararegistrasi.com/EKEPWG","_self"); }
+function MainL7() { window.open("https://cararegistrasi.com/A3Vuw","_self"); }
 /* ########## */
 /*DV SC 64bit*/
-function MainDS64() { window.open("https://ponselharian.com/eCfr","_self"); }
+function MainDS64() { window.open("https://ponselharian.com/buZ7fwgj","_self"); }
 /*Sc DV 1X 64bit*/
-function MainL1X64() { window.open("https://cararegistrasi.com/rGU8Cl3","_self"); }
+function MainL1X64() { window.open("https://cararegistrasi.com/Ab5Q","_self"); }
 /*Sc DV 2X 64bit*/
-function MainL2X64() { window.open("https://cararegistrasi.com/YWrL1","_self"); }
+function MainL2X64() { window.open("https://cararegistrasi.com/RrkadaMqC40","_self"); }
 /*Sc DV 3X 64bit*/
-function MainL3X64() { window.open("https://cararegistrasi.com/X8Q0","_self"); }
+function MainL3X64() { window.open("https://cararegistrasi.com/P3Td3zDHwUTq","_self"); }
 /*Sc DV 4X 64bit*/
-function MainL4X64() { window.open("https://cararegistrasi.com/wAuBLjUIbyg","_self"); }
+function MainL4X64() { window.open("https://cararegistrasi.com/hxcM0LY","_self"); }
 /*Sc DV 5X 64bit*/
-function MainL5X64() { window.open("https://cararegistrasi.com/Yki6EvD","_self"); }
+function MainL5X64() { window.open("https://cararegistrasi.com/mdIUPstBRgh","_self"); }
 /*Sc DV 6X 64bit*/
-function MainL6X64() { window.open("https://cararegistrasi.com/8e0qN","_self"); }
+function MainL6X64() { window.open("https://cararegistrasi.com/Z0e8Xv","_self"); }
 /*Sc DV 7X 64bit*/
-function MainL7X64() { window.open("https://cararegistrasi.com/PZBmL1xEdhKq","_self"); }
+function MainL7X64() { window.open("https://cararegistrasi.com/kCuT9","_self"); }
 
 /*DV APK 32bit*/
 function MainDAS() { window.open("https://ponselharian.com/JHtO1yt4","_self"); }
