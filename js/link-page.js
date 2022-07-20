@@ -60,7 +60,7 @@ function MainSFr7() { window.open("https://cararegistrasi.com/Dyfcp92","_self");
 function MainSFrBu() { window.open("https://cararegistrasi.com/xm3NbrDFe0t","_self"); }
 
 /*LBX AU*/
-function MainLAu() { window.open("https://ponselharian.com/D2UO7k","_self"); }
+function MainLAu() { window.open("https://ponselharian.com/2XVncf8","_self"); }
 /*Sc LAU 1X*/
 function MainS1() { window.open("https://semawur.com/xFF3KPNz","_self"); }
 /*Sc LAU 2X*/
