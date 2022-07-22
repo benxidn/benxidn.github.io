@@ -84,7 +84,7 @@ function MainMA() { window.open("https://ponselharian.com/sMgAQ0zIKt","_self"); 
 function MainMK() { window.open("https://ponselharian.com/sbKZPhHM","_self"); }
 
 /*MH FC*/
-function MainMF() { window.open("https://ponselharian.com/LA8MvB","_self"); }
+function MainMF() { window.open("https://ponselharian.com/lRVtT52","_self"); }
 
 /*MH TD*/
 function MainMT() { window.open("https://ponselharian.com/wdPWThb0","_self"); }
