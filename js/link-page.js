@@ -1,6 +1,6 @@
 /* ### MAIN LINK ### */
 /*DV SC 32bit*/
-function MainDS() { window.open("https://ponselharian.com/qaS1iYRJujI4","_self"); }
+function MainDS() { window.open("https://ponselharian.com/OEha","_self"); }
 /*Sc DV 1X 32bit*/
 function MainL1() { window.open("https://cararegistrasi.com/cuRGoDTN","_self"); }
 /*Sc DV 2X 32bit*/
@@ -17,7 +17,7 @@ function MainL6() { window.open("https://cararegistrasi.com/SYfqTJ","_self"); }
 function MainL7() { window.open("https://cararegistrasi.com/A3Vuw","_self"); }
 /* ########## */
 /*DV SC 64bit*/
-function MainDS64() { window.open("https://ponselharian.com/buZ7fwgj","_self"); }
+function MainDS64() { window.open("https://ponselharian.com/kYVLhlDsuXo","_self"); }
 /*Sc DV 1X 64bit*/
 function MainL1X64() { window.open("https://cararegistrasi.com/Ab5Q","_self"); }
 /*Sc DV 2X 64bit*/
