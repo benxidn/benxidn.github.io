@@ -74,10 +74,10 @@ html, body {
   font-size: 15px;
   color: #000;
 }
-.content .img-content,
-.content .vid-content {
+.img-content,
+.vid-content {
   width: 100%;
-  height: 200px;
+  height: 190px;
   background: #002f5b;
   border: 0;
   border-radius: 5px;
@@ -113,9 +113,9 @@ html, body {
   border-radius: 5px;
   margin: 10px 5px;
 }
-.vip-area .img-vip {
+.img-vip {
   width: 100%;
-  height: 200px;
+  height: 190px;
   background: #002f5b;
   border-radius: 5px 5px 0 0;
 }
@@ -168,7 +168,7 @@ html, body {
   border-radius: 5px;
   color: #d9edff;
 }
-.box .img-box {
+.img-box {
   width: 100%;
   height: 95px;
   background: #002f5b;
@@ -225,4 +225,12 @@ html, body {
 img {
   pointer-events: none;
   cursor: default;
+}
+.img-content,
+.img-vip,
+.img-box {
+  background-image: url('../file/default.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
