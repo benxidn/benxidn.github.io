@@ -186,7 +186,8 @@ html, body {
   text-align: left;
   color: #fff;
 }
-.text-area .btn {
+.btn,
+.btn-cs {
   margin: 0;
   width: 100%;
   border: 0;
@@ -195,6 +196,9 @@ html, body {
   border-radius: 3px;
   color: #fff;
   font-size: 12px;
+}
+.btn-cs {
+  background: #6d859b;
 }
 
 /*FOOTER*/
@@ -225,6 +229,9 @@ html, body {
 .btn-sub:hover {
   border-color: #8dd3ff;
   color: #fff;
+}
+.btn-cs:hover {
+  background: #0085ff;
 }
 img {
   pointer-events: none;
