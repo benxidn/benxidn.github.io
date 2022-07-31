@@ -86,6 +86,7 @@ html, body {
   border-radius: 0;
 }
 .btn-link,
+.btn-main,
 .btn-sub {
   border: 0;
   width: 100%;
@@ -220,7 +221,10 @@ html, body {
 .btn-link:hover,
 .btn-sub:hover {
   background: #8dd3ff;
-  border: 0;
+}
+.btn-sub:hover {
+  border-color: #8dd3ff;
+  color: #fff;
 }
 img {
   pointer-events: none;
