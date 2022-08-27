@@ -1,13 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Segawon Official</title>
-  <link href="css/style.css" rel="stylesheet">
+  <title>Segawon Official</title><!--
+  <link href="css/style.css" rel="stylesheet">-->
   <link href="file/logo.png" rel="shortcut icon">
 </head>
 <style>
+html, body {
+  margin: 0 auto;
+  font-family: poppins;
+  background: #d9edff;
+  user-select: none;
+}
+.header {
+  width: 393px;
+  background: #0085ff;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  top: 0;
+}
+.header h1 {
+  margin: 0;
+  margin-right: 30px;
+  font-size: 20px;
+  color: #fff;
+}
+.fa-home {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.header a {
+  display: block;
+  font-size: 12px;
+  padding: 0;
+  margin: 3px;
+  text-decoration: none;
+  color: #fff;
+}
+.header i:hover,
+.header a:hover {
+  color: #000;
+}
+.content {
+  padding: 25px;
+  margin: 60px 0;
+  height: 100%;
+}
+.content h2 {
+  display: flex;
+  align-items: center;
+  margin: 7px 0;
+  font-size: 20px;
+  color: #000;
+}
+.content p {
+  text-align: center;
+  margin: 7px 0;
+  font-size: 15px;
+  color: #000;
+}
+.img-content {
+  width: 100%;
+  height: 190px;
+  background: #002f5b;
+  border: 0;
+  border-radius: 5px;
+}
+.btn-link {
+  border: 0;
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  background: #0085ff;
+  color: #fff;
+  font-size: 15px;
+  margin: 5px 0;
+}
+.footer {
+  padding: 15px 0;
+  text-align: center;
+  background: #0085ff;
+}
+.footer.fixed {
+  position: fixed;
+  width: 393px;
+  bottom: 0;
+}
+.footer p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+.img-content {
+  background-image: url('../file/default.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 </style>
 <body>
   <div class="header">
@@ -20,9 +115,9 @@
   </div>
 <!--CONTENT-->
   <div class="content">
-    <h2 class="top">Link Download Segaw</h2>
+    <h2 class="top">Link Download Segawon</h2>
     <img class="img-content" src="file/default.jpg" />
-    <p>Pilih salah satu versi apk berikut!</p>
+    <p>Tekan tombol download berikut ini!</p>
     <button onclick="location.href='https://rb.gy/jlg496'" class="btn-link">Download Disini</button>
   </div>
   <div class="footer fixed">
