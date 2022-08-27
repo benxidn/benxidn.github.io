@@ -14,7 +14,7 @@ html, body {
   user-select: none;
 }
 .header {
-  width: 393px;
+  width: 100%;
   background: #0085ff;
   position: fixed;
   display: flex;
@@ -47,9 +47,11 @@ html, body {
   color: #000;
 }
 .content {
-  padding: 25px;
-  margin: 60px 0;
+  padding: 25px auto;
+  margin: 60px auto;
+  margin-top: 80px;
   height: 100%;
+  width: 340px;
 }
 .content h2 {
   display: flex;
@@ -82,13 +84,13 @@ html, body {
   margin: 5px 0;
 }
 .footer {
+  width: 100%;
   padding: 15px 0;
   text-align: center;
   background: #0085ff;
 }
 .footer.fixed {
   position: fixed;
-  width: 393px;
   bottom: 0;
 }
 .footer p {
@@ -119,9 +121,9 @@ html, body {
     <img class="img-content" src="file/default.jpg" />
     <p>Tekan tombol download berikut ini!</p>
     <button onclick="location.href='https://rb.gy/jlg496'" class="btn-link">Download Disini</button>
-  </div>
+  </div><!--
   <div class="footer fixed">
     <p>Copyright © 2022, Segawon Official</p>
-  </div>
+  </div>-->
 </body>
 </html>
