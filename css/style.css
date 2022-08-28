@@ -148,7 +148,7 @@ html, body {
   font-size: 16px;
 }
 
-/*REGULAR*/
+/*DEFAULT*/
 .content .box-area {
   display: flex;
 }
@@ -199,6 +199,34 @@ html, body {
 }
 .btn-cs {
   background: #6d859b;
+}
+.note {
+  display: flex;
+  background: #a9cbed;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.note .img-brave {
+  width: 60px;
+  height: 60px;
+  background: #64a4de;
+  margin-right: 10px;
+  border-radius: 7px;
+}
+.brave h4 {
+  margin: 0;
+  margin-bottom: 7px;
+}
+.brave .btn-link {
+  margin: 0;
+  width: auto;
+  padding: 7px 15px;
+  background: #0085ff;
+  font-size: 12px;
+}
+.brave .btn-link:hover {
+  opacity: 0.5;
 }
 
 /*FOOTER*/
