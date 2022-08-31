@@ -215,17 +215,14 @@ html, body {
   border-radius: 7px;
 }
 .brave h4 {
-  margin: 0;
-  margin-bottom: 7px;
+  margin: 3px 0;
+  margin-bottom: 5px;
+  text-align: left;
 }
-.brave .btn-link {
-  margin: 0;
-  width: auto;
-  padding: 7px 15px;
-  background: #0085ff;
-  font-size: 12px;
+.brave .ps {
+  width: 40%;
 }
-.brave .btn-link:hover {
+.brave .ps:hover {
   opacity: 0.5;
 }
 
