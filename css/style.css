@@ -40,7 +40,6 @@ html, body {
 .header h1:hover,
 .header i:hover,
 .header a:hover {
-  color: #1A1B1F;
   color: #009E70;
 }
 
@@ -275,6 +274,10 @@ html, body {
 .btn-link:hover,
 .btn-sub:hover, 
 .btn-cs:hover {
+  opacity: 0.6;
+}
+.btn-sub:hover {
+  background: #009E70;
   opacity: 0.6;
 }
 .btn.red {
