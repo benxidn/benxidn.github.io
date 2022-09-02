@@ -99,7 +99,6 @@ html, body {
   background: #009E70;
 }
 .btn-sub {
-  font-weight: bold;
   display: none;
   background: none;
   border: 2px solid #009E70;
@@ -278,6 +277,7 @@ html, body {
 }
 .btn-sub:hover {
   background: #009E70;
+  color: #1A1B1F;
   opacity: 0.6;
 }
 .btn.red {
