@@ -14,6 +14,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
   background: #000;
   color: #b8b8b8;
 }
@@ -45,6 +46,10 @@ html, body {
 }
 .btn:hover {
   opacity: 0.75;
+}
+img {
+  pointer-events: none;
+  cursor: default;
 }
 </style>
 <body>
