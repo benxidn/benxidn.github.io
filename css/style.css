@@ -1,1 +1,8 @@
-
+html, body {
+  margin: 0 auto;
+/*   max-width: 393px; */
+  /* font-family: poppins; */
+  font-family: Tahoma, sans-serif;
+  user-select: none;
+  background: #0E0E0E;
+}
