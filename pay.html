@@ -14,51 +14,48 @@
   </header>
 
   <!-- Konten -->
-  <main class="flex-1 flex justify-center items-start pt-24 px-6 sm:px-8">
-    <div class="w-full max-w-lg">
+  <main class="flex-1 flex justify-center items-start pt-24 px-4">
+    <div class="w-full max-w-xs">
 
       <!-- Form QRIS -->
-      <div id="qrisForm" class="bg-white p-6 rounded-lg shadow-lg text-center">
-        <h2 class="text-xl font-semibold mb-4">Silakan Scan QRIS</h2>
+      <div id="qrisForm" class="bg-white p-6 rounded shadow-md text-center">
+        <h2 class="text-lg font-semibold mb-4">Silakan Scan QRIS</h2>
+        <img src="file/3k.jpg" alt="QRIS" class="mx-auto w-72 h-auto mb-4 border border-gray-300 rounded" />
 
-        <!-- Teks penjelasan -->
-        <p class="text-sm text-gray-600 mb-6">
-          Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.
+        <p class="text-sm text-gray-600 mb-4">
+          QRIS ini dapat dibayar dengan semua e-wallet dan m-banking. Cukup scan kode QR menggunakan aplikasi yang mendukung.
         </p>
 
-        <!-- Foto QRIS -->
-        <img src="file/3k.jpg" alt="QRIS" class="mx-auto w-full max-w-xs h-auto mb-6 border border-gray-300 rounded-lg shadow-md" />
-
-        <div class="w-full max-w-xs mx-auto">
-          <a href="file/3k.jpg" download class="block w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg text-center mb-4">
+        <div class="w-72 mx-auto">
+          <a href="file/3k.jpg" download class="block w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded text-center">
             Download QRIS
           </a>
         </div>
 
-        <div class="w-full max-w-xs mx-auto">
-          <button onclick="showUploadForm()" class="block w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg text-center">
+        <div class="w-72 mx-auto mt-4">
+          <button onclick="showUploadForm()" class="block w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
             Cek Pembayaran
           </button>
         </div>
       </div>
 
       <!-- Form Upload Bukti Pembayaran -->
-      <div id="uploadForm" class="bg-white p-6 rounded-lg shadow-lg mt-6 hidden text-center">
-        <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
-        <input type="file" id="buktiUpload" class="block mx-auto mb-4 p-2 border border-gray-300 rounded-lg w-full" accept="image/*" />
+      <div id="uploadForm" class="bg-white p-6 rounded shadow-md mt-6 hidden text-center">
+        <h2 class="text-lg font-semibold mb-4">Upload Bukti Pembayaran</h2>
+        <input type="file" id="buktiUpload" class="block mx-auto mb-4" accept="image/*" />
 
         <!-- Tempat untuk menampilkan gambar yang diupload -->
         <div id="imagePreview" class="hidden mb-4">
-          <img id="previewImage" class="mx-auto w-full max-w-xs h-auto border border-gray-300 rounded-lg shadow-md" />
+          <img id="previewImage" class="mx-auto w-72 h-auto border border-gray-300 rounded" />
         </div>
 
         <div id="nextStep" class="hidden mt-4">
-          <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="block w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg text-center">
+          <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="block w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded">
             Download Link
           </a>
         </div>
 
-        <button onclick="showQrisForm()" class="mt-4 w-full bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-lg">
+        <button onclick="showQrisForm()" class="mt-4 w-full bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
           Kembali ke Form QRIS
         </button>
       </div>
