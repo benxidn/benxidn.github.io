@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Download Setelah Bayar</title>
+    <style>
+        #downloadBtn {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Silakan bayar untuk mengunduh file</h2>
+    <p>Scan QR code berikut menggunakan aplikasi pembayaran kamu:</p>
+    <img src="qrcode-pembayaran.png" alt="QR Code Pembayaran" width="200">
+
+    <div id="statusPembayaran">Menunggu pembayaran...</div>
+
+    <a href="https://link-download.com/file.zip" id="downloadBtn" target="_blank">
+        <button>Download Sekarang</button>
+    </a>
+
+    <script>
+        // Fungsi untuk cek status pembayaran ke server tiap 5 detik
+        setInterval(() => {
+            fetch('/cek-pembayaran') // Ganti dengan endpoint kamu
+                .then(res => res.json())
+                .then(data => {
+                    if (data.paid) {
+                        document.getElementById('statusPembayaran').innerText = "Pembayaran berhasil!";
+                        document.getElementById('downloadBtn').style.display = 'block';
+                    }
+                });
+        }, 5000);
+    </script>
+</body>
+</html>
