@@ -8,13 +8,13 @@
 </head>
 <body class="bg-gray-100 text-sm">
 
-  <!-- Header besar tanpa jarak samping -->
+  <!-- Header besar, tanpa jarak -->
   <header class="text-center bg-blue-600 text-white py-6">
-    <h1 class="text-3xl font-bold">Dexter Modz</h1>
+    <h1 class="text-4xl font-bold">Dexter Modz</h1>
   </header>
 
-  <!-- QRIS Form -->
-  <div id="qrisForm" class="bg-white p-6 mt-10 rounded shadow-md max-w-md mx-auto text-center space-y-4">
+  <!-- QRIS Form dengan margin kiri-kanan lebar -->
+  <div id="qrisForm" class="bg-white p-6 mt-10 rounded shadow-md max-w-2xl mx-auto px-6 text-center space-y-4">
     <h2 class="text-base font-semibold text-gray-700">Pembayaran via QRIS</h2>
     <p>Silakan scan QR di bawah ini dengan e-wallet atau m-banking.</p>
     <img src="file/3k.jpg" alt="QRIS" class="w-full rounded border"/>
@@ -26,8 +26,8 @@
     </button>
   </div>
 
-  <!-- Upload Form -->
-  <div id="uploadForm" class="hidden bg-white p-6 mt-10 rounded shadow-md max-w-md mx-auto text-center space-y-4">
+  <!-- Upload Form dengan margin kiri-kanan lebar -->
+  <div id="uploadForm" class="hidden bg-white p-6 mt-10 rounded shadow-md max-w-2xl mx-auto px-6 text-center space-y-4">
     <h2 class="text-base font-semibold text-gray-700">Upload Bukti Pembayaran</h2>
     <input type="file" id="buktiBayar" class="w-full p-2 border rounded text-sm" accept="image/*" onchange="tampilkanDownload()"/>
     <a id="downloadLink" href="https://benxidn.github.io/free/mlmod/main.html" target="_blank"
