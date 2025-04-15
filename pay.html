@@ -2,42 +2,22 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pembelian Link Download</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pembayaran QRIS</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-  <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-    <h2 class="text-2xl font-bold mb-4 text-center">Beli Link Download</h2>
+  <div class="bg-white shadow-lg rounded-lg p-6 max-w-sm text-center">
+    <h1 class="text-2xl font-bold text-gray-800 mb-4">Pembayaran QRIS</h1>
 
-    <p class="mb-4 text-center text-gray-600">Silakan scan QRIS di bawah ini untuk melakukan pembayaran menggunakan Dana atau M-Banking.</p>
+    <p class="text-gray-600 mb-2">Silakan scan QRIS di bawah untuk membayar</p>
+    <p class="text-sm text-gray-500 mb-4">Nomor DANA: <strong>085156406340</strong></p>
 
-    <!-- Gambar QR -->
-    <div class="flex justify-center mb-4">
-      <img src="https://via.placeholder.com/250" alt="QRIS" class="w-60 h-60 object-cover rounded border border-gray-300">
-    </div>
+    <!-- Ganti src dengan link gambar QRIS asli milik kamu -->
+    <img src="https://i.ibb.co/sWsHyvJ/qris-placeholder.png" alt="QRIS DANA" class="mx-auto w-64 h-64 border p-2 rounded-md" />
 
-    <div class="text-center text-gray-600 mb-4">
-      <p>Total: <span class="font-semibold text-black">Rp10.000</span></p>
-      <p>Nama Penerima: <span class="text-black">PT Digital Store</span></p>
-    </div>
-
-    <form class="space-y-4">
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Email Anda</label>
-        <input type="email" required placeholder="email@example.com" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 px-3 py-2"/>
-      </div>
-
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Upload Bukti Pembayaran</label>
-        <input type="file" accept="image/*" class="w-full border-gray-300 rounded-md"/>
-      </div>
-
-      <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition">
-        Kirim & Minta Link
-      </button>
-    </form>
+    <p class="text-xs text-gray-500 mt-4">Bisa dibayar menggunakan DANA, OVO, GoPay, ShopeePay, m-Banking, dll.</p>
   </div>
 
 </body>
