@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download Setelah Bayar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pembayaran QRIS untuk Download</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-  <div class="bg-white shadow-md rounded-lg p-6 text-center max-w-md">
-    <h1 class="text-2xl font-bold mb-4">Download File</h1>
-    <p class="mb-4">Untuk mengunduh file, silakan lakukan pembayaran terlebih dahulu.</p>
+  <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md text-center">
+    <h1 class="text-2xl font-bold mb-4">Download File Premium</h1>
+    <p class="mb-6 text-gray-600">Silakan lakukan pembayaran via QRIS untuk mengakses link download.</p>
 
-    <div id="before-payment">
-      <button onclick="showQRIS()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-        Bayar Sekarang
-      </button>
+    <div id="payment-section">
+      <img src="https://via.placeholder.com/300x300.png?text=QRIS+Code" alt="QRIS Code" class="mx-auto mb-4 rounded" />
+      <p class="text-sm text-gray-500 mb-4">Scan kode QR di atas menggunakan aplikasi Dana, Gopay, OVO, atau M-Banking Anda.</p>
+      <button 
+        onclick="confirmPayment()" 
+        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-200"
+      >Saya Sudah Bayar</button>
     </div>
 
-    <div id="qris-payment" class="hidden mt-4">
-      <p class="mb-2">Silakan scan QRIS di bawah ini:</p>
-      <img src="https://via.placeholder.com/250x250.png?text=QRIS+Code" alt="QRIS Code" class="mx-auto mb-4">
-
-      <button onclick="confirmPayment()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-        Saya Sudah Bayar
-      </button>
-    </div>
-
-    <div id="download-link" class="hidden mt-4">
-      <a href="https://link-download-anda.com/file.zip" class="text-blue-600 underline" target="_blank">
-        Klik di sini untuk mengunduh file
-      </a>
+    <div id="download-section" class="hidden mt-6">
+      <a 
+        href="https://example.com/file.zip" 
+        class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition duration-200 inline-block"
+        download
+      >Download Sekarang</a>
     </div>
   </div>
 
   <script>
-    function showQRIS() {
-      document.getElementById('before-payment').classList.add('hidden');
-      document.getElementById('qris-payment').classList.remove('hidden');
-    }
-
     function confirmPayment() {
-      // Dalam implementasi nyata, verifikasi pembayaran dilakukan di backend
-      // Ini hanya simulasi
-      document.getElementById('qris-payment').classList.add('hidden');
-      document.getElementById('download-link').classList.remove('hidden');
+      // Simulasi verifikasi pembayaran
+      const isPaid = confirm("Apakah Anda sudah melakukan pembayaran?");
+      if (isPaid) {
+        document.getElementById("payment-section").classList.add("hidden");
+        document.getElementById("download-section").classList.remove("hidden");
+      } else {
+        alert("Silakan selesaikan pembayaran terlebih dahulu.");
+      }
     }
   </script>
 
