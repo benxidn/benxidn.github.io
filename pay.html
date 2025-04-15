@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Download Setelah Bayar</title>
-    <style>
-        #downloadBtn {
-            display: none;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Setelah Bayar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h2>Silakan bayar untuk mengunduh file</h2>
-    <p>Scan QR code berikut menggunakan aplikasi pembayaran kamu:</p>
-    <img src="qrcode-pembayaran.png" alt="QR Code Pembayaran" width="200">
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-    <div id="statusPembayaran">Menunggu pembayaran...</div>
+  <div class="bg-white shadow-md rounded-lg p-6 text-center max-w-md">
+    <h1 class="text-2xl font-bold mb-4">Download File</h1>
+    <p class="mb-4">Untuk mengunduh file, silakan lakukan pembayaran terlebih dahulu.</p>
 
-    <a href="https://link-download.com/file.zip" id="downloadBtn" target="_blank">
-        <button>Download Sekarang</button>
-    </a>
+    <div id="before-payment">
+      <button onclick="showQRIS()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        Bayar Sekarang
+      </button>
+    </div>
 
-    <script>
-        // Fungsi untuk cek status pembayaran ke server tiap 5 detik
-        setInterval(() => {
-            fetch('/cek-pembayaran') // Ganti dengan endpoint kamu
-                .then(res => res.json())
-                .then(data => {
-                    if (data.paid) {
-                        document.getElementById('statusPembayaran').innerText = "Pembayaran berhasil!";
-                        document.getElementById('downloadBtn').style.display = 'block';
-                    }
-                });
-        }, 5000);
-    </script>
+    <div id="qris-payment" class="hidden mt-4">
+      <p class="mb-2">Silakan scan QRIS di bawah ini:</p>
+      <img src="https://via.placeholder.com/250x250.png?text=QRIS+Code" alt="QRIS Code" class="mx-auto mb-4">
+
+      <button onclick="confirmPayment()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+        Saya Sudah Bayar
+      </button>
+    </div>
+
+    <div id="download-link" class="hidden mt-4">
+      <a href="https://link-download-anda.com/file.zip" class="text-blue-600 underline" target="_blank">
+        Klik di sini untuk mengunduh file
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function showQRIS() {
+      document.getElementById('before-payment').classList.add('hidden');
+      document.getElementById('qris-payment').classList.remove('hidden');
+    }
+
+    function confirmPayment() {
+      // Dalam implementasi nyata, verifikasi pembayaran dilakukan di backend
+      // Ini hanya simulasi
+      document.getElementById('qris-payment').classList.add('hidden');
+      document.getElementById('download-link').classList.remove('hidden');
+    }
+  </script>
+
 </body>
 </html>
