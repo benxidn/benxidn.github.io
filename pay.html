@@ -14,51 +14,51 @@
   </header>
 
   <!-- Konten -->
-  <main class="flex-1 flex justify-center items-start pt-24 px-4">
-    <div class="w-full max-w-xs">
+  <main class="flex-1 flex justify-center items-start pt-24 px-6 sm:px-8">
+    <div class="w-full max-w-lg">
 
       <!-- Form QRIS -->
-      <div id="qrisForm" class="bg-white p-6 rounded shadow-md text-center">
-        <h2 class="text-lg font-semibold mb-4">Silakan Scan QRIS</h2>
+      <div id="qrisForm" class="bg-white p-6 rounded-lg shadow-lg text-center">
+        <h2 class="text-xl font-semibold mb-4">Silakan Scan QRIS</h2>
 
         <!-- Teks penjelasan -->
-        <p class="text-sm text-gray-600 mb-4">
+        <p class="text-sm text-gray-600 mb-6">
           Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.
         </p>
 
         <!-- Foto QRIS -->
-        <img src="file/3k.jpg" alt="QRIS" class="mx-auto w-72 h-auto mb-4 border border-gray-300 rounded" />
+        <img src="file/3k.jpg" alt="QRIS" class="mx-auto w-full max-w-xs h-auto mb-6 border border-gray-300 rounded-lg shadow-md" />
 
-        <div class="w-72 mx-auto">
-          <a href="file/3k.jpg" download class="block w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded text-center">
+        <div class="w-full max-w-xs mx-auto">
+          <a href="file/3k.jpg" download class="block w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg text-center mb-4">
             Download QRIS
           </a>
         </div>
 
-        <div class="w-72 mx-auto mt-4">
-          <button onclick="showUploadForm()" class="block w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+        <div class="w-full max-w-xs mx-auto">
+          <button onclick="showUploadForm()" class="block w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg text-center">
             Cek Pembayaran
           </button>
         </div>
       </div>
 
       <!-- Form Upload Bukti Pembayaran -->
-      <div id="uploadForm" class="bg-white p-6 rounded shadow-md mt-6 hidden text-center">
-        <h2 class="text-lg font-semibold mb-4">Upload Bukti Pembayaran</h2>
-        <input type="file" id="buktiUpload" class="block mx-auto mb-4" accept="image/*" />
+      <div id="uploadForm" class="bg-white p-6 rounded-lg shadow-lg mt-6 hidden text-center">
+        <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
+        <input type="file" id="buktiUpload" class="block mx-auto mb-4 p-2 border border-gray-300 rounded-lg w-full" accept="image/*" />
 
         <!-- Tempat untuk menampilkan gambar yang diupload -->
         <div id="imagePreview" class="hidden mb-4">
-          <img id="previewImage" class="mx-auto w-72 h-auto border border-gray-300 rounded" />
+          <img id="previewImage" class="mx-auto w-full max-w-xs h-auto border border-gray-300 rounded-lg shadow-md" />
         </div>
 
         <div id="nextStep" class="hidden mt-4">
-          <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="block w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded">
+          <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="block w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg text-center">
             Download Link
           </a>
         </div>
 
-        <button onclick="showQrisForm()" class="mt-4 w-full bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
+        <button onclick="showQrisForm()" class="mt-4 w-full bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-lg">
           Kembali ke Form QRIS
         </button>
       </div>
@@ -102,11 +102,6 @@
 
     // Set tahun saat ini secara otomatis
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Fungsi untuk kembali ke form QRIS jika tombol back ditekan pada perangkat
-    window.addEventListener('popstate', function () {
-      showQrisForm();
-    });
   </script>
 
 </body>
