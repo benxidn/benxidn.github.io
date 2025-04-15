@@ -6,16 +6,16 @@
   <title>Pembayaran QRIS - Dexter Modz</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex flex-col items-center justify-start min-h-screen px-4 py-6">
+<body class="bg-gray-100 flex flex-col items-center justify-start min-h-screen px-4 py-0">
 
-  <!-- Header dengan warna berbeda -->
-  <header class="mb-6 w-full max-w-sm bg-blue-100 p-4 rounded-lg shadow text-center">
-    <h1 class="text-2xl font-bold text-blue-700">Dexter Modz</h1>
-    <p class="text-sm text-blue-600">Pembayaran Mudah via QRIS</p>
+  <!-- Header Hitam Full -->
+  <header class="w-full bg-black text-white text-center py-3">
+    <h1 class="text-xl font-bold">Dexter Modz</h1>
+    <p class="text-sm text-gray-300">Pembayaran Mudah via QRIS</p>
   </header>
 
   <!-- Container -->
-  <div class="bg-white w-full max-w-sm rounded-lg shadow-md p-4 space-y-5">
+  <div class="bg-white w-full max-w-sm rounded-lg shadow-md p-4 mt-6 space-y-5">
 
     <!-- Form QRIS -->
     <div id="qrisForm">
@@ -49,10 +49,10 @@
         </button>
       </form>
 
-      <!-- Tombol kembali ke QRIS -->
+      <!-- Tombol Kembali ke Scan QR -->
       <button 
         onclick="showQRForm()" 
-        class="mt-2 w-full bg-gray-300 text-gray-700 text-sm py-2 rounded hover:bg-gray-400 transition">
+        class="mt-3 w-full bg-gray-600 text-white text-sm py-2 rounded hover:bg-gray-700 transition">
         Kembali ke QRIS
       </button>
 
@@ -87,7 +87,7 @@
     });
 
     function goToNextPage() {
-      window.location.href = "halaman-tujuan.html";
+      window.location.href = "halaman-tujuan.html"; // Ganti sesuai kebutuhan
     }
   </script>
 </body>
