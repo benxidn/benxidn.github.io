@@ -2,51 +2,41 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dexter Modz</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans p-4">
+<body class="bg-gray-100 p-8">
 
   <!-- Header -->
-  <header class="text-center bg-blue-600 text-white py-4 rounded">
-    <h1 class="text-3xl font-bold">Dexter Modz</h1>
+  <header class="mb-10 text-center">
+    <h1 class="text-4xl font-bold text-blue-600">Dexter Modz</h1>
   </header>
 
   <!-- QRIS Form -->
-  <div id="qrisForm" class="mt-6 bg-white p-6 rounded shadow-md max-w-md mx-auto">
-    <h2 class="text-xl font-semibold mb-4">Form Pembayaran</h2>
-    <form>
-      <label class="block mb-2 font-medium">Nama Lengkap:</label>
-      <input type="text" class="w-full border px-3 py-2 rounded mb-4" placeholder="Masukkan nama Anda" required />
-    </form>
-
-    <div class="mb-4">
-      <img src="file/3k.jpg" alt="QRIS Pembayaran" class="w-full rounded" />
-    </div>
-    <div class="flex space-x-2">
-      <a href="file/3k.jpg" download class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
-        Download QRIS
-      </a>
-      <button onclick="cekPembayaran()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-        Cek Pembayaran
-      </button>
-    </div>
+  <div id="qrisForm" class="bg-white p-6 rounded shadow-md max-w-md mx-auto space-y-4">
+    <h2 class="text-xl font-semibold text-gray-700">Pembayaran via QRIS</h2>
+    <p>Silakan scan QR di bawah ini dengan e-wallet atau m-banking.</p>
+    <img src="file/3k.jpg" alt="QRIS" class="w-full rounded border"/>
+    <a href="file/3k.jpg" download class="block w-full text-center mt-4 bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+      Download QRIS
+    </a>
+    <button onclick="cekPembayaran()" class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">
+      Cek Pembayaran
+    </button>
   </div>
 
-  <!-- Upload Bukti Pembayaran -->
-  <div id="uploadForm" class="hidden mt-6 bg-white p-6 rounded shadow-md max-w-md mx-auto">
-    <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
-    <input type="file" id="buktiBayar" accept="image/*" class="mb-4" />
-    <div class="flex space-x-2">
-      <a id="downloadLink" href="https://benxidn.github.io/free/mlmod/main.html" target="_blank"
-         class="hidden bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded">
-        Download Link
-      </a>
-      <button onclick="kembaliKeForm()" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded">
-        Kembali ke Form QRIS
-      </button>
-    </div>
+  <!-- Upload Form -->
+  <div id="uploadForm" class="hidden bg-white p-6 mt-10 rounded shadow-md max-w-md mx-auto space-y-4">
+    <h2 class="text-xl font-semibold text-gray-700">Upload Bukti Pembayaran</h2>
+    <input type="file" id="buktiBayar" class="w-full p-2 border rounded" accept="image/*" onchange="tampilkanDownload()"/>
+    <a id="downloadLink" href="https://benxidn.github.io/free/mlmod/main.html" target="_blank"
+       class="hidden block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600">
+      Download Link MOD
+    </a>
+    <button onclick="kembaliForm()" class="w-full bg-gray-400 text-white py-2 rounded hover:bg-gray-500">
+      Kembali ke Form QRIS
+    </button>
   </div>
 
   <script>
@@ -55,17 +45,16 @@
       document.getElementById("uploadForm").classList.remove("hidden");
     }
 
-    function kembaliKeForm() {
-      document.getElementById("uploadForm").classList.add("hidden");
-      document.getElementById("qrisForm").classList.remove("hidden");
+    function tampilkanDownload() {
+      document.getElementById("downloadLink").classList.remove("hidden");
     }
 
-    document.getElementById("buktiBayar").addEventListener("change", function () {
-      const downloadBtn = document.getElementById("downloadLink");
-      if (this.files.length > 0) {
-        downloadBtn.classList.remove("hidden");
-      }
-    });
+    function kembaliForm() {
+      document.getElementById("uploadForm").classList.add("hidden");
+      document.getElementById("downloadLink").classList.add("hidden");
+      document.getElementById("qrisForm").classList.remove("hidden");
+    }
   </script>
+
 </body>
 </html>
