@@ -16,37 +16,41 @@
   <!-- Konten -->
   <main class="p-4">
     <!-- Form QRIS -->
-    <div id="qrisForm" class="bg-white p-6 rounded shadow-md text-center max-w-md mx-auto">
-      <h2 class="text-xl font-semibold mb-4">Silakan Scan QRIS</h2>
-      <img src="file/3k.jpg" alt="QRIS" class="mx-auto w-60 h-auto mb-4 border border-gray-300 rounded" />
-      
-      <div class="w-60 mx-auto">
-        <a href="file/3k.jpg" download class="block w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded text-center">
-          Download QRIS
-        </a>
-      </div>
+    <div id="qrisForm" class="bg-white rounded shadow-md max-w-md mx-auto">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-4 text-center">Silakan Scan QRIS</h2>
+        <img src="file/3k.jpg" alt="QRIS" class="mx-auto w-60 h-auto mb-4 border border-gray-300 rounded" />
+        
+        <div class="w-60 mx-auto">
+          <a href="file/3k.jpg" download class="block w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded text-center">
+            Download QRIS
+          </a>
+        </div>
 
-      <div class="w-60 mx-auto mt-4">
-        <button onclick="showUploadForm()" class="block w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-          Cek Pembayaran
-        </button>
+        <div class="w-60 mx-auto mt-4">
+          <button onclick="showUploadForm()" class="block w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+            Cek Pembayaran
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Form Upload Bukti Pembayaran -->
-    <div id="uploadForm" class="bg-white p-6 rounded shadow-md mt-6 hidden text-center max-w-md mx-auto">
-      <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
-      <input type="file" id="buktiUpload" class="block mx-auto mb-4" />
-      
-      <div id="nextStep" class="hidden mt-4">
-        <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded">
-          Menuju Halaman Mod
-        </a>
-      </div>
+    <div id="uploadForm" class="bg-white rounded shadow-md mt-6 max-w-md mx-auto hidden">
+      <div class="p-6 text-center">
+        <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
+        <input type="file" id="buktiUpload" class="block mx-auto mb-4" />
+        
+        <div id="nextStep" class="hidden mt-4">
+          <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded">
+            Menuju Halaman Mod
+          </a>
+        </div>
 
-      <button onclick="showQrisForm()" class="mt-4 bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
-        Kembali ke Form QRIS
-      </button>
+        <button onclick="showQrisForm()" class="mt-4 bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
+          Kembali ke Form QRIS
+        </button>
+      </div>
     </div>
   </main>
 
