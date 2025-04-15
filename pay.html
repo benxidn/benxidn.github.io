@@ -19,23 +19,23 @@
 
       <!-- Form QRIS -->
       <div id="qrisForm" class="space-y-6">
-        <p class="text-center text-lg text-gray-700">Scan kode QR di bawah ini untuk melakukan pembayaran</p>
+        <p class="text-center text-xl text-gray-700">Scan kode QR di bawah ini untuk melakukan pembayaran</p>
         <img src="file/3k.jpg" alt="QRIS" class="w-56 mx-auto rounded-lg border border-gray-200 shadow-md" />
 
-        <div class="flex justify-between">
-          <a href="file/3k.jpg" download class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-blue-700 transform transition duration-200">Download QRIS</a>
-          <button onclick="showUploadForm()" class="bg-green-600 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-green-700 transform transition duration-200">Cek Pembayaran</button>
+        <div class="space-y-4">
+          <a href="file/3k.jpg" download class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transform transition duration-200 block text-center">Download QRIS</a>
+          <button onclick="showUploadForm()" class="bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-700 transform transition duration-200 block text-center">Cek Pembayaran</button>
         </div>
       </div>
 
       <!-- Form Upload Bukti Bayar -->
       <div id="uploadForm" class="hidden mt-6 space-y-6">
-        <p class="text-center text-lg text-gray-700">Upload bukti pembayaran</p>
+        <p class="text-center text-xl text-gray-700">Upload bukti pembayaran</p>
         <input type="file" id="buktiBayar" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
 
-        <div class="flex justify-between">
-          <a id="downloadLink" href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="hidden bg-purple-600 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-purple-700 transform transition duration-200">Download Link</a>
-          <button onclick="showQrisForm()" class="bg-gray-400 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-gray-500 transform transition duration-200">Kembali</button>
+        <div class="space-y-4">
+          <a id="downloadLink" href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="hidden bg-purple-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 transform transition duration-200 block text-center">Download Link</a>
+          <button onclick="showQrisForm()" class="bg-gray-400 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-gray-500 transform transition duration-200 block text-center">Kembali</button>
         </div>
       </div>
 
