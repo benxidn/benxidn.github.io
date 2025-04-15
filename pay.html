@@ -7,27 +7,22 @@
   <!-- Link ke Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Fungsi untuk menangani tampilan tombol setelah cek pembayaran
-    function cekPembayaran() {
-      document.getElementById('upload-bukti').classList.remove('hidden');
-      document.getElementById('cek-pembayaran').classList.add('hidden');
+    // Fungsi untuk menampilkan form upload bukti bayar
+    function toggleUploadForm() {
+      document.getElementById('uploadForm').classList.remove('hidden');
+      document.getElementById('cekPembayaranBtn').classList.add('hidden');
     }
 
     // Fungsi untuk menangani upload bukti bayar
-    function uploadBuktiBayar() {
-      const fileInput = document.getElementById('file-upload');
-      const uploadButton = document.getElementById('upload-bukti-btn');
-      const successMessage = document.getElementById('upload-success');
-      const tujuanButton = document.getElementById('halaman-tujuan');
-
-      // Simulasikan upload file
+    function handleUpload() {
+      // Cek jika file diinput
+      const fileInput = document.getElementById('buktiBayar');
       if (fileInput.files.length > 0) {
-        // Simulasi proses upload berhasil
-        setTimeout(() => {
-          uploadButton.classList.add('hidden');
-          successMessage.classList.remove('hidden');
-          tujuanButton.classList.remove('hidden');
-        }, 1000); // Menunggu 1 detik untuk simulasi
+        // Simulasi upload dan tampilkan tombol menuju halaman tujuan
+        document.getElementById('uploadForm').classList.add('hidden');
+        document.getElementById('goToPageBtn').classList.remove('hidden');
+      } else {
+        alert('Silakan upload bukti pembayaran terlebih dahulu.');
       }
     }
   </script>
@@ -40,34 +35,30 @@
       <!-- Menampilkan gambar QRIS -->
       <img src="file/3k.jpeg" alt="QRIS Pembayaran" class="w-60 h-60 object-contain border border-gray-300 rounded-lg shadow-lg">
     </div>
-    <p class="text-center text-gray-600">Kode QRIS ini dapat dibayar melalui semua dompet digital dan mobile banking yang mendukung QRIS.</p>
+    <p class="text-center text-gray-600 mb-6">Kode QRIS ini dapat dibayar melalui semua dompet digital dan mobile banking yang mendukung QRIS.</p>
 
-    <!-- Tombol Cek Pembayaran -->
-    <div class="flex justify-center mt-6">
-      <button id="cek-pembayaran" onclick="cekPembayaran()" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">
+    <!-- Tombol cek pembayaran -->
+    <div class="text-center">
+      <button id="cekPembayaranBtn" onclick="toggleUploadForm()" class="bg-blue-500 text-white py-2 px-6 rounded-full hover:bg-blue-600">
         Cek Pembayaran
       </button>
     </div>
 
-    <!-- Form Upload Bukti Bayar -->
-    <div id="upload-bukti" class="hidden mt-6">
-      <div class="text-center mb-4">
-        <p class="text-gray-600">Upload bukti pembayaran Anda</p>
-        <input type="file" id="file-upload" class="mt-2 mb-4 border rounded-lg p-2">
-        <button id="upload-bukti-btn" onclick="uploadBuktiBayar()" class="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600">
-          Upload Bukti Bayar
-        </button>
-      </div>
+    <!-- Form upload bukti bayar (sembunyi hingga tombol cek pembayaran ditekan) -->
+    <div id="uploadForm" class="hidden mt-6 text-center">
+      <p class="mb-4">Silakan unggah bukti pembayaran Anda:</p>
+      <input type="file" id="buktiBayar" class="mb-4 p-2 border border-gray-300 rounded" />
+      <br>
+      <button onclick="handleUpload()" class="bg-green-500 text-white py-2 px-6 rounded-full hover:bg-green-600">
+        Upload Bukti Bayar
+      </button>
+    </div>
 
-      <!-- Pesan Berhasil Upload -->
-      <p id="upload-success" class="hidden text-center text-green-600 mb-4">Bukti pembayaran berhasil diupload!</p>
-
-      <!-- Tombol Menuju Halaman Tujuan -->
-      <div id="halaman-tujuan" class="hidden text-center mt-4">
-        <a href="https://www.contohhalaman.com" target="_blank" class="px-4 py-2 bg-yellow-500 text-white rounded-lg shadow hover:bg-yellow-600">
-          Ke Halaman Tujuan
-        </a>
-      </div>
+    <!-- Tombol menuju halaman tujuan (sembunyi hingga upload berhasil) -->
+    <div id="goToPageBtn" class="hidden mt-6 text-center">
+      <a href="https://tujuan.com" class="bg-purple-500 text-white py-2 px-6 rounded-full hover:bg-purple-600">
+        Ke Halaman Tujuan
+      </a>
     </div>
   </div>
 </body>
