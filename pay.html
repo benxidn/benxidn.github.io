@@ -7,22 +7,27 @@
   <!-- Link ke Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Fungsi untuk menampilkan tombol upload setelah cek pembayaran
-    function showUploadButton() {
-      document.getElementById('upload-section').classList.remove('hidden');
-      document.getElementById('cek-pembayaran-btn').classList.add('hidden');
+    // Fungsi untuk menangani tampilan tombol setelah cek pembayaran
+    function cekPembayaran() {
+      document.getElementById('upload-bukti').classList.remove('hidden');
+      document.getElementById('cek-pembayaran').classList.add('hidden');
     }
 
-    // Fungsi untuk menghandle upload dan menampilkan tombol download
-    function handleUpload(event) {
-      event.preventDefault();
-      const fileInput = document.getElementById('bukti-bayar');
-      const file = fileInput.files[0];
-      
-      if (file) {
-        // Simulasi upload berhasil (seharusnya menggunakan backend untuk upload nyata)
-        document.getElementById('download-section').classList.remove('hidden');
-        document.getElementById('upload-section').classList.add('hidden');
+    // Fungsi untuk menangani upload bukti bayar
+    function uploadBuktiBayar() {
+      const fileInput = document.getElementById('file-upload');
+      const uploadButton = document.getElementById('upload-bukti-btn');
+      const successMessage = document.getElementById('upload-success');
+      const tujuanButton = document.getElementById('halaman-tujuan');
+
+      // Simulasikan upload file
+      if (fileInput.files.length > 0) {
+        // Simulasi proses upload berhasil
+        setTimeout(() => {
+          uploadButton.classList.add('hidden');
+          successMessage.classList.remove('hidden');
+          tujuanButton.classList.remove('hidden');
+        }, 1000); // Menunggu 1 detik untuk simulasi
       }
     }
   </script>
@@ -38,31 +43,31 @@
     <p class="text-center text-gray-600">Kode QRIS ini dapat dibayar melalui semua dompet digital dan mobile banking yang mendukung QRIS.</p>
 
     <!-- Tombol Cek Pembayaran -->
-    <div class="mt-6 text-center">
-      <button id="cek-pembayaran-btn" onclick="showUploadButton()" class="px-6 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 focus:outline-none">
+    <div class="flex justify-center mt-6">
+      <button id="cek-pembayaran" onclick="cekPembayaran()" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">
         Cek Pembayaran
       </button>
     </div>
 
-    <!-- Upload Bukti Bayar (initially hidden) -->
-    <div id="upload-section" class="hidden mt-6 text-center">
-      <form onsubmit="handleUpload(event)">
-        <label for="bukti-bayar" class="block text-gray-700 mb-2">Upload Bukti Pembayaran</label>
-        <input type="file" id="bukti-bayar" accept="image/*" class="px-4 py-2 border rounded-lg mb-4" required>
-        <br>
-        <button type="submit" class="px-6 py-2 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600 focus:outline-none">
-          Upload
+    <!-- Form Upload Bukti Bayar -->
+    <div id="upload-bukti" class="hidden mt-6">
+      <div class="text-center mb-4">
+        <p class="text-gray-600">Upload bukti pembayaran Anda</p>
+        <input type="file" id="file-upload" class="mt-2 mb-4 border rounded-lg p-2">
+        <button id="upload-bukti-btn" onclick="uploadBuktiBayar()" class="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600">
+          Upload Bukti Bayar
         </button>
-      </form>
-    </div>
+      </div>
 
-    <!-- Tombol Download (initially hidden) -->
-    <div id="download-section" class="hidden mt-6 text-center">
-      <a href="#" download="bukti_bayar.jpg">
-        <button class="px-6 py-2 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-600 focus:outline-none">
-          Download Bukti Bayar
-        </button>
-      </a>
+      <!-- Pesan Berhasil Upload -->
+      <p id="upload-success" class="hidden text-center text-green-600 mb-4">Bukti pembayaran berhasil diupload!</p>
+
+      <!-- Tombol Menuju Halaman Tujuan -->
+      <div id="halaman-tujuan" class="hidden text-center mt-4">
+        <a href="https://www.contohhalaman.com" target="_blank" class="px-4 py-2 bg-yellow-500 text-white rounded-lg shadow hover:bg-yellow-600">
+          Ke Halaman Tujuan
+        </a>
+      </div>
     </div>
   </div>
 </body>
