@@ -6,19 +6,15 @@
   <title>Dexter Modz</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
 
-  <!-- Header -->
-  <header class="bg-blue-700 text-white text-center py-4 text-2xl font-bold">
-    Dexter Modz
-  </header>
+  <!-- Wrapper -->
+  <div class="w-full max-w-md">
 
-  <!-- Konten -->
-  <main class="p-4">
     <!-- Form QRIS -->
-    <div id="qrisForm" class="bg-white rounded shadow-md max-w-md mx-auto">
-      <div class="p-6">
-        <h2 class="text-xl font-semibold mb-4 text-center">Silakan Scan QRIS</h2>
+    <div id="qrisForm" class="bg-white rounded shadow-md">
+      <div class="p-6 text-center">
+        <h2 class="text-xl font-semibold mb-4">Silakan Scan QRIS</h2>
         <img src="file/3k.jpg" alt="QRIS" class="mx-auto w-60 h-auto mb-4 border border-gray-300 rounded" />
         
         <div class="w-60 mx-auto">
@@ -36,7 +32,7 @@
     </div>
 
     <!-- Form Upload Bukti Pembayaran -->
-    <div id="uploadForm" class="bg-white rounded shadow-md mt-6 max-w-md mx-auto hidden">
+    <div id="uploadForm" class="bg-white rounded shadow-md mt-6 hidden">
       <div class="p-6 text-center">
         <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
         <input type="file" id="buktiUpload" class="block mx-auto mb-4" />
@@ -52,7 +48,8 @@
         </button>
       </div>
     </div>
-  </main>
+
+  </div>
 
   <script>
     function showUploadForm() {
