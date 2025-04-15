@@ -58,6 +58,11 @@
     </div>
   </main>
 
+  <!-- Footer -->
+  <footer class="bg-blue-700 text-white text-center py-3 text-sm">
+    DexterModz© <span id="year"></span>
+  </footer>
+
   <script>
     function showUploadForm() {
       document.getElementById('qrisForm').classList.add('hidden');
@@ -77,6 +82,9 @@
         nextStep.classList.add('hidden');
       }
     });
+
+    // Set tahun otomatis
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
 </body>
