@@ -6,16 +6,16 @@
   <title>Dexter Modz</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-8">
+<body class="bg-gray-100 p-8 text-sm">
 
   <!-- Header -->
-  <header class="mb-10 text-center">
-    <h1 class="text-4xl font-bold text-blue-600">Dexter Modz</h1>
+  <header class="mb-10 text-center bg-blue-600 text-white py-4 rounded">
+    <h1 class="text-2xl font-semibold">Dexter Modz</h1>
   </header>
 
   <!-- QRIS Form -->
-  <div id="qrisForm" class="bg-white p-6 rounded shadow-md max-w-md mx-auto space-y-4">
-    <h2 class="text-xl font-semibold text-gray-700">Pembayaran via QRIS</h2>
+  <div id="qrisForm" class="bg-white p-6 rounded shadow-md max-w-md mx-auto text-center space-y-4">
+    <h2 class="text-base font-semibold text-gray-700">Pembayaran via QRIS</h2>
     <p>Silakan scan QR di bawah ini dengan e-wallet atau m-banking.</p>
     <img src="file/3k.jpg" alt="QRIS" class="w-full rounded border"/>
     <a href="file/3k.jpg" download class="block w-full text-center mt-4 bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
@@ -27,9 +27,9 @@
   </div>
 
   <!-- Upload Form -->
-  <div id="uploadForm" class="hidden bg-white p-6 mt-10 rounded shadow-md max-w-md mx-auto space-y-4">
-    <h2 class="text-xl font-semibold text-gray-700">Upload Bukti Pembayaran</h2>
-    <input type="file" id="buktiBayar" class="w-full p-2 border rounded" accept="image/*" onchange="tampilkanDownload()"/>
+  <div id="uploadForm" class="hidden bg-white p-6 mt-10 rounded shadow-md max-w-md mx-auto text-center space-y-4">
+    <h2 class="text-base font-semibold text-gray-700">Upload Bukti Pembayaran</h2>
+    <input type="file" id="buktiBayar" class="w-full p-2 border rounded text-sm" accept="image/*" onchange="tampilkanDownload()"/>
     <a id="downloadLink" href="https://benxidn.github.io/free/mlmod/main.html" target="_blank"
        class="hidden block text-center bg-purple-500 text-white py-2 rounded hover:bg-purple-600">
       Download Link MOD
