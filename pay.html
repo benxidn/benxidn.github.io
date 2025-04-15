@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen">
 
-  <!-- Header tetap di atas -->
+  <!-- Header -->
   <header class="fixed top-0 w-full z-50 bg-blue-700 text-white text-center py-4 text-2xl font-bold shadow-md">
     Dexter Modz
   </header>
@@ -59,8 +59,8 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-blue-700 text-white text-center py-3 text-sm">
-    DexterModz© <span id="year"></span>
+  <footer class="bg-blue-700 text-white text-center py-3 text-sm mt-6">
+    Dexter Modz © <span id="year"></span>
   </footer>
 
   <script>
@@ -83,8 +83,8 @@
       }
     });
 
-    // Set tahun otomatis
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Set tahun saat ini secara otomatis
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
 </body>
