@@ -102,6 +102,11 @@
 
     // Set tahun saat ini secara otomatis
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Fungsi untuk kembali ke form QRIS jika tombol back ditekan pada perangkat
+    window.addEventListener('popstate', function () {
+      showQrisForm();
+    });
   </script>
 
 </body>
