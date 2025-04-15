@@ -8,10 +8,10 @@
 </head>
 <body class="bg-gray-100 flex flex-col items-center justify-start min-h-screen px-4 py-6">
 
-  <!-- Judul Header -->
-  <header class="mb-6 text-center">
+  <!-- Header dengan warna berbeda -->
+  <header class="mb-6 w-full max-w-sm bg-blue-100 p-4 rounded-lg shadow text-center">
     <h1 class="text-2xl font-bold text-blue-700">Dexter Modz</h1>
-    <p class="text-sm text-gray-500">Pembayaran Mudah via QRIS</p>
+    <p class="text-sm text-blue-600">Pembayaran Mudah via QRIS</p>
   </header>
 
   <!-- Container -->
@@ -48,6 +48,14 @@
           Upload Bukti
         </button>
       </form>
+
+      <!-- Tombol kembali ke QRIS -->
+      <button 
+        onclick="showQRForm()" 
+        class="mt-2 w-full bg-gray-300 text-gray-700 text-sm py-2 rounded hover:bg-gray-400 transition">
+        Kembali ke QRIS
+      </button>
+
       <div id="successMessage" class="hidden">
         <button 
           onclick="goToNextPage()" 
@@ -65,6 +73,11 @@
       document.getElementById('uploadForm').classList.remove('hidden');
     }
 
+    function showQRForm() {
+      document.getElementById('uploadForm').classList.add('hidden');
+      document.getElementById('qrisForm').classList.remove('hidden');
+    }
+
     document.getElementById('uploadBuktiForm').addEventListener('submit', function(e) {
       e.preventDefault();
       setTimeout(() => {
@@ -74,7 +87,7 @@
     });
 
     function goToNextPage() {
-      window.location.href = "halaman-tujuan.html"; // Ganti sesuai kebutuhan
+      window.location.href = "halaman-tujuan.html";
     }
   </script>
 </body>
