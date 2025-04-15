@@ -3,48 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pembayaran QRIS</title>
+  <title>Pembayaran QRIS - Dexter Modz</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen px-4">
-  <div class="bg-white w-full max-w-md rounded-xl shadow-lg p-6 space-y-6">
-    
+<body class="bg-gray-100 flex flex-col items-center justify-start min-h-screen px-4 py-6">
+
+  <!-- Judul Header -->
+  <header class="mb-6 text-center">
+    <h1 class="text-2xl font-bold text-blue-700">Dexter Modz</h1>
+    <p class="text-sm text-gray-500">Pembayaran Mudah via QRIS</p>
+  </header>
+
+  <!-- Container -->
+  <div class="bg-white w-full max-w-sm rounded-lg shadow-md p-4 space-y-5">
+
     <!-- Form QRIS -->
     <div id="qrisForm">
-      <h2 class="text-2xl font-bold text-gray-800 mb-2">Pembayaran QRIS</h2>
-      <p class="text-gray-600 mb-4">Silakan scan kode QR di bawah untuk membayar melalui dompet digital atau m-banking Anda.</p>
-      <div class="border rounded overflow-hidden mb-4">
+      <h2 class="text-lg font-semibold text-gray-800 mb-2">Scan QRIS</h2>
+      <p class="text-sm text-gray-600 mb-3">Scan kode di bawah untuk membayar.</p>
+      <div class="border rounded overflow-hidden mb-3">
         <img src="file/3k.jpeg" alt="Kode QRIS" class="w-full object-cover"/>
       </div>
       <button 
         onclick="showUploadForm()" 
-        class="w-full bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 transition">
+        class="w-full bg-blue-600 text-white text-sm py-2 rounded hover:bg-blue-700 transition">
         Cek Pembayaran
       </button>
     </div>
 
     <!-- Form Upload Bukti -->
     <div id="uploadForm" class="hidden">
-      <h2 class="text-2xl font-bold text-gray-800 mb-2">Upload Bukti Pembayaran</h2>
-      <p class="text-gray-600 mb-4">Unggah foto bukti transfer setelah pembayaran berhasil.</p>
-      <form id="uploadBuktiForm" enctype="multipart/form-data" class="space-y-4">
+      <h2 class="text-lg font-semibold text-gray-800 mb-2">Upload Bukti</h2>
+      <form id="uploadBuktiForm" enctype="multipart/form-data" class="space-y-3">
         <input 
           type="file" 
           id="buktiBayar" 
           name="buktiBayar" 
           accept="image/*" 
           required 
-          class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200"/>
+          class="block w-full text-sm text-gray-500 file:mr-2 file:py-1 file:px-3 file:rounded file:border-0 file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200"/>
         <button 
           type="submit" 
-          class="w-full bg-green-600 text-white font-semibold py-2 rounded hover:bg-green-700 transition">
-          Upload
+          class="w-full bg-green-600 text-white text-sm py-2 rounded hover:bg-green-700 transition">
+          Upload Bukti
         </button>
       </form>
-      <div id="successMessage" class="hidden mt-4">
+      <div id="successMessage" class="hidden">
         <button 
           onclick="goToNextPage()" 
-          class="w-full bg-purple-600 text-white font-semibold py-2 rounded hover:bg-purple-700 transition">
+          class="mt-3 w-full bg-purple-600 text-white text-sm py-2 rounded hover:bg-purple-700 transition">
           Lanjut ke Halaman Tujuan
         </button>
       </div>
@@ -60,7 +67,6 @@
 
     document.getElementById('uploadBuktiForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      // Simulasi proses upload
       setTimeout(() => {
         alert("Bukti pembayaran berhasil diupload.");
         document.getElementById('successMessage').classList.remove('hidden');
@@ -68,7 +74,7 @@
     });
 
     function goToNextPage() {
-      window.location.href = "halaman-tujuan.html"; // Ganti dengan halaman sebenarnya
+      window.location.href = "halaman-tujuan.html"; // Ganti sesuai kebutuhan
     }
   </script>
 </body>
