@@ -6,24 +6,33 @@
   <title>Pembayaran QRIS - Dexter Modz</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex flex-col items-center justify-start min-h-screen px-2 py-4">
+<body class="bg-gray-100 flex flex-col items-center justify-start min-h-screen px-2 py-0">
+
+  <!-- Header -->
+  <header class="w-full bg-black text-white text-center py-3">
+    <h1 class="text-xl font-bold">Dexter Modz</h1>
+    <p class="text-sm text-gray-300">Pembayaran Mudah via QRIS</p>
+  </header>
 
   <!-- Container -->
-  <div class="bg-white w-full max-w-xs rounded-lg shadow-md p-2 space-y-4">
-
-    <!-- Judul -->
-    <div class="text-center">
-      <h1 class="text-lg font-bold text-gray-800">Dexter Modz</h1>
-      <p class="text-sm text-gray-500">Pembayaran via QRIS</p>
-    </div>
+  <div class="bg-white w-full max-w-xs rounded-lg shadow-md p-2 mt-6 space-y-4">
 
     <!-- Form QRIS -->
     <div id="qrisForm">
-      <h2 class="text-base font-semibold text-gray-800 mt-2 mb-2">Scan QRIS</h2>
+      <h2 class="text-base font-semibold text-gray-800 mb-2">Scan QRIS</h2>
       <p class="text-sm text-gray-600 mb-3">Scan kode di bawah untuk membayar.</p>
       <div class="border rounded overflow-hidden mb-3">
         <img src="file/3k.jpg" alt="Kode QRIS" class="w-full object-cover"/>
       </div>
+
+      <!-- Tombol Download QRIS -->
+      <a 
+        href="file/3k.jpg" 
+        download="qris_dextermodz.jpg"
+        class="block w-full text-center bg-yellow-500 text-white text-sm py-2 rounded hover:bg-yellow-600 transition mb-3">
+        Download QRIS
+      </a>
+
       <button 
         onclick="showUploadForm()" 
         class="w-full bg-blue-600 text-white text-sm py-2 rounded hover:bg-blue-700 transition">
