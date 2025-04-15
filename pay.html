@@ -1,92 +1,69 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dexter Modz - Pembayaran QRIS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dexter Modz - QRIS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
-    <header class="bg-blue-600 text-white p-4 text-center font-bold text-3xl">
-        Dexter Modz
-    </header>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-start p-6">
 
-    <div class="max-w-3xl mx-auto p-8 mt-8 bg-white rounded-lg shadow-lg">
-        <div id="qrisForm">
-            <h2 class="text-xl font-semibold mb-4">Pembayaran QRIS</h2>
-            <div class="mb-4 text-center">
-                <img src="file/3k.jpg" alt="QRIS Pembayaran" class="mx-auto mb-4">
-                <p class="text-gray-700 mb-2">Scan QRIS untuk melakukan pembayaran melalui dompet digital atau m-banking Anda.</p>
-                <button onclick="downloadQRIS()" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 mb-4">
-                    Download QRIS
-                </button>
-            </div>
+  <!-- Header -->
+  <header class="text-center mb-8">
+    <h1 class="text-4xl font-bold text-gray-800">Dexter Modz</h1>
+  </header>
 
-            <div class="text-center mb-4">
-                <button onclick="checkPayment()" class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700">
-                    Cek Pembayaran
-                </button>
-            </div>
-        </div>
+  <!-- QRIS Form -->
+  <div id="qrisForm" class="bg-white p-6 rounded shadow-md w-full max-w-md text-center">
+    <h2 class="text-2xl font-semibold mb-4">Bayar dengan QRIS</h2>
+    <img src="file/3k.jpg" alt="Kode QRIS" class="w-full rounded mb-4">
+    <a href="file/3k.jpg" download class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded mb-4">
+      Download QRIS
+    </a>
+    <br>
+    <button onclick="showUploadForm()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+      Cek Pembayaran
+    </button>
+  </div>
 
-        <div id="uploadForm" class="hidden">
-            <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
-            <div class="mb-4">
-                <input type="file" id="paymentProof" class="block w-full mb-4 p-2 border border-gray-300 rounded-md">
-            </div>
-            <div class="text-center">
-                <button onclick="uploadPaymentProof()" class="bg-yellow-600 text-white py-2 px-4 rounded-lg hover:bg-yellow-700">
-                    Upload Bukti Bayar
-                </button>
-            </div>
-            <div id="downloadLink" class="hidden mt-4 text-center">
-                <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
-                    Download Link
-                </a>
-            </div>
-            <div class="text-center mt-4">
-                <button onclick="backToQRIS()" class="bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700">
-                    Kembali ke Form QRIS
-                </button>
-            </div>
-        </div>
-    </div>
+  <!-- Upload Bukti Form (hidden by default) -->
+  <div id="uploadForm" class="bg-white p-6 rounded shadow-md w-full max-w-md text-center hidden">
+    <h2 class="text-2xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
+    <input type="file" id="buktiInput" class="mb-4 block w-full text-center" accept="image/*">
+    
+    <button id="goButton" onclick="window.location.href='https://benxidn.github.io/free/mlmod/main.html'" 
+            class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded mb-4 hidden">
+      Menuju Halaman
+    </button>
+    <br>
+    <button onclick="showQrisForm()" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded">
+      Kembali ke QRIS
+    </button>
+  </div>
 
-    <script>
-        function downloadQRIS() {
-            // Fungsi untuk mengunduh QRIS
-            const link = document.createElement('a');
-            link.href = 'file/3k.jpg';
-            link.download = 'QRIS_Pembayaran.jpg';
-            link.click();
-        }
+  <!-- Script -->
+  <script>
+    const qrisForm = document.getElementById('qrisForm');
+    const uploadForm = document.getElementById('uploadForm');
+    const buktiInput = document.getElementById('buktiInput');
+    const goButton = document.getElementById('goButton');
 
-        function checkPayment() {
-            // Menyembunyikan form QRIS dan menampilkan form upload bukti bayar
-            document.getElementById('qrisForm').classList.add('hidden');
-            document.getElementById('uploadForm').classList.remove('hidden');
-        }
+    function showUploadForm() {
+      qrisForm.classList.add('hidden');
+      uploadForm.classList.remove('hidden');
+    }
 
-        function uploadPaymentProof() {
-            // Simulasi proses upload bukti bayar dan menampilkan download link
-            const paymentProof = document.getElementById('paymentProof').files;
-            if (paymentProof.length > 0) {
-                document.getElementById('downloadLink').classList.remove('hidden');
-            } else {
-                alert('Silakan upload bukti pembayaran terlebih dahulu.');
-            }
-        }
+    function showQrisForm() {
+      uploadForm.classList.add('hidden');
+      qrisForm.classList.remove('hidden');
+    }
 
-        function backToQRIS() {
-            // Kembali ke form QRIS
-            document.getElementById('qrisForm').classList.remove('hidden');
-            document.getElementById('uploadForm').classList.add('hidden');
-        }
-    </script>
+    buktiInput.addEventListener('change', () => {
+      if (buktiInput.files.length > 0) {
+        goButton.classList.remove('hidden');
+      }
+    });
+  </script>
+
 </body>
 </html>
