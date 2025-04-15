@@ -4,62 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pembayaran QRIS</title>
-  <!-- Link ke Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Fungsi untuk menampilkan form upload bukti bayar
-    function toggleUploadForm() {
-      document.getElementById('uploadForm').classList.remove('hidden');
-      document.getElementById('cekPembayaranBtn').classList.add('hidden');
-    }
-
-    // Fungsi untuk menangani upload bukti bayar
-    function handleUpload() {
-      // Cek jika file diinput
-      const fileInput = document.getElementById('buktiBayar');
-      if (fileInput.files.length > 0) {
-        // Simulasi upload dan tampilkan tombol menuju halaman tujuan
-        document.getElementById('uploadForm').classList.add('hidden');
-        document.getElementById('goToPageBtn').classList.remove('hidden');
-      } else {
-        alert('Silakan upload bukti pembayaran terlebih dahulu.');
-      }
-    }
-  </script>
 </head>
-<body class="bg-gray-100 py-10">
-  <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-    <h1 class="text-2xl font-semibold text-center text-gray-800 mb-6">Pembayaran QRIS</h1>
-    <p class="text-center text-gray-600 mb-4">Scan kode QRIS berikut menggunakan aplikasi dompet digital atau m-banking Anda untuk melakukan pembayaran.</p>
-    <div class="flex justify-center mb-6">
-      <!-- Menampilkan gambar QRIS -->
-      <img src="file/3k.jpeg" alt="QRIS Pembayaran" class="w-60 h-60 object-contain border border-gray-300 rounded-lg shadow-lg">
-    </div>
-    <p class="text-center text-gray-600 mb-6">Kode QRIS ini dapat dibayar melalui semua dompet digital dan mobile banking yang mendukung QRIS.</p>
-
-    <!-- Tombol cek pembayaran -->
-    <div class="text-center">
-      <button id="cekPembayaranBtn" onclick="toggleUploadForm()" class="bg-blue-500 text-white py-2 px-6 rounded-full hover:bg-blue-600">
-        Cek Pembayaran
-      </button>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <!-- Form Pembayaran QRIS -->
+    <div id="qrisForm">
+      <h2 class="text-xl font-semibold mb-4">Pembayaran QRIS</h2>
+      <p class="mb-4 text-gray-600">Scan kode QR di bawah ini untuk membayar menggunakan e-wallet atau m-banking Anda.</p>
+      <img src="file/3k.jpeg" alt="QRIS" class="w-full h-auto rounded mb-4">
+      <button onclick="showUploadForm()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Cek Pembayaran</button>
     </div>
 
-    <!-- Form upload bukti bayar (sembunyi hingga tombol cek pembayaran ditekan) -->
-    <div id="uploadForm" class="hidden mt-6 text-center">
-      <p class="mb-4">Silakan unggah bukti pembayaran Anda:</p>
-      <input type="file" id="buktiBayar" class="mb-4 p-2 border border-gray-300 rounded" />
-      <br>
-      <button onclick="handleUpload()" class="bg-green-500 text-white py-2 px-6 rounded-full hover:bg-green-600">
-        Upload Bukti Bayar
-      </button>
-    </div>
-
-    <!-- Tombol menuju halaman tujuan (sembunyi hingga upload berhasil) -->
-    <div id="goToPageBtn" class="hidden mt-6 text-center">
-      <a href="https://tujuan.com" class="bg-purple-500 text-white py-2 px-6 rounded-full hover:bg-purple-600">
-        Ke Halaman Tujuan
-      </a>
+    <!-- Form Upload Bukti Pembayaran -->
+    <div id="uploadForm" class="hidden">
+      <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
+      <form id="uploadBuktiForm" enctype="multipart/form-data">
+        <input type="file" id="buktiBayar" name="buktiBayar" accept="image/*" required class="mb-4 w-full">
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full">Upload</button>
+      </form>
+      <div id="successMessage" class="hidden mt-4">
+        <button onclick="goToNextPage()" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 w-full">Lanjut ke Halaman Tujuan</button>
+      </div>
     </div>
   </div>
+
+  <script>
+    function showUploadForm() {
+      document.getElementById('qrisForm').classList.add('hidden');
+      document.getElementById('uploadForm').classList.remove('hidden');
+    }
+
+    document.getElementById('uploadBuktiForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simulasi upload berhasil
+      setTimeout(() => {
+        alert("Bukti pembayaran berhasil diupload.");
+        document.getElementById('successMessage').classList.remove('hidden');
+      }, 1000);
+    });
+
+    function goToNextPage() {
+      window.location.href = "halaman-tujuan.html"; // Ganti dengan halaman sebenarnya
+    }
+  </script>
 </body>
 </html>
