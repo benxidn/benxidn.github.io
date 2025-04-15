@@ -42,7 +42,12 @@
       <!-- Form Upload Bukti Pembayaran -->
       <div id="uploadForm" class="bg-white p-6 rounded shadow-md mt-6 hidden text-center">
         <h2 class="text-lg font-semibold mb-4">Upload Bukti Pembayaran</h2>
-        <input type="file" id="buktiUpload" class="block mx-auto mb-4" />
+        <input type="file" id="buktiUpload" class="block mx-auto mb-4" accept="image/*" />
+
+        <!-- Tempat untuk menampilkan gambar yang diupload -->
+        <div id="imagePreview" class="hidden mb-4">
+          <img id="previewImage" class="mx-auto w-72 h-auto border border-gray-300 rounded" />
+        </div>
 
         <div id="nextStep" class="hidden mt-4">
           <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="block w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded">
@@ -74,12 +79,21 @@
       document.getElementById('qrisForm').classList.remove('hidden');
     }
 
-    document.getElementById('buktiUpload').addEventListener('change', function () {
-      const nextStep = document.getElementById('nextStep');
-      if (this.files.length > 0) {
-        nextStep.classList.remove('hidden');
+    // Menampilkan gambar preview setelah memilih file
+    document.getElementById('buktiUpload').addEventListener('change', function (e) {
+      const file = e.target.files[0];
+      const preview = document.getElementById('previewImage');
+      const imagePreview = document.getElementById('imagePreview');
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+          imagePreview.classList.remove('hidden');
+        }
+        reader.readAsDataURL(file);
       } else {
-        nextStep.classList.add('hidden');
+        imagePreview.classList.add('hidden');
       }
     });
 
