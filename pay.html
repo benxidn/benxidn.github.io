@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pembayaran QRIS</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-  <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-    <!-- Form Pembayaran QRIS -->
+<body class="bg-gray-100 flex items-center justify-center min-h-screen px-4">
+  <div class="bg-white w-full max-w-md rounded-xl shadow-lg p-6 space-y-6">
+    
+    <!-- Form QRIS -->
     <div id="qrisForm">
-      <h2 class="text-xl font-semibold mb-4">Pembayaran QRIS</h2>
-      <p class="mb-4 text-gray-600">Scan kode QR di bawah ini untuk membayar menggunakan e-wallet atau m-banking Anda.</p>
-      <img src="file/3k.jpeg" alt="QRIS" class="w-full h-auto rounded mb-4">
-      <button onclick="showUploadForm()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Cek Pembayaran</button>
+      <h2 class="text-2xl font-bold text-gray-800 mb-2">Pembayaran QRIS</h2>
+      <p class="text-gray-600 mb-4">Silakan scan kode QR di bawah untuk membayar melalui dompet digital atau m-banking Anda.</p>
+      <div class="border rounded overflow-hidden mb-4">
+        <img src="file/3k.jpeg" alt="Kode QRIS" class="w-full object-cover"/>
+      </div>
+      <button 
+        onclick="showUploadForm()" 
+        class="w-full bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 transition">
+        Cek Pembayaran
+      </button>
     </div>
 
-    <!-- Form Upload Bukti Pembayaran -->
+    <!-- Form Upload Bukti -->
     <div id="uploadForm" class="hidden">
-      <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
-      <form id="uploadBuktiForm" enctype="multipart/form-data">
-        <input type="file" id="buktiBayar" name="buktiBayar" accept="image/*" required class="mb-4 w-full">
-        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full">Upload</button>
+      <h2 class="text-2xl font-bold text-gray-800 mb-2">Upload Bukti Pembayaran</h2>
+      <p class="text-gray-600 mb-4">Unggah foto bukti transfer setelah pembayaran berhasil.</p>
+      <form id="uploadBuktiForm" enctype="multipart/form-data" class="space-y-4">
+        <input 
+          type="file" 
+          id="buktiBayar" 
+          name="buktiBayar" 
+          accept="image/*" 
+          required 
+          class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200"/>
+        <button 
+          type="submit" 
+          class="w-full bg-green-600 text-white font-semibold py-2 rounded hover:bg-green-700 transition">
+          Upload
+        </button>
       </form>
       <div id="successMessage" class="hidden mt-4">
-        <button onclick="goToNextPage()" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 w-full">Lanjut ke Halaman Tujuan</button>
+        <button 
+          onclick="goToNextPage()" 
+          class="w-full bg-purple-600 text-white font-semibold py-2 rounded hover:bg-purple-700 transition">
+          Lanjut ke Halaman Tujuan
+        </button>
       </div>
     </div>
+
   </div>
 
   <script>
@@ -37,7 +60,7 @@
 
     document.getElementById('uploadBuktiForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      // Simulasi upload berhasil
+      // Simulasi proses upload
       setTimeout(() => {
         alert("Bukti pembayaran berhasil diupload.");
         document.getElementById('successMessage').classList.remove('hidden');
