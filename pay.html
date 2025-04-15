@@ -4,75 +4,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QRIS Pembayaran</title>
+  <title>Dexter Modz</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .form-container {
-      margin-top: 50px;
-    }
-    .hidden {
-      display: none;
-    }
-    .btn {
-      width: 100%;
-    }
-    .container {
-      max-width: 800px;
-    }
-  </style>
 </head>
 
-<body class="bg-gray-100 p-6">
-
-  <div class="container mx-auto">
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
+    <h1 class="text-3xl font-semibold text-center mb-6">Dexter Modz</h1>
+    
     <!-- Form Pembayaran QRIS -->
-    <div id="form-qris" class="form-container bg-white p-8 rounded-lg shadow-lg">
-      <h2 class="text-xl font-semibold text-center mb-4">Pembayaran QRIS</h2>
-      <div class="text-center mb-6">
-        <img src="file/3k.jpg" alt="QRIS Pembayaran" class="mx-auto mb-4" />
-      </div>
-      <div class="text-center mb-6">
-        <a href="file/3k.jpg" download class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 btn">Download QRIS</a>
-      </div>
-      <div class="text-center mb-6">
-        <button id="btn-cek-pembayaran" class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 btn">Cek Pembayaran</button>
-      </div>
+    <div id="qrisForm">
+      <form class="space-y-6">
+        <div class="text-center">
+          <img src="file/3k.jpg" alt="QRIS Pembayaran" class="mx-auto mb-4 max-w-full h-auto">
+          <p class="text-sm text-gray-600 mb-4">Pembayaran bisa dilakukan melalui semua dompet digital atau m-banking.</p>
+          <button type="button" onclick="downloadQRIS()" class="bg-blue-500 text-white px-4 py-2 rounded-md text-sm">Download QRIS</button>
+        </div>
+        <div class="text-center">
+          <button type="button" onclick="showUploadForm()" class="bg-green-500 text-white px-4 py-2 rounded-md text-sm">Cek Pembayaran</button>
+        </div>
+      </form>
     </div>
 
     <!-- Form Upload Bukti Pembayaran -->
-    <div id="form-upload-bukti" class="form-container hidden bg-white p-8 rounded-lg shadow-lg">
-      <h2 class="text-xl font-semibold text-center mb-4">Upload Bukti Pembayaran</h2>
-      <div class="mb-6">
-        <label for="file-upload" class="block text-gray-700 text-sm mb-2">Pilih Bukti Pembayaran</label>
-        <input type="file" id="file-upload" class="mt-2 p-2 border border-gray-300 rounded-md w-full" />
-      </div>
-      <div class="text-center mb-6">
-        <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 btn">Download Link</a>
+    <div id="uploadForm" class="hidden space-y-6">
+      <div class="text-center">
+        <input type="file" id="paymentProof" class="block mx-auto mb-4 text-sm">
+        <button type="button" onclick="showDownloadLink()" class="bg-orange-500 text-white px-4 py-2 rounded-md text-sm">Upload Bukti Bayar</button>
       </div>
       <div class="text-center">
-        <button id="btn-kembali-qris" class="bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600 btn">Kembali ke Form QRIS</button>
+        <button type="button" onclick="backToQrisForm()" class="bg-gray-500 text-white px-4 py-2 rounded-md text-sm">Kembali ke Form QRIS</button>
       </div>
+    </div>
+
+    <!-- Link Download -->
+    <div id="downloadLink" class="hidden text-center">
+      <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="bg-purple-500 text-white px-4 py-2 rounded-md text-sm">Download Link</a>
     </div>
   </div>
 
   <script>
-    // Event listener untuk tombol cek pembayaran
-    document.getElementById('btn-cek-pembayaran').addEventListener('click', function () {
-      // Sembunyikan form QRIS
-      document.getElementById('form-qris').classList.add('hidden');
-      // Tampilkan form upload bukti pembayaran
-      document.getElementById('form-upload-bukti').classList.remove('hidden');
-    });
+    // Fungsi untuk mendownload QRIS
+    function downloadQRIS() {
+      const link = document.createElement('a');
+      link.href = 'file/3k.jpg'; // Link ke file QRIS
+      link.download = 'QRIS-Pembayaran.jpg';
+      link.click();
+    }
 
-    // Event listener untuk tombol kembali ke form QRIS
-    document.getElementById('btn-kembali-qris').addEventListener('click', function () {
-      // Sembunyikan form upload bukti pembayaran
-      document.getElementById('form-upload-bukti').classList.add('hidden');
-      // Tampilkan form QRIS
-      document.getElementById('form-qris').classList.remove('hidden');
-    });
+    // Fungsi untuk menampilkan form upload bukti pembayaran
+    function showUploadForm() {
+      document.getElementById('qrisForm').classList.add('hidden');
+      document.getElementById('uploadForm').classList.remove('hidden');
+    }
+
+    // Fungsi untuk menampilkan link download setelah bukti pembayaran diupload
+    function showDownloadLink() {
+      const paymentProof = document.getElementById('paymentProof').files[0];
+      if (paymentProof) {
+        document.getElementById('uploadForm').classList.add('hidden');
+        document.getElementById('downloadLink').classList.remove('hidden');
+      } else {
+        alert('Silakan upload bukti pembayaran terlebih dahulu.');
+      }
+    }
+
+    // Fungsi untuk kembali ke form QRIS
+    function backToQrisForm() {
+      document.getElementById('uploadForm').classList.add('hidden');
+      document.getElementById('qrisForm').classList.remove('hidden');
+    }
   </script>
-
 </body>
 
 </html>
