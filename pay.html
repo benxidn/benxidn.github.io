@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dexter Modz - QRIS</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-start p-6">
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-start p-4 text-sm">
 
   <!-- Header -->
-  <header class="text-center mb-8">
-    <h1 class="text-4xl font-bold text-gray-800">Dexter Modz</h1>
+  <header class="text-center mb-4">
+    <h1 class="text-2xl font-bold text-gray-800">Dexter Modz</h1>
   </header>
 
   <!-- QRIS Form -->
-  <div id="qrisForm" class="bg-white p-6 rounded shadow-md w-full max-w-md text-center">
-    <h2 class="text-2xl font-semibold mb-4">Bayar dengan QRIS</h2>
-    <img src="file/3k.jpg" alt="Kode QRIS" class="w-full rounded mb-4">
-    <a href="file/3k.jpg" download class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded mb-4">
+  <div id="qrisForm" class="bg-white p-4 rounded shadow w-full max-w-sm text-center space-y-3">
+    <h2 class="text-lg font-semibold">Bayar via QRIS</h2>
+    <img src="file/3k.jpg" alt="QRIS" class="w-full rounded border" />
+    <a href="file/3k.jpg" download class="block bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">
       Download QRIS
     </a>
-    <br>
-    <button onclick="showUploadForm()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+    <button onclick="showUploadForm()" class="bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded">
       Cek Pembayaran
     </button>
   </div>
 
-  <!-- Upload Bukti Form (hidden by default) -->
-  <div id="uploadForm" class="bg-white p-6 rounded shadow-md w-full max-w-md text-center hidden">
-    <h2 class="text-2xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
-    <input type="file" id="buktiInput" class="mb-4 block w-full text-center" accept="image/*">
+  <!-- Upload Form -->
+  <div id="uploadForm" class="bg-white p-4 rounded shadow w-full max-w-sm text-center space-y-3 hidden mt-4">
+    <h2 class="text-lg font-semibold">Upload Bukti</h2>
+    <input type="file" id="buktiInput" class="w-full text-xs border p-1 rounded" accept="image/*" />
     
-    <button id="goButton" onclick="window.location.href='https://benxidn.github.io/free/mlmod/main.html'" 
-            class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded mb-4 hidden">
+    <button id="goButton" onclick="window.location.href='https://benxidn.github.io/free/mlmod/main.html'"
+      class="w-full bg-purple-600 hover:bg-purple-700 text-white py-1 rounded hidden">
       Menuju Halaman
     </button>
-    <br>
-    <button onclick="showQrisForm()" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded">
-      Kembali ke QRIS
+
+    <button onclick="showQrisForm()" class="bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded">
+      Kembali
     </button>
   </div>
 
@@ -64,6 +63,5 @@
       }
     });
   </script>
-
 </body>
 </html>
