@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen">
 
-  <!-- Header -->
+  <!-- Header tetap di atas -->
   <header class="fixed top-0 w-full z-50 bg-blue-700 text-white text-center py-4 text-2xl font-bold shadow-md">
     Dexter Modz
   </header>
@@ -21,20 +21,23 @@
       <div id="qrisForm" class="bg-white p-6 rounded shadow-md text-center">
         <h2 class="text-lg font-semibold mb-4">Silakan Scan QRIS</h2>
         
+        <!-- Teks Deskripsi QRIS -->
         <p class="text-sm text-gray-600 mb-4">
           Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.
         </p>
 
-        <img src="file/3k.jpg" alt="QRIS" class="mx-auto w-72 h-auto mb-4 border border-gray-300 rounded" />
+        <!-- Gambar QRIS & Tombol -->
+        <div class="mx-auto w-72">
+          <!-- Gambar QRIS -->
+          <img src="file/3k.jpg" alt="QRIS" class="w-full h-auto mb-4 border border-gray-300 rounded" />
 
-        <div class="mb-4">
-          <a href="file/3k.jpg" download class="w-72 mx-auto bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded text-center block">
+          <!-- Tombol Download QRIS -->
+          <a href="file/3k.jpg" download class="block w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded text-center mb-4">
             Download QRIS
           </a>
-        </div>
 
-        <div>
-          <button onclick="showUploadForm()" class="w-72 mx-auto bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded block">
+          <!-- Tombol Cek Pembayaran -->
+          <button onclick="showUploadForm()" class="block w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
             Cek Pembayaran
           </button>
         </div>
@@ -44,14 +47,17 @@
       <div id="uploadForm" class="bg-white p-6 rounded shadow-md mt-6 hidden text-center">
         <h2 class="text-lg font-semibold mb-4">Upload Bukti Pembayaran</h2>
         
+        <!-- Input File -->
         <input type="file" id="buktiUpload" class="block mx-auto mb-4 w-full" accept="image/*" />
 
+        <!-- Tombol Kembali -->
         <button onclick="showQrisForm()" class="mt-4 w-full bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
           Kembali
         </button>
 
-        <div id="nextStep" class="hidden mt-4 w-72 mx-auto">
-          <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="block bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded text-center">
+        <!-- Link Download di dalam Form Upload -->
+        <div id="nextStep" class="hidden mt-4 w-full mx-auto">
+          <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="block w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded text-center">
             Download Link
           </a>
         </div>
