@@ -1,52 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="id"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dexter Modz QRIS</title>
+  <title>Toko Online Sederhana</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100">
+</head><body class="bg-gray-100 font-sans">
+  <div class="max-w-4xl mx-auto py-10">
+    <h1 class="text-4xl font-bold text-center mb-10">Toko Online Sederhana</h1><!-- Produk -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="bg-white p-6 rounded-2xl shadow">
+    <img src="https://via.placeholder.com/300" alt="Produk 1" class="w-full rounded-xl mb-4">
+    <h2 class="text-2xl font-semibold mb-2">Produk Keren</h2>
+    <p class="mb-4">Deskripsi singkat produk keren ini.</p>
+    <p class="text-lg font-bold mb-4">Rp100.000</p>
+    <button onclick="document.getElementById('qrisModal').classList.remove('hidden')"
+      class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Beli Sekarang</button>
+  </div>
+  <!-- Tambah produk lain jika ingin -->
+</div>
 
-  <!-- Header -->
-  <header class="bg-blue-700 text-white p-4 text-center text-2xl font-bold">
-    Dexter Modz
-  </header>
-
-  <!-- Panel 1 -->
-  <div id="panel1" class="p-6">
-    <h2 class="text-xl font-semibold mb-4">Silakan Scan QRIS</h2>
-    <p class="mb-4">Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.</p>
-    <div class="flex justify-center mb-4">
-      <img src="file/3k.jpg" alt="QRIS Code" class="w-60">
-    </div>
-    <div>
-      <button onclick="showPanel2()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 mt-2">Cek Pembayaran</button>
+  </div>  <!-- Modal QRIS -->  <div id="qrisModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white rounded-2xl p-6 max-w-md w-full relative">
+      <button class="absolute top-2 right-2 text-gray-500" onclick="document.getElementById('qrisModal').classList.add('hidden')">&times;</button>
+      <h3 class="text-xl font-bold mb-4">Scan QRIS untuk Membayar</h3>
+      <img src="file/3k.jpg" alt="QRIS Code" class="w-full rounded-xl">
     </div>
   </div>
-
-  <!-- Panel 2 -->
-  <div id="panel2" class="hidden p-6">
-    <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
-    <input type="file" id="uploadInput" accept="image/*" class="mb-4">
-    <div>
-      <button id="downloadBtn" class="hidden bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mt-2">Download Link</button>
-    </div>
-  </div>
-
-  <!-- Script -->
-  <script>
-    function showPanel2() {
-      document.getElementById('panel1').classList.add('hidden');
-      document.getElementById('panel2').classList.remove('hidden');
-    }
-
-    document.getElementById('uploadInput').addEventListener('change', function () {
-      if (this.files.length > 0) {
-        document.getElementById('downloadBtn').classList.remove('hidden');
-      }
-    });
-  </script>
-
-</body>
-</html>
+</body></html>
