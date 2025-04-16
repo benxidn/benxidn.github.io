@@ -1,32 +1,40 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dexter Modz QRIS</title>
+  <title>Dexter Modz</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head><body class="bg-gray-100 min-h-screen">
-  <!-- Header -->
+</head>
+<body class="bg-gray-100">
   <header class="bg-blue-700 text-white p-4 text-center text-2xl font-bold">
     Dexter Modz
-  </header>  <!-- Panel 1 -->  <div id="panel1" class="p-6">
-    <h2 class="text-xl font-semibold mb-2">Silakan Scan QRIS</h2>
-    <p class="mb-4">Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.</p>
-    <img src="file/3k.jpg" alt="QRIS Code" class="mb-6 w-64 mx-auto">
-    <div class="text-center">
-      <button onclick="showPanel2()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
-        Cek Pembayaran
-      </button>
-    </div>
-  </div>  <!-- Panel 2 -->  <div id="panel2" class="p-6 hidden">
-    <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
-    <input type="file" id="uploadInput" accept="image/*" class="mb-4 block">
-    <button id="downloadBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition hidden">
-      Download Link
-    </button>
-  </div>  <script>
+  </header>  <main class="max-w-md mx-auto mt-10 p-4">
+    <!-- Panel Pertama -->
+    <div id="panel1" class="bg-white p-6 rounded-2xl shadow-lg">
+      <h2 class="text-xl font-bold mb-2">Silakan Scan QRIS</h2>
+      <p class="mb-4">Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.</p>
+      <img src="file/3k.jpg" alt="QRIS Code" class="w-full h-auto mb-4 rounded">
+      <button onclick="showPanel2()" class="w-full bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition">Cek Pembayaran</button>
+    </div><!-- Panel Kedua -->
+<div id="panel2" class="hidden bg-white p-6 rounded-2xl shadow-lg">
+  <h2 class="text-xl font-bold mb-4">Upload Bukti Pembayaran</h2>
+  <input id="fileInput" type="file" accept="image/*" class="mb-4 w-full">
+  <button id="downloadBtn" class="w-full bg-green-600 text-white py-2 px-4 rounded-xl hover:bg-green-700 transition hidden">Download Link</button>
+</div>
+
+  </main>  <script>
     function showPanel2() {
       document.getElementById('panel1').classList.add('hidden');
       document.getElementById('panel2').classList.remove('hidden');
     }
 
-    const uploadInput = document.getElementById('uploadInput');
-    const downloadBtn = document.get
+    document.getElementById('fileInput').addEventListener('change', function() {
+      const downloadBtn = document.getElementById('downloadBtn');
+      if (this.files.length > 0) {
+        downloadBtn.classList.remove('hidden');
+      } else {
+        downloadBtn.classList.add('hidden');
+      }
+    });
+  </script></body>
+</html>
