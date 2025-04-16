@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen">
 
-  <!-- Header tetap di atas -->
+  <!-- Header -->
   <header class="fixed top-0 w-full z-50 bg-blue-700 text-white text-center py-4 text-2xl font-bold shadow-md">
     Dexter Modz
   </header>
@@ -25,16 +25,16 @@
           Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.
         </p>
 
-        <!-- Gambar QRIS -->
         <img src="file/3k.jpg" alt="QRIS" class="mx-auto w-72 h-auto mb-4 border border-gray-300 rounded" />
 
-        <!-- Tombol dalam container berukuran sama -->
-        <div class="mx-auto w-72">
-          <a href="file/3k.jpg" download class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded text-center block mb-4">
+        <div class="mx-auto mb-4 w-72">
+          <a href="file/3k.jpg" download class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded text-center block">
             Download QRIS
           </a>
+        </div>
 
-          <button onclick="showUploadForm()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded block w-full">
+        <div class="mx-auto w-72">
+          <button onclick="showUploadForm()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded w-full">
             Cek Pembayaran
           </button>
         </div>
@@ -50,9 +50,8 @@
           Kembali
         </button>
 
-        <!-- Link Download di dalam Form Upload -->
-        <div id="nextStep" class="hidden mt-4 w-full mx-auto">
-          <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="block w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded text-center">
+        <div id="nextStep" class="hidden mt-4 w-72 mx-auto">
+          <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="block bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded text-center">
             Download Link
           </a>
         </div>
