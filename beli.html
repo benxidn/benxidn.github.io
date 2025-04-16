@@ -1,25 +1,32 @@
-<!DOCTYPE html><html lang="id">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dexter Modz - QRIS</title>
+  <title>Dexter Modz QRIS</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center">
+</head><body class="bg-gray-100 min-h-screen">
   <!-- Header -->
-  <header class="w-full bg-blue-600 py-4 shadow-md">
-    <h1 class="text-white text-center text-3xl font-bold">Dexter Modz</h1>
-  </header>  <!-- Main Content -->  <main class="flex-1 mt-10 w-full max-w-md px-4 text-center">
-    <h2 class="text-2xl font-semibold mb-4">Silakan Scan QRIS</h2>
-    <p class="text-gray-700 mb-6">
-      Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.
-    </p>
-    <div class="mb-6">
-      <img src="file/3k.jpg" alt="QRIS" class="mx-auto w-64 h-auto border rounded shadow" />
+  <header class="bg-blue-700 text-white p-4 text-center text-2xl font-bold">
+    Dexter Modz
+  </header>  <!-- Panel 1 -->  <div id="panel1" class="p-6">
+    <h2 class="text-xl font-semibold mb-2">Silakan Scan QRIS</h2>
+    <p class="mb-4">Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.</p>
+    <img src="file/3k.jpg" alt="QRIS Code" class="mb-6 w-64 mx-auto">
+    <div class="text-center">
+      <button onclick="showPanel2()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+        Cek Pembayaran
+      </button>
     </div>
-    <button class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded shadow">
-      Cek Pembayaran
+  </div>  <!-- Panel 2 -->  <div id="panel2" class="p-6 hidden">
+    <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
+    <input type="file" id="uploadInput" accept="image/*" class="mb-4 block">
+    <button id="downloadBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition hidden">
+      Download Link
     </button>
-  </main>
-</body>
-</html>
+  </div>  <script>
+    function showPanel2() {
+      document.getElementById('panel1').classList.add('hidden');
+      document.getElementById('panel2').classList.remove('hidden');
+    }
+
+    const uploadInput = document.getElementById('uploadInput');
+    const downloadBtn = document.get
