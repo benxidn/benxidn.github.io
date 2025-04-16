@@ -1,26 +1,39 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dexter Modz QRIS</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head><body class="bg-gray-100">
+</head>
+<body class="bg-gray-100">
   <!-- Header -->
   <header class="bg-blue-700 text-white p-4 text-center text-2xl font-bold">
     Dexter Modz
-  </header>  <!-- Panel 1 -->  <div id="panel1" class="p-6">
-    <h2 class="text-xl font-semibold mb-2">Silakan Scan QRIS</h2>
+  </header>
+
+  <!-- Panel 1 -->
+  <div id="panel1" class="p-6">
+    <h2 class="text-xl font-semibold mb-4">Silakan Scan QRIS</h2>
     <p class="mb-4">Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.</p>
-    <img src="file/3k.jpg" alt="QRIS Code" class="mb-4 w-60 mx-auto">
-    <div class="text-center">
+    <div class="flex justify-center mb-4">
+      <img src="file/3k.jpg" alt="QRIS Code" class="w-60">
+    </div>
+    <div>
       <button onclick="showPanel2()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Cek Pembayaran</button>
     </div>
-  </div>  <!-- Panel 2 -->  <div id="panel2" class="hidden p-6">
+  </div>
+
+  <!-- Panel 2 -->
+  <div id="panel2" class="hidden p-6">
     <h2 class="text-xl font-semibold mb-4">Upload Bukti Pembayaran</h2>
     <input type="file" id="uploadInput" accept="image/*" class="mb-4">
     <div>
       <button id="downloadBtn" class="hidden bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mt-2">Download Link</button>
     </div>
-  </div>  <script>
+  </div>
+
+  <script>
     function showPanel2() {
       document.getElementById('panel1').classList.add('hidden');
       document.getElementById('panel2').classList.remove('hidden');
@@ -31,4 +44,6 @@
         document.getElementById('downloadBtn').classList.remove('hidden');
       }
     });
-  </script></body></html>
+  </script>
+</body>
+</html>
