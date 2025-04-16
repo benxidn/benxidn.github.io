@@ -4,33 +4,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dexter Modz QRIS</title>
   <script>
-    function showPanelTwo() {
+    function showPanel(panelId) {
       document.getElementById('panel1').classList.add('hidden');
       document.getElementById('panel2').classList.remove('hidden');
-    }
-    function enableDownload() {
-      document.getElementById('downloadBtn').classList.remove('hidden');
-    }
+    }function showDownloadButton() {
+  document.getElementById('downloadButton').classList.remove('hidden');
+}
+
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
-  <header class="bg-blue-800 text-white text-center py-4 text-2xl font-bold">
-    Dexter Modz
-  </header>  <div class="max-w-md mx-auto mt-8 p-4 bg-white shadow-lg rounded-xl text-center text-sm space-y-4">
-    <!-- Panel 1 -->
-    <div id="panel1">
-      <h2 class="text-lg font-semibold">Silakan Scan QRIS</h2>
-      <p>Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.</p>
-      <img src="file/3k.jpg" alt="QRIS Code" class="mx-auto my-4 max-w-full h-auto">
-      <button onclick="showPanelTwo()" class="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700">Cek Pembayaran</button>
-    </div><!-- Panel 2 -->
-<div id="panel2" class="hidden">
-  <h2 class="text-lg font-semibold">Upload Bukti Pembayaran</h2>
-  <input type="file" accept="image/*" class="w-full border rounded-xl py-2 px-3 text-sm" onchange="enableDownload()">
-  <button id="downloadBtn" class="w-full bg-green-600 text-white py-2 mt-4 rounded-xl hidden hover:bg-green-700">Download Link</button>
-</div>
-
+<body class="bg-gray-800 text-white min-h-screen flex flex-col items-center p-4">
+  <header class="text-3xl font-bold mb-6">Dexter Modz</header>  <!-- Panel 1 -->  <div id="panel1" class="bg-gray-700 p-4 rounded-2xl w-80 text-sm text-center">
+    <h2 class="text-xl font-semibold mb-2">Silakan Scan QRIS</h2>
+    <p class="mb-4">Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.</p>
+    <img src="file/3k.jpg" alt="QRIS" class="mb-4 mx-auto rounded">
+    <button onclick="showPanel('panel2')" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">Cek Pembayaran</button>
+  </div>  <!-- Panel 2 -->  <div id="panel2" class="bg-gray-700 p-4 rounded-2xl w-80 text-sm text-center hidden">
+    <h2 class="text-xl font-semibold mb-2">Upload Bukti Pembayaran</h2>
+    <input type="file" accept="image/*" class="w-full mb-4" onchange="showDownloadButton()">
+    <button id="downloadButton" class="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded hidden">Download Link</button>
   </div>
 </body>
 </html>
