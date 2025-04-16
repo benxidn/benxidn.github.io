@@ -1,28 +1,64 @@
-<!DOCTYPE html><html lang="id"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toko Online Sederhana</title>
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toko TopUp Game</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head><body class="bg-gray-100 font-sans">
-  <div class="max-w-4xl mx-auto py-10">
-    <h1 class="text-4xl font-bold text-center mb-10">Toko Online Sederhana</h1><!-- Produk -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-  <div class="bg-white p-6 rounded-2xl shadow">
-    <img src="https://via.placeholder.com/300" alt="Produk 1" class="w-full rounded-xl mb-4">
-    <h2 class="text-2xl font-semibold mb-2">Produk Keren</h2>
-    <p class="mb-4">Deskripsi singkat produk keren ini.</p>
-    <p class="text-lg font-bold mb-4">Rp100.000</p>
-    <button onclick="document.getElementById('qrisModal').classList.remove('hidden')"
-      class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Beli Sekarang</button>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="max-w-3xl mx-auto p-4">
+    <h1 class="text-3xl font-bold text-center mb-6">Toko TopUp Game</h1><form id="topupForm" class="bg-white p-6 rounded-lg shadow">
+  <div class="mb-4">
+    <label for="game" class="block text-gray-700 font-semibold mb-2">Pilih Game:</label>
+    <select id="game" class="w-full p-2 border border-gray-300 rounded">
+      <option value="Mobile Legends">Mobile Legends</option>
+      <option value="PUBG Mobile">PUBG Mobile</option>
+      <option value="Free Fire">Free Fire</option>
+      <option value="Genshin Impact">Genshin Impact</option>
+    </select>
   </div>
-  <!-- Tambah produk lain jika ingin -->
+
+  <div class="mb-4">
+    <label for="userId" class="block text-gray-700 font-semibold mb-2">User ID:</label>
+    <input type="text" id="userId" class="w-full p-2 border border-gray-300 rounded" required />
+  </div>
+
+  <div class="mb-4">
+    <label for="nominal" class="block text-gray-700 font-semibold mb-2">Nominal TopUp:</label>
+    <select id="nominal" class="w-full p-2 border border-gray-300 rounded">
+      <option value="10.000">10.000</option>
+      <option value="20.000">20.000</option>
+      <option value="50.000">50.000</option>
+      <option value="100.000">100.000</option>
+    </select>
+  </div>
+
+  <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Bayar</button>
+</form>
+
+<div id="paymentSection" class="mt-6 hidden bg-white p-6 rounded-lg shadow">
+  <h2 class="text-xl font-bold mb-4">Silakan Scan QRIS untuk Pembayaran</h2>
+  <img src="file/3k.jpg" alt="QRIS Pembayaran" class="w-64 h-64 object-cover mx-auto mb-4" />
+  <p class="text-center text-gray-600">Setelah pembayaran, hubungi admin untuk konfirmasi.</p>
 </div>
 
-  </div>  <!-- Modal QRIS -->  <div id="qrisModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-    <div class="bg-white rounded-2xl p-6 max-w-md w-full relative">
-      <button class="absolute top-2 right-2 text-gray-500" onclick="document.getElementById('qrisModal').classList.add('hidden')">&times;</button>
-      <h3 class="text-xl font-bold mb-4">Scan QRIS untuk Membayar</h3>
-      <img src="file/3k.jpg" alt="QRIS Code" class="w-full rounded-xl">
-    </div>
-  </div>
-</body></html>
+  </div>  <script>
+    const form = document.getElementById('topupForm');
+    const paymentSection = document.getElementById('paymentSection');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const game = document.getElementById('game').value;
+      const userId = document.getElementById('userId').value;
+      const nominal = document.getElementById('nominal').value;
+
+      // Simulasi proses
+      console.log(`Game: ${game}, User ID: ${userId}, Nominal: ${nominal}`);
+
+      // Tampilkan QRIS
+      paymentSection.classList.remove('hidden');
+      paymentSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script></body>
+</html>
