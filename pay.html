@@ -20,17 +20,23 @@
       <!-- Form QRIS -->
       <div id="qrisForm" class="bg-white p-6 rounded shadow-md text-center">
         <h2 class="text-lg font-semibold mb-4">Silakan Scan QRIS</h2>
+        
+        <!-- Teks Deskripsi QRIS -->
         <p class="text-sm text-gray-600 mb-4">
           Silakan scan QRIS berikut menggunakan e-wallet Anda untuk menyelesaikan pembayaran.
         </p>
+
+        <!-- Gambar QRIS -->
         <img src="file/3k.jpg" alt="QRIS" class="mx-auto w-72 h-auto mb-4 border border-gray-300 rounded" />
+
         <div class="w-72 mx-auto">
           <a href="file/3k.jpg" download class="block w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded text-center">
             Download QRIS
           </a>
         </div>
+
         <div class="w-72 mx-auto mt-4">
-          <button onclick="showUploadForm(); updateURL()" class="block w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+          <button onclick="showUploadForm()" class="block w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
             Cek Pembayaran
           </button>
         </div>
@@ -40,13 +46,16 @@
       <div id="uploadForm" class="bg-white p-6 rounded shadow-md mt-6 hidden text-center">
         <h2 class="text-lg font-semibold mb-4">Upload Bukti Pembayaran</h2>
         <input type="file" id="buktiUpload" class="block mx-auto mb-4" accept="image/*" />
+
         <div id="nextStep" class="hidden mt-4">
           <a href="https://benxidn.github.io/free/mlmod/main.html" target="_blank" class="block w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded">
             Download Link
           </a>
         </div>
-        <button onclick="showQrisForm(); updateURL()" class="mt-4 w-full bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
-          Kembali ke Form QRIS
+
+        <!-- Tombol Kembali -->
+        <button onclick="showQrisForm()" class="mt-4 w-full bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
+          Kembali
         </button>
       </div>
 
@@ -64,12 +73,6 @@
       document.getElementById('qrisForm').classList.remove('hidden');
     }
 
-    function updateURL() {
-      // Mengubah URL tanpa memuat ulang halaman
-      const newURL = window.location.protocol + "//" + window.location.host + window.location.pathname + "?step=upload"; 
-      window.history.pushState({ path: newURL }, '', newURL);
-    }
-
     document.getElementById('buktiUpload').addEventListener('change', function () {
       const nextStep = document.getElementById('nextStep');
       if (this.files.length > 0) {
@@ -78,6 +81,9 @@
         nextStep.classList.add('hidden');
       }
     });
+
+    // Mengganti URL tanpa me-refresh halaman
+    window.history.replaceState('', '', '/');
   </script>
 
 </body>
