@@ -13,7 +13,7 @@
   <div class="content">
     <div class="action-area">
       <div class="action-in">
-        <div id="front"></div>
+        <div id="subs-up"></div>
         <div class="btn-2">
             <button class="btn-action 1" onclick="window.open('https://adlinksumo.com/xTJB','_blank')"><i class="fas fa-unlock"></i><a>Open Link</a><i class="fas fa-link"></i></button> 
              <!-- <button class="btn-action 2" onclick="window.open('https://adlinksumo.com/IYeFV7qy','_blank')"><i class="fas fa-unlock"></i><a>Open Link</a><i class="fas fa-link"></i></button> -->
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div id="back"></div>
+    <div id="subs-down"></div>
   </div>
   
 <script
@@ -30,13 +30,33 @@
     crossorigin="anonymous">
 </script>
 <script>
-$(function(){
-  $("#header2").load("../../link/header2.html");
-  $("#front").load("../../link/front.html");
-  $("#back").load("../../link/back.html");
-});
-</script>
-<script src="../../link/my-link.js">
+  fetch('header2.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header2').innerHTML = data;
+    })
+    .catch(error => {
+      document.getElementById('header2').innerHTML = "Gagal memuat konten.";
+      console.error(error);
+    });
+  fetch('subs-up.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('subs-up').innerHTML = data;
+    })
+    .catch(error => {
+      document.getElementById('subs-up').innerHTML = "Gagal memuat konten.";
+      console.error(error);
+    });
+  fetch('subs-down.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('subs-down').innerHTML = data;
+    })
+    .catch(error => {
+      document.getElementById('subs-down').innerHTML = "Gagal memuat Header.";
+      console.error(error);
+    });
 </script>
 <script>
     window.history.replaceState('','','/');
