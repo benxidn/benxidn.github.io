@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ganti URL Tanpa Reload</title>
+  <script>
+    function gantiURLBaru(urlBaru) {
+      // pushState(state, title, url)
+      history.pushState({}, '', urlBaru);
+    }
+  </script>
+</head>
+<body>
+  <h1>Contoh Ganti URL</h1>
+  <button onclick="gantiURLBaru('/halaman-baru')">Ganti URL ke /halaman-baru</button>
+  <button onclick="gantiURLBaru('/profile')">Ganti URL ke /profile</button>
+</body>
+</html>
