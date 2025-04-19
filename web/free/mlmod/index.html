@@ -1,35 +1,29 @@
-<!-- fol1/a/index.html -->
+<!-- free/mlmod/index.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Halaman Utama</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    header { background-color: #f0f0f0; padding: 10px; }
-    nav a { margin: 0 10px; text-decoration: none; color: #007BFF; }
-  </style>
+  <title>Web HTML Modular</title>
 </head>
 <body>
 
-  <div id="header-container"></div>
+  <div id="header-placeholder"></div>
 
   <main>
-    <h2>Ini adalah halaman utama</h2>
-    <p>Konten utama dari website ditampilkan di sini.</p>
+    <h2>Ini Halaman Utama</h2>
+    <p>Konten utama aplikasi berada di sini.</p>
   </main>
 
   <script>
-    // Memuat header.html secara dinamis dari folder lain
-    fetch('../../fol2/header.html')
+    // Menyisipkan header2.html secara dinamis
+    fetch('../../link/header2.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('header-container').innerHTML = data;
+        document.getElementById("header-placeholder").innerHTML = data;
       })
       .catch(error => {
-        console.error('Gagal memuat header:', error);
+        console.error("Gagal memuat header:", error);
       });
   </script>
-
 </body>
 </html>
