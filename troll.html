@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ganti URL ke Root</title>
+  <title>Auto Ganti URL</title>
   <script>
-    function gantiKeRootURL() {
-      // Ambil asal domain (origin), misalnya https://example.com
-      const rootURL = window.location.origin;
+    // Langsung ganti URL saat halaman dimuat
+    window.onload = function() {
+      const rootURL = window.location.origin + '/';
       history.pushState({}, '', rootURL);
-    }
+    };
   </script>
 </head>
 <body>
-  <h1>Contoh Ganti URL ke Root</h1>
-  <button onclick="gantiKeRootURL()">Hapus Path, Tampilkan Domain Saja</button>
+  <h1>URL sudah diganti ke domain saja!</h1>
 </body>
 </html>
