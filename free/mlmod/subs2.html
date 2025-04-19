@@ -30,34 +30,33 @@
     crossorigin="anonymous">
 </script>
 <script>
-  fetch('../../link/header2.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header2').innerHTML = data;
-    })
-    .catch(error => {
-      document.getElementById('header2').innerHTML = "Gagal memuat konten.";
-      console.error(error);
+    // Fungsi untuk memuat file HTML dan menaruh ke elemen target
+    function loadHTML(file, elementId) {
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(elementId).innerHTML = data;
+        })
+        .catch(error => console.error('Gagal memuat ' + file, error));
+    }
+
+    // Memuat masing-masing bagian
+    loadHTML('../../link/header2.html', 'header2');
+    loadHTML('../../link/subs-up.html', 'subs-up');
+    loadHTML('../../link/subs-down.html', 'subs-down');
+
+    // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
+    document.addEventListener("DOMContentLoaded", () => {
+      const tahunSekarang = new Date().getFullYear();
+      const cekTahun = setInterval(() => {
+        const el = document.getElementById("tahun");
+        if (el) {
+          el.textContent = tahunSekarang;
+          clearInterval(cekTahun);
+        }
+      }, 100);
     });
-  // fetch('../link/subs-up.html')
-  //   .then(response => response.text())
-  //   .then(data => {
-  //     document.getElementById('subs-up').innerHTML = data;
-  //   })
-  //   .catch(error => {
-  //     document.getElementById('subs-up').innerHTML = "Gagal memuat konten.";
-  //     console.error(error);
-  //   });
-  // fetch('../link/subs-down.html')
-  //   .then(response => response.text())
-  //   .then(data => {
-  //     document.getElementById('subs-down').innerHTML = data;
-  //   })
-  //   .catch(error => {
-  //     document.getElementById('subs-down').innerHTML = "Gagal memuat konten.";
-  //     console.error(error);
-  //   });
-</script>
+  </script>
 <!-- <script>
     window.history.replaceState('','','/');
 </script> -->
