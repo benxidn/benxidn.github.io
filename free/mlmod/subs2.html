@@ -40,6 +40,22 @@
     .catch(error => {
       console.error("Gagal memuat konten:", error);
     });
+  fetch('../../links/subs-up.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("subs-up").innerHTML = data;
+    })
+    .catch(error => {
+      console.error("Gagal memuat konten:", error);
+    });
+  fetch('../../links/subs-down.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("subs-down").innerHTML = data;
+    })
+    .catch(error => {
+      console.error("Gagal memuat konten:", error);
+    });
 </script>
 
 <script>
