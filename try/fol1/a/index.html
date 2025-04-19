@@ -1,0 +1,35 @@
+<!-- fol1/a/index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Halaman Utama</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    header { background-color: #f0f0f0; padding: 10px; }
+    nav a { margin: 0 10px; text-decoration: none; color: #007BFF; }
+  </style>
+</head>
+<body>
+
+  <div id="header-container"></div>
+
+  <main>
+    <h2>Ini adalah halaman utama</h2>
+    <p>Konten utama dari website ditampilkan di sini.</p>
+  </main>
+
+  <script>
+    // Memuat header.html secara dinamis dari folder lain
+    fetch('../../fol2/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Gagal memuat header:', error);
+      });
+  </script>
+
+</body>
+</html>
