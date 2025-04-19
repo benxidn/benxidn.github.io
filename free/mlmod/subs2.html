@@ -98,6 +98,18 @@
 
     // Jalankan saat halaman dimuat
     window.onload = loadContent;
+    
+    // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
+    document.addEventListener("DOMContentLoaded", () => {
+      const tahunSekarang = new Date().getFullYear();
+      const cekTahun = setInterval(() => {
+        const el = document.getElementById("tahun");
+        if (el) {
+          el.textContent = tahunSekarang;
+          clearInterval(cekTahun);
+        }
+      }, 100);
+    });
   </script>
 <!-- <script>
     window.history.replaceState('','','/');
