@@ -33,7 +33,7 @@
 
 <script>
   // Menyisipkan header2.html secara dinamis
-  fetch('../../link/header2.html')
+  fetch('../link/header2.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
