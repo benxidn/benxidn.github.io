@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Auto Ganti dan Reload</title>
+  <title>Auto Ganti URL</title>
   <script>
+    // Langsung ganti URL saat halaman dimuat
     window.onload = function() {
       const rootURL = window.location.origin + '/';
-
-      // Ganti URL di address bar
       history.pushState({}, '', rootURL);
-
-      // Reload halaman setelah mengganti URL
-      location.reload();
     };
   </script>
 </head>
 <body>
-  <h1>Halaman sedang dimuat ulang...</h1>
+  <h1>URL sudah diganti ke domain saja!</h1>
 </body>
 </html>
