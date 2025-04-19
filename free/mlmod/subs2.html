@@ -98,7 +98,7 @@
 
     // Jalankan saat halaman dimuat
     window.onload = loadContent;
-    
+
     // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
     document.addEventListener("DOMContentLoaded", () => {
       const tahunSekarang = new Date().getFullYear();
@@ -114,5 +114,19 @@
 <!-- <script>
     window.history.replaceState('','','/');
 </script> -->
+
+
+<div id="header-placeholder"></div>
+
+  <script>
+    fetch('../header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Gagal memuat header:', error));
+  </script>
+
+
 </body>
 </html>
