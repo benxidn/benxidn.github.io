@@ -8,6 +8,24 @@
   <link href="../../file/logo.png" rel="shortcut icon">
 </head>
 <body>
+
+
+  <div id="header-placeholder"></div>
+  
+  <main>
+    <p>Ini adalah konten utama halaman.</p>
+  </main>
+  
+  <!-- Script untuk memuat header -->
+  <script>
+    fetch('components/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+  </script>
+  
+  
   <div id="header2"></div>
   
   <div class="content">
@@ -114,23 +132,5 @@
 <!-- <script>
     window.history.replaceState('','','/');
 </script> -->
-
-
-<div id="header-placeholder"></div>
-
-<main>
-  <p>Ini adalah konten utama halaman.</p>
-</main>
-
-<!-- Script untuk memuat header -->
-<script>
-  fetch('components/header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
-    });
-</script>
-
-
 </body>
 </html>
