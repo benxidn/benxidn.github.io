@@ -42,3 +42,18 @@ function 404() {
  function copyBtn2() {
     navigator.clipboard.writeText(stringText2);
     }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const Homes = document.getElementById("Home");
+      const Channels = document.getElementById("Channel");
+    
+      Homes.addEventListener("click", function () {
+        window.open("../../","_self");
+      });
+    
+      Channels.addEventListener("click", function () {
+        window.open("https://dexter.rf.gd/1/channel1", "_self");
+      });
+    });
+    
