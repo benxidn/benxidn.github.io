@@ -8,8 +8,7 @@
   <link href="../../file/logo.png" rel="shortcut icon">
 </head>
 <body>
-  <!-- <div id="header2"></div> -->
-  <div id="header-placeholder"></div>
+  <div id="header2"></div>
   
   <div class="content">
     <div class="action-area">
@@ -33,10 +32,10 @@
 
 <script>
   // Menyisipkan header2.html secara dinamis
-  fetch('../link/header2.html')
+  fetch('../../links/header2.html')
     .then(response => response.text())
     .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
+      document.getElementById("header2").innerHTML = data;
     })
     .catch(error => {
       console.error("Gagal memuat konten:", error);
