@@ -1,5 +1,5 @@
 function Home() {
-    window.open("../../","_self");
+    window.open("https://benxidn.github.io","_self");
     }
 function 404() {
     window.open("https://benxidn.github.io/","_self");
