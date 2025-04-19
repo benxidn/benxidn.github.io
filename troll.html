@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ganti URL Tanpa Reload</title>
+  <title>Ganti URL ke Root</title>
   <script>
-    function gantiURLBaru(urlBaru) {
-      // pushState(state, title, url)
-      history.pushState({}, '', urlBaru);
+    function gantiKeRootURL() {
+      // Ambil asal domain (origin), misalnya https://example.com
+      const rootURL = window.location.origin;
+      history.pushState({}, '', rootURL);
     }
   </script>
 </head>
 <body>
-  <h1>Contoh Ganti URL</h1>
-  <button onclick="gantiURLBaru('/halaman-baru')">Ganti URL ke /halaman-baru</button>
-  <button onclick="gantiURLBaru('/profile')">Ganti URL ke /profile</button>
+  <h1>Contoh Ganti URL ke Root</h1>
+  <button onclick="gantiKeRootURL()">Hapus Path, Tampilkan Domain Saja</button>
 </body>
 </html>
