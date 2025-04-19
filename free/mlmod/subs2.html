@@ -39,7 +39,7 @@
       document.getElementById('header2').innerHTML = "Gagal memuat konten.";
       console.error(error);
     });
-  fetch('../../link/subs-up.html')
+  fetch('../link/subs-up.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('subs-up').innerHTML = data;
@@ -48,7 +48,7 @@
       document.getElementById('subs-up').innerHTML = "Gagal memuat konten.";
       console.error(error);
     });
-  fetch('../../link/subs-down.html')
+  fetch('../link/subs-down.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('subs-down').innerHTML = data;
