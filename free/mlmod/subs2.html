@@ -8,24 +8,6 @@
   <link href="../../file/logo.png" rel="shortcut icon">
 </head>
 <body>
-
-
-  <div id="header-placeholder"></div>
-  
-  <main>
-    <p>Ini adalah konten utama halaman.</p>
-  </main>
-  
-  <!-- Script untuk memuat header -->
-  <script>
-    fetch('components/header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-      });
-  </script>
-  
-  
   <div id="header2"></div>
   
   <div class="content">
@@ -47,6 +29,15 @@
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous">
 </script>
+
+<script>
+  fetch('../../link/header2.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header2').innerHTML = data;
+    });
+</script>
+
 <!-- <script>
     // Fungsi untuk memuat file HTML dan menaruh ke elemen target
     function loadHTML(file, elementId) {
@@ -75,60 +66,6 @@
       }, 100);
     });
   </script> -->
-  <script>
-    // Fungsi untuk mengambil file HTML eksternal dan memasukkan ke dalam #app
-    async function loadContent() {
-      const app = document.getElementById('header2');
-
-      const files = ['header2.html'];
-      for (let file of files) {
-        const res = await fetch(file);
-        const html = await res.text();
-        const section = document.createElement('div');
-        section.innerHTML = html;
-        app.appendChild(section);
-      }
-    }
-    async function loadContent() {
-      const app = document.getElementById('subs-up');
-
-      const files = ['subs-up.html'];
-      for (let file of files) {
-        const res = await fetch(file);
-        const html = await res.text();
-        const section = document.createElement('div');
-        section.innerHTML = html;
-        app.appendChild(section);
-      }
-    }
-    async function loadContent() {
-      const app = document.getElementById('subs-down');
-
-      const files = ['subs-down.html'];
-      for (let file of files) {
-        const res = await fetch(file);
-        const html = await res.text();
-        const section = document.createElement('div');
-        section.innerHTML = html;
-        app.appendChild(section);
-      }
-    }
-
-    // Jalankan saat halaman dimuat
-    window.onload = loadContent;
-
-    // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
-    document.addEventListener("DOMContentLoaded", () => {
-      const tahunSekarang = new Date().getFullYear();
-      const cekTahun = setInterval(() => {
-        const el = document.getElementById("tahun");
-        if (el) {
-          el.textContent = tahunSekarang;
-          clearInterval(cekTahun);
-        }
-      }, 100);
-    });
-  </script>
 <!-- <script>
     window.history.replaceState('','','/');
 </script> -->
