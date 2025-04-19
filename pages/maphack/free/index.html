@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <title>Dexter Modz</title>
+  <link href="../../../css/style.css" rel="stylesheet">
+  <link href="../../../images/logo.png" rel="shortcut icon">
+</head>
+<body>
+  <div class="header">
+    <div id="header"></div>
+  </div>
+  
+  <div class="content">
+    <div id="download"></div>
+    <div class="action-area">
+      <div class="action-in">
+        <h2>MLBB Mod</h2>
+        <!-- <div class="line"></div> -->
+        <p>Link download <b>WARNA HIJAU</b>. Lihat tutorial download diatas jika belum tahu caranya !!!</p>
+        <button class="btn-action video" onclick="InstallAPK()">TUTORIAL PEMASANGAN</button>
+        <!-- <button class="btn-action main" onclick="window.open('https://adlinksumo.com/xTJB','_blank')">DOWNLOAD APK MLBB MOD</button> -->
+        <button class="btn-action main" onclick="window.open('https://sub4unlock.io/2qckH','_blank')">DOWNLOAD APK MLBB MOD</button>
+        <button class="btn-action plus" onclick="window.open('https://videy.co/v?id=l8Q4YyHk1','_blank')">PREVIEW FEATURE</button>
+        <button class="btn-action video" onclick="AntiBan()">TRIK KREDENSIAL & DNS CEGAH BANNED</button>
+        <p>Males download banyak iklan? Cukup bayar link <b>Rp.3000</b> aja ke Admin udah bisa download <b>LINK MEDIAFIRE</b> tanpa iklan !!!</p>
+        <button class="btn-action link" onclick="window.open('https://wa.me/6281338214136?text=Halo+min+saya+mau+beli+link+mediafire+APK+MLBB+MOD+harga+3K+!!!','_blank')">APK MLBB MOD LINK MEDIAFIRE</button>
+        <p>Disarankan pakai akun ML server 5K biar lebih aman dan kebal banned. Bisa buat sendiri atau beli ke Admin melalui link dibawah !!!</p>
+        <button class="btn-action video" onclick="Server5K()">CARA BUAT AKUN ML SERVER 5K</button>
+        <p>Gak mau ribet buat akun ML server 5K? Beli aja ke Admin cuma <b>Rp.5000</b> !!! </p>
+        <button class="btn-action link" onclick="BeliAkun()">LINK BELI AKUN SERVER 5K</button>
+      </div>
+    </div>
+    <div id="free"></div>
+  </div>
+  
+  <div class="footer">
+    <div id="footer"></div>
+  </div>
+
+  <script>
+    // Menyisipkan file html secara dinamis
+    fetch('../../../components/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      })
+    fetch('../../../components/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      })
+    fetch('../../../components/free.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("free").innerHTML = data;
+      })
+    fetch('../../../components/tutor-download.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("download").innerHTML = data;
+      })
+      .catch(error => {
+        console.error("Gagal memuat konten:", error);
+      });
+  </script>
+  <script>
+    // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
+        document.addEventListener("DOMContentLoaded", () => {
+          const tahunSekarang = new Date().getFullYear();
+          const cekTahun = setInterval(() => {
+            const el = document.getElementById("tahun");
+            if (el) {
+              el.textContent = tahunSekarang;
+              clearInterval(cekTahun);
+            }
+          }, 100);
+        });
+  </script>
+<script src="../../../js/script.js">
+</script>
+</body>
+</html>

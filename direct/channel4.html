@@ -1,0 +1,11 @@
+<html>
+<body onload="location.href='https://www.youtube.com/@cybermodz2'">
+<script>
+    // Ganti URL ke nama domain saat halaman dimuat
+    window.onload = function() {
+        const rootURL = window.location.origin + '/';
+        history.pushState({}, '', rootURL);
+    };
+</script>
+</body>
+</html>

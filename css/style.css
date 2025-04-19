@@ -1,8 +1,406 @@
 html, body {
   margin: 0 auto;
-/*   max-width: 393px; */
+  max-width: 393px;
   /* font-family: poppins; */
   font-family: Tahoma, sans-serif;
   user-select: none;
-  background: #0E0E0E;
+}
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.header-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+}
+.icon {
+  margin-right: auto;
+  width: 165px;
+}
+.btn-subs,
+.btn-donate {
+  border: 0;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.content {
+  min-height: calc(100vh - 50px);
+}
+.banner {
+  margin: 20px;
+}
+.img-banner {
+  display: block;
+  width: 100%;
+  height: 190px;
+  border-radius: 10px;
+}
+.banner h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 5px 0;
+  margin-top: 15px;
+}
+.banner p {
+  margin: 0;
+  font-size: 15px;
+  text-align: justify;
+}
+.donate {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  padding: 10px;
+  border-radius: 15px;
+}
+.img-donate {
+  display: block;
+  min-width: 90px;
+  height: 100px;
+  border-radius: 10px;
+}
+.box-donate {
+  margin-left: 10px;
+}
+.box-donate p {
+  text-align: justify;
+  font-size: 13px;
+  margin: 0;
+  margin-bottom: 8px;
+}
+.btn-donate {
+  font-size: 10px;
+  padding: 8px 15px;
+  margin: 0;
+}
+.content .char {
+  width: 35px;
+  height: 11px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+.content h1 {
+  margin: 15px 20px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+.content h1 i {
+  font-style: normal;
+  margin-left: 7px;
+}
+.box-area {
+  display: flex;
+  margin: 0 12.5px;
+  padding-top: 30px;
+}
+.box-out {
+  width: 100%;
+  margin: 7.5px;
+  border-radius: 15px;
+  position: relative;
+  text-align: center;
+  border: 0;
+  padding: 8px;
+}
+.box-out:hover {
+  opacity: 0.75;
+}
+.box-in {
+  position: relative;
+  top: -40px;
+  margin-bottom: -40px;
+}
+.img-product {
+  width: 60px;
+  height: 60px;
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  border-radius: 15px;
+}
+.box-in h3,
+.box-in h4 {
+  margin: 5px 0;
+  font-size: 11px;
+  font-weight: 500;
+}
+.box-in h3 {
+  font-weight: 600;
+}
+.box-in h4 {
+  opacity: 0.5;
+}
+.box-out .btn-unduh {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+  margin: 0;
+  margin-top: 10px;
+  border-radius: 50px;
+  font-size: 10px;
+  border: 0;
+  font-weight: bold;
+}
+.footer {
+  margin-top: 50px;
+}
+.top-footer {
+  padding: 20px;
+}
+/* .space {
+  margin-top: 100px;
+} */
+.footer h2 {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+.footer h3 {
+  font-size: 16px;
+  font-weight: normal;
+  text-align: justify;
+  line-height: 1.25;
+}
+.fab {
+  font-size: 27px;
+  margin-right: 10px;
+}
+.footer p {
+  width: 100%;
+  margin: 0;
+  padding: 17.5px 0;
+  font-size: 13px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/*PRODUCT PAGE*/
+
+.container {
+  width: auto;
+  margin: 20px;
+  margin-bottom: 0;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+}
+.vid-content {
+  width: 100%;
+  height: 190px;
+  border-radius: 5px;
+}
+.line {
+  margin: 10px 0;
+  margin-bottom: 15px;
+}
+.container p {
+  text-align: justify;
+  margin: 0;
+}
+.action-area {
+  padding: 0 20px;
+  padding-top: 20px;
+}
+.action-in {
+  padding: 10px;
+  padding-top: 20px;
+  margin-top: 20px;
+  position: relative;
+  width: auto;
+  border-radius: 10px;
+}
+.action-area h2 {
+  margin: 0;
+  padding: 5px 15px;
+  padding-right: 50px;
+  border-radius: 7.5px;
+  position: absolute;
+  top: -20px;
+  font-size: 25px;
+}
+.btn-action {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin: 0;
+  margin-top: 10px;
+  border-radius: 7.5px;
+  font-size: 12px;
+}
+.btn-action.copy {
+  width: auto;
+  margin: 0;
+  border-radius: 0 9px 9px 0;
+}
+.btn-action:hover {
+  font-weight: bold;
+}
+.action-in p {
+  text-align: center;
+  font-size: 13px;
+  padding: 10px;
+  font-style: italic;
+  border-radius: 10px;
+}
+
+/*COLOR & MORE*/
+
+html, body {
+  /* background: #272323; */
+  background: #100027;
+}
+.header,
+.img-donate,
+.box-out,
+.container,
+.action-in,
+.top-footer {
+  background: #FFFFFF;
+}
+html,
+body,
+.content h1 i {
+  color: #7735D5;
+}
+.img-banner,
+.donate,
+.img-product,
+.vid-content {
+  /* background: #4C4A4A; */
+  background: #3E2D5A;
+}
+
+/* TRY */
+.btn-subs.red {
+  background: #FF0000;
+}
+.btn-subs.red:hover {
+  background: #7735D5;
+  opacity: 1;
+}
+.btn-donate.blue {
+  background: #009DF8;
+}
+.btn-donate.blue:hover {
+  background: #7735D5;
+  opacity: 1;
+}
+.btn-action.main {
+  color: #FFFFFF;
+  background: #00CF5E;
+  border: 1.25px solid #00CF5E;
+}
+.btn-action.video {
+  color: #FFFFFF;
+  background: #FF0000;
+  border: 1.25px solid #FF0000;
+}
+.btn-action.link {
+  color: #FFFFFF;
+  background: #009DF8;
+  border: 1.25px solid #009DF8;
+}
+.btn-action.plus {
+  color: #FFFFFF;
+  background: #F8A500;
+  border: 1.25px solid #F8A500;
+}
+/* TRY */
+
+.btn-subs,
+.btn-donate,
+.content .char,
+.btn-unduh,
+.action-area h2,
+.btn-action:hover,
+.footer p {
+  background: #7735D5;
+}
+.btn-subs,
+.btn-donate,
+.box-donate p,
+.content h1, 
+.content h2, 
+.btn-unduh,
+.action-area h2,
+.btn-action:hover,
+.footer p {
+  color: #FFFFFF;
+}
+.box-in,
+.top-footer,
+.container p,
+.action-in p {
+  color: #000000;
+}
+.btn-action {
+  border: 1.25px solid #BABABA;
+  background: #D7D7D7;
+}
+.btn-action.copy {
+  border-color: #D7D7D7;
+}
+.btn-action:hover {
+  border: 1.25px solid #7735D5;
+}
+.line {
+  border-top: 1.25px dashed #C0C0C0;
+}
+.action-in p {
+  border: 1.25px dashed #C0C0C0;
+}
+.none {
+  background: none;
+}
+.icon:hover,
+.btn-subs:hover,
+.btn-donate:hover,
+.fab:hover {
+  opacity: 0.75;
+}
+.off {
+  pointer-events: none;
+  cursor: default;
+}
+
+/*FLOATING BUTTONN*/
+
+.floating {
+  position: fixed;
+  margin: 20px;
+  margin-left: 333px;
+  bottom: 0px;
+  z-index: 100;
+}
+.my {
+  width: 45px;
+  height: 45px;
+  margin: 8px 0 0 auto;
+  border: 0;
+  border-radius: 50px;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1.25px 1.25px 0 #000000;
+  background: #00CF5E;
+  color: #FFFFFF;
+}
+.tele {
+  font-size: 47px;
+  background: #FFFFFF;
+  color: #009DF8;
+}
+.yt {
+  font-size: 25px;
+  background: #FF0000;
 }

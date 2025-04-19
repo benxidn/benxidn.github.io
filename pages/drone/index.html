@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <title>Dexter Modz</title>
+  <link href="../../css/style.css" rel="stylesheet">
+  <link href="../../images/logo.png" rel="shortcut icon">
+</head>
+<body>
+  <div class="header">
+    <div id="header"></div>
+  </div>
+  
+  <div class="content">
+    <div id="download"></div>
+    <!-- <div id="coming"></div> -->
+    <div class="action-area">
+      <div class="action-in">
+        <h2>Script Drone View</h2>
+        <!-- <div class="line"></div> -->
+        <p>Link download <b>WARNA HIJAU</b>. Lihat tutorial download diatas jika belum tahu caranya !!!</p>
+        <button class="btn-action video" onclick="AddScript()">TUTORIAL PEMASANGAN</button>
+        <p>Sebelum pasang drone view wajib update apk ML ke versi terbaru di Play Store & selesaikan download data 100% dulu !!!</p>
+        <!-- <button class="btn-action" onclick="window.open('http://adlinksumo.com/VzeEpNon','_blank')">DOWNLOAD APK MLBB V1.9.33</button> -->
+        <!-- <button class="btn-action main" onclick="window.open('https://adlinksumo.com/R5GTlKt','_blank')">DOWNLOAD SCRIPT DRONE X2</button>
+        <button class="btn-action main" onclick="window.open('https://adlinksumo.com/dKrY','_blank')">DOWNLOAD SCRIPT DRONE X3</button>
+        <button class="btn-action main" onclick="window.open('https://adlinksumo.com/rfR4463','_blank')">DOWNLOAD SCRIPT DRONE X4</button>
+        <button class="btn-action main" onclick="window.open('https://adlinksumo.com/zQGMG','_blank')">DOWNLOAD SCRIPT DRONE X5</button>
+        <button class="btn-action main" onclick="window.open('https://adlinksumo.com/hC6IXbo','_blank')">DOWNLOAD SCRIPT DRONE X6</button>
+        <button class="btn-action main" onclick="window.open('https://adlinksumo.com/flDn9','_blank')">DOWNLOAD BACKUP DRONE VIEW</button> -->
+        <button class="btn-action main" onclick="window.open('https://sub4unlock.io/oDMCG','_blank')">DOWNLOAD SCRIPT DRONE X2</button>
+        <button class="btn-action main" onclick="window.open('https://sub4unlock.io/GjaFA','_blank')">DOWNLOAD SCRIPT DRONE X3</button>
+        <button class="btn-action main" onclick="window.open('https://sub4unlock.io/YCp0J','_blank')">DOWNLOAD SCRIPT DRONE X4</button>
+        <button class="btn-action main" onclick="window.open('https://sub4unlock.io/XkE8o','_blank')">DOWNLOAD SCRIPT DRONE X5</button>
+        <button class="btn-action main" onclick="window.open('https://sub4unlock.io/eiykC','_blank')">DOWNLOAD SCRIPT DRONE X6</button>
+        <button class="btn-action main" onclick="window.open('https://dexter.rf.gd/unlock/drone/backup','_blank')">DOWNLOAD BACKUP DRONE VIEW</button>
+        <p>Males download banyak iklan? Cukup bayar link <b>Rp.3000</b> aja ke Admin udah bisa download <b>LINK MEDIAFIRE</b> tanpa iklan !!!</p>
+        <button class="btn-action link" onclick="window.open('https://wa.me/6281338214136?text=Halo+min+saya+mau+beli+link+mediafire+SCRIPT+DRONE+VIEW+harga+3K+!!!','_blank')">SCRIPT DRONE VIEW LINK MEDIAFIRE</button>
+      </div>
+    </div>
+    <div id="free"></div>
+  </div>
+  
+  <div class="footer">
+    <div id="footer"></div>
+  </div>
+
+<script>
+// Menyisipkan file html secara dinamis
+fetch('../../../components/header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  })
+fetch('../../../components/footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  })
+fetch('../../../components/free.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("free").innerHTML = data;
+  })
+fetch('../../../components/tutor-download.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("download").innerHTML = data;
+  })
+  .catch(error => {
+    console.error("Gagal memuat konten:", error);
+  });
+</script>
+<script>
+// Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
+    document.addEventListener("DOMContentLoaded", () => {
+      const tahunSekarang = new Date().getFullYear();
+      const cekTahun = setInterval(() => {
+        const el = document.getElementById("tahun");
+        if (el) {
+          el.textContent = tahunSekarang;
+          clearInterval(cekTahun);
+        }
+      }, 100);
+    });
+</script>
+<script src="../../../js/script.js">
+</script>
+</body>
+</html>

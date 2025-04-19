@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <title>Dexter Modz</title>
+  <link href="../../../css/style.css" rel="stylesheet">
+  <link href="../../../images/logo.png" rel="shortcut icon">
+</head>
+<body>
+  <div class="header">
+    <div id="header"></div>
+  </div>
+  
+  <div class="content">
+    <div id="download"></div>
+    <div class="action-area">
+      <div class="action-in">
+        <h2>VPN Push Rank</h2>
+        <!-- <div class="line"></div> -->
+        <p>Link download <b>WARNA HIJAU</b>. Lihat tutorial download diatas jika belum tahu caranya !!!</p>
+        <!-- <button class="btn-action video" onclick="Unduh()">TUTORIAL DOWNLOAD</button> -->
+        <button class="btn-action main" onclick="window.open('https://sub4unlock.io/dtUWw','_blank')">DOWNLOAD APK VPN MLBB</button>
+        <!-- <button class="btn-action" onclick="location.href='https://rentry.co/vpnml'">DOWNLOAD APK VPN MLBB</button> -->
+      </div>
+    </div>
+    <div class="action-area">
+      <div class="action-in">
+        <h2>Apk & Link Lainnya</h2>
+        <div class="line"></div>
+        <button class="btn-action" onclick="location.href='zarchiver.html'">APK ZARCHIVER PRO</button>
+        <button class="btn-action" onclick="location.href='mt-manager.html'">APK MT MANAGER PRO</button>
+      </div>
+    </div>
+    <div id="free"></div>
+  </div>
+  
+  <div class="footer">
+    <div id="footer"></div>
+  </div>
+  
+  <script>
+    // Menyisipkan file html secara dinamis
+    fetch('../../../components/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      })
+    fetch('../../../components/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      })
+    fetch('../../../components/free.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("free").innerHTML = data;
+      })
+    fetch('../../../components/tutor-download.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("download").innerHTML = data;
+      })
+      .catch(error => {
+        console.error("Gagal memuat konten:", error);
+      });
+  </script>
+  <script>
+    // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
+        document.addEventListener("DOMContentLoaded", () => {
+          const tahunSekarang = new Date().getFullYear();
+          const cekTahun = setInterval(() => {
+            const el = document.getElementById("tahun");
+            if (el) {
+              el.textContent = tahunSekarang;
+              clearInterval(cekTahun);
+            }
+          }, 100);
+        });
+  </script>
+<script src="../../../js/script.js">
+</script>
+</body>
+</html>
