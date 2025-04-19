@@ -8,7 +8,8 @@
   <link href="../../file/logo.png" rel="shortcut icon">
 </head>
 <body>
-  <div id="header2"></div>
+  <!-- <div id="header2"></div> -->
+  <div id="header-placeholder"></div>
   
   <div class="content">
     <div class="action-area">
@@ -29,6 +30,19 @@
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous">
 </script>
+
+<script>
+  // Menyisipkan header2.html secara dinamis
+  fetch('../../link/header2.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    })
+    .catch(error => {
+      console.error("Gagal memuat konten:", error);
+    });
+</script>
+
 <script>
   // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
       document.addEventListener("DOMContentLoaded", () => {
