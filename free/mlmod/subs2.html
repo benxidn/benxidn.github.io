@@ -29,14 +29,6 @@
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous">
 </script>
-
-<script>
-  fetch('../../link/header2.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header2').innerHTML = data;
-    });
-</script>
 <script>
   // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
       document.addEventListener("DOMContentLoaded", () => {
@@ -50,34 +42,6 @@
         }, 100);
       });
 </script>
-<!-- <script>
-    // Fungsi untuk memuat file HTML dan menaruh ke elemen target
-    function loadHTML(file, elementId) {
-      fetch(file)
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById(elementId).innerHTML = data;
-        })
-        .catch(error => console.error('Gagal memuat ' + file, error));
-    }
-
-    // Memuat masing-masing bagian
-    loadHTML('../../link/header2.html', 'header2');
-    loadHTML('../../link/subs-up.html', 'subs-up');
-    loadHTML('../../link/subs-down.html', 'subs-down');
-
-    // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
-    document.addEventListener("DOMContentLoaded", () => {
-      const tahunSekarang = new Date().getFullYear();
-      const cekTahun = setInterval(() => {
-        const el = document.getElementById("tahun");
-        if (el) {
-          el.textContent = tahunSekarang;
-          clearInterval(cekTahun);
-        }
-      }, 100);
-    });
-  </script> -->
 <!-- <script>
     window.history.replaceState('','','/');
 </script> -->

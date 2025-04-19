@@ -1,5 +1,5 @@
 <!-- free/mlmod/index.html -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -22,8 +22,73 @@
         document.getElementById("header-placeholder").innerHTML = data;
       })
       .catch(error => {
-        console.error("Gagal memuat header:", error);
+        console.error("Gagal memuat konten:", error);
       });
   </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <title>Dexter Modz</title>
+  <link href="../../css/unlock.css" rel="stylesheet">
+  <link href="../../file/logo.png" rel="shortcut icon">
+</head>
+<body>
+  <!-- <div id="header2"></div> -->
+  <div id="header-placeholder"></div>
+  
+  <div class="content">
+    <div class="action-area">
+      <div class="action-in">
+        <div id="subs-up"></div>
+        <div class="btn-2">
+            <button class="btn-action 1" onclick="window.open('https://adlinksumo.com/xTJB','_blank')"><i class="fas fa-unlock"></i><a>Open Link</a><i class="fas fa-link"></i></button> 
+             <!-- <button class="btn-action 2" onclick="window.open('https://adlinksumo.com/IYeFV7qy','_blank')"><i class="fas fa-unlock"></i><a>Open Link</a><i class="fas fa-link"></i></button> -->
+            <!-- <button class="btn-action" onclick="location.href='https://adlinksumo.com/IYeFV7qy'"><i class="fas fa-unlock"></i><a>Open Link</a><i class="fas fa-link"></i></button> -->
+        </div>
+      </div>
+    </div>
+    <div id="subs-down"></div>
+  </div>
+  
+<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+
+<script>
+  // Menyisipkan header2.html secara dinamis
+  fetch('../../link/header2.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    })
+    .catch(error => {
+      console.error("Gagal memuat konten:", error);
+    });
+</script>
+
+<script>
+  // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
+      document.addEventListener("DOMContentLoaded", () => {
+        const tahunSekarang = new Date().getFullYear();
+        const cekTahun = setInterval(() => {
+          const el = document.getElementById("tahun");
+          if (el) {
+            el.textContent = tahunSekarang;
+            clearInterval(cekTahun);
+          }
+        }, 100);
+      });
+</script>
+<!-- <script>
+    window.history.replaceState('','','/');
+</script> -->
 </body>
 </html>
