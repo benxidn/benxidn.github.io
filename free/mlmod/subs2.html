@@ -37,23 +37,18 @@
       document.getElementById('header2').innerHTML = data;
     });
 </script>
-// Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
-    document.addEventListener("DOMContentLoaded", () => {
-      const tahunSekarang = new Date().getFullYear();
-      const cekTahun = setInterval(() => {
-        const el = document.getElementById("tahun");
-        if (el) {
-          el.textContent = tahunSekarang;
-          clearInterval(cekTahun);
-        }
-      }, 100);
-    });
 <script>
-  fetch('link/header2.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
-    });
+  // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
+      document.addEventListener("DOMContentLoaded", () => {
+        const tahunSekarang = new Date().getFullYear();
+        const cekTahun = setInterval(() => {
+          const el = document.getElementById("tahun");
+          if (el) {
+            el.textContent = tahunSekarang;
+            clearInterval(cekTahun);
+          }
+        }, 100);
+      });
 </script>
 <!-- <script>
     // Fungsi untuk memuat file HTML dan menaruh ke elemen target
