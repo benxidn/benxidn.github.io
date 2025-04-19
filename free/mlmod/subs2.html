@@ -30,7 +30,7 @@
     crossorigin="anonymous">
 </script>
 <script>
-  fetch('../../header2.html')
+  fetch('../../link/header2.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('header2').innerHTML = data;
@@ -39,7 +39,7 @@
       document.getElementById('header2').innerHTML = "Gagal memuat konten.";
       console.error(error);
     });
-  fetch('../../subs-up.html')
+  fetch('../../link/subs-up.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('subs-up').innerHTML = data;
@@ -48,7 +48,7 @@
       document.getElementById('subs-up').innerHTML = "Gagal memuat konten.";
       console.error(error);
     });
-  fetch('../../subs-down.html')
+  fetch('../../link/subs-down.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('subs-down').innerHTML = data;
