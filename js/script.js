@@ -71,7 +71,11 @@ function Home() {
  }
  
  function Channel() {
-   window.open("https://dexter.rf.gd/1/channel1", "_self");
+   window.open("/redirect/channel1", "_self");
+ }
+ 
+ function Whatsapp() {
+   window.open("https://chat.whatsapp.com/CrqhFjhKUEM7LMGqx8m8sU", "_self");
  }
  
  function AntiBan() {
@@ -99,15 +103,15 @@ function Home() {
  }
  
  function Drone() {
-   window.open("https://dexter.rf.gd/1/channel1", "_self");
+   window.open("/redirect/channel1", "_self");
  }
  
  function Fakecez() {
-   window.open("https://dexter.rf.gd/1/channel1", "_self");
+   window.open("/redirect/channel1", "_self");
  }
  
  function Dexter() {
-   window.open("https://dexter.rf.gd/1/channel1", "_self");
+   window.open("/redirect/channel1", "_self");
  }
  
  // Fungsi salin teks
