@@ -42,9 +42,9 @@ function Home() {
  function bukaLink() {
    window.open("https://github.com", "_blank");
  }
- document.addEventListener("DOMContentLoaded", function () {
-   const button = document.getElementById("myButton");
-   if (button) {
-     button.addEventListener("click", bukaLink);
-   }
- });
+//  document.addEventListener("DOMContentLoaded", function () {
+//    const button = document.getElementById("myButton");
+//    if (button) {
+//      button.addEventListener("click", bukaLink);
+//    }
+//  });
