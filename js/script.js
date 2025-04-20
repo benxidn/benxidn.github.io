@@ -39,12 +39,18 @@ function Home() {
 
 
 
- function bukaLink() {
-   window.open("https://github.com", "_self");
+// Fungsi untuk membuka link
+function bukaLink() {
+   window.open("https://github.com", "_blank");
  }
-//  document.addEventListener("DOMContentLoaded", function () {
-//    const button = document.getElementById("myButton");
-//    if (button) {
-//      button.addEventListener("click", bukaLink);
-//    }
-//  });
+ 
+ // Fungsi untuk load komponen header
+ document.addEventListener("DOMContentLoaded", function () {
+   fetch("components/header.html")
+     .then(response => response.text())
+     .then(data => {
+       document.getElementById("header-container").innerHTML = data;
+     })
+     .catch(error => console.error("Gagal memuat header:", error));
+ });
+ 
