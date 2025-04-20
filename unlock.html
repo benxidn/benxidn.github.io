@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unlock Link</title>
+  <!-- Menambahkan Font Awesome untuk ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #0f0f0f;
+      --card-dark: #1c1c1c;
+      --text: #fff;
+      --btn: #ff0000;
+      --btn-hover: #cc0000;
+      --btn-disabled: #ff0000;
+      --success: #00c853;
+      --btn-clicked: #555;
+      --btn-last: #003d33;
+      --btn-last-text: #01DF72;
+      --btn-transparent: rgba(255, 255, 255, 0.2);
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg-dark);
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    /* Header Styling */
+    .header {
+      background: var(--bg-dark);
+      padding: 15px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      box-sizing: border-box;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      color: #fff;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .header .btn-subscribe {
+      background: var(--btn);
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .header .btn-subscribe:hover {
+      background: var(--btn-hover);
+    }
+
+    /* Main Content Container */
+    .container {
+      background: var(--card-dark);
+      border-radius: 10px;
+      padding: 20px;
+      width: 100%;
+      max-width: 320px; /* Ukuran lebih kecil */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 13px;
+      margin-bottom: 16px;
+      color: #ccc;
+    }
+
+    .btn {
+      background: var(--btn);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn:hover:enabled {
+      background: var(--btn-hover);
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .btn-success {
+      background: var(--success);
+    }
+
+    .btn-success:hover:enabled {
+      background: #00b248;
+    }
+
+    .btn-last {
+      background: var(--btn-last);
+      color: var(--btn-last-text);
+    }
+
+    .btn-last:hover:enabled {
+      background: #002c26;
+    }
+
+    .progress-text {
+      font-size: 13px;
+      margin: 12px 0 4px;
+      color: #aaa;
+    }
+
+    .progress-container {
+      background: #333;
+      border-radius: 4px;
+      height: 8px;
+      margin-bottom: 12px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: var(--success);
+      transition: width 0.4s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <a href="https://benxidn.github.io" style="text-decoration: none;">
+      <h1>Dexter Modz</h1>
+    </a>
+    <button class="btn-subscribe" onclick="window.open('https://www.youtube.com/@dextertod', '_blank')">Subscribe</button>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h2>Unlock Link</h2>
+    <p>Complete the actions and unlock the link.</p>
+
+    <!-- Tombol Subscribe dengan ikon -->
+    <button id="btn1" class="btn" onclick="subscribe1()">
+      <i class="fab fa-youtube"></i> Subscribe on YouTube <i class="fas fa-chevron-right" id="icon1"></i>
+    </button>
+    <button id="btn2" class="btn" onclick="subscribe2()" disabled>
+      <i class="fab fa-youtube"></i> Subscribe on YouTube <i class="fas fa-chevron-right" id="icon2"></i>
+    </button>
+    <button id="btn3" class="btn" onclick="subscribe3()" disabled>
+      <i class="fab fa-youtube"></i> Subscribe on YouTube <i class="fas fa-chevron-right" id="icon3"></i>
+    </button>
+    <button id="btn4" class="btn" onclick="subscribe4()" disabled>
+      <i class="fab fa-youtube"></i> Subscribe on YouTube <i class="fas fa-chevron-right" id="icon4"></i>
+    </button>
+
+    <div class="progress-text" id="progressText">Unlock Progress: 0/4</div>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Tombol Unlock Link dengan ikon -->
+    <button id="btn5" class="btn btn-success btn-last" onclick="goToContent()" disabled>
+      <i class="fas fa-lock"></i> Unlock Link <i class="fas fa-link"></i>
+    </button>
+  </div>
+
+  <script>
+    let stepsDone = 0;
+
+    function subscribe1() {
+      setLoading(1);
+      window.open('https://www.youtube.com/@dextertod', '_blank');
+      setTimeout(() => {
+        document.getElementById('btn1').disabled = true;
+        document.getElementById('btn2').disabled = false;
+        document.getElementById('btn1').style.backgroundColor = '#555';
+        document.getElementById('btn1').style.color = '#bbb';
+        setCheckmark(1);
+        stepsDone = 1;
+        updateProgress();
+      }, 3000); // Simulasikan waktu loading setelah membuka link
+    }
+
+    function subscribe2() {
+      setLoading(2);
+      window.open('https://www.youtube.com/@elfomodz2', '_blank');
+      setTimeout(() => {
+        document.getElementById('btn2').disabled = true;
+        document.getElementById('btn3').disabled = false;
+        document.getElementById('btn2').style.backgroundColor = '#555';
+        document.getElementById('btn2').style.color = '#bbb';
+        setCheckmark(2);
+        stepsDone = 2;
+        updateProgress();
+      }, 3000); // Simulasikan waktu loading setelah membuka link
+    }
+
+    function subscribe3() {
+      setLoading(3);
+      window.open('https://www.youtube.com/@hydramodz2', '_blank');
+      setTimeout(() => {
+        document.getElementById('btn3').disabled = true;
+        document.getElementById('btn4').disabled = false;
+        document.getElementById('btn3').style.backgroundColor = '#555';
+        document.getElementById('btn3').style.color = '#bbb';
+        setCheckmark(3);
+        stepsDone = 3;
+        updateProgress();
+      }, 3000); // Simulasikan waktu loading setelah membuka link
+    }
+
+    function subscribe4() {
+      setLoading(4);
+      window.open('https://www.youtube.com/@cybermodz2', '_blank');
+      setTimeout(() => {
+        document.getElementById('btn4').disabled = true;
+        document.getElementById('btn5').disabled = false;
+        document.getElementById('btn4').style.backgroundColor = '#555';
+        document.getElementById('btn4').style.color = '#bbb';
+        setCheckmark(4);
+        stepsDone = 4;
+        updateProgress();
+      }, 3000); // Simulasikan waktu loading setelah membuka link
+    }
+
+    function setLoading(buttonNumber) {
+      document.getElementById(`icon${buttonNumber}`).classList.remove('fa-chevron-right');
+      document.getElementById(`icon${buttonNumber}`).classList.add('fa-spinner', 'fa-spin');
+    }
+
+    function setCheckmark(buttonNumber) {
+      document.getElementById(`icon${buttonNumber}`).classList.remove('fa-spinner', 'fa-spin');
+      document.getElementById(`icon${buttonNumber}`).classList.add('fa-check-circle');
+    }
+
+    function goToContent() {
+      window.location.href = "https://benxidn.github.io/unlock2.html";  // Arahkan ke halaman baru
+    }
+
+    function updateProgress() {
+      const percent = (stepsDone / 4) * 100;
+      document.getElementById('progressBar').style.width = percent + '%';
+      document.getElementById('progressText').textContent = `Unlock Progress: ${stepsDone}/4`;
+    }
+  </script>
+
+</body>
+</html>
