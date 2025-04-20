@@ -1,29 +1,30 @@
-function loadComponent(id, path) {
-   fetch(path)
-     .then(response => response.text())
-     .then(data => {
-       document.getElementById(id).innerHTML = data;
-     })
-     .catch(error => {
-       console.error(`Gagal memuat komponen ${id}:`, error);
-     });
- }
- 
- document.addEventListener("DOMContentLoaded", () => {
-   loadComponent("header", "components/header.html");
-   loadComponent("footer", "components/footer.html");
- 
-// Menyisipkan tahun saat ini ke elemen dengan id "tahun"
+// Menyisipkan file HTML secara dinamis ke dalam elemen header dan footer
+fetch('components/header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+
+fetch('components/footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  })
+  .catch(error => {
+    console.error("Gagal memuat konten:", error);
+  });
+
+// Setelah halaman dimuat, tunggu hingga elemen #tahun tersedia, lalu sisipkan tahun saat ini
 document.addEventListener("DOMContentLoaded", () => {
-   const tahunSekarang = new Date().getFullYear();
-   const cekTahun = setInterval(() => {
-     const el = document.getElementById("tahun");
-     if (el) {
-       el.textContent = tahunSekarang;
-       clearInterval(cekTahun);
-     }
-   }, 100);
- });
+  const tahunSekarang = new Date().getFullYear();
+  const cekTahun = setInterval(() => {
+    const el = document.getElementById("tahun");
+    if (el) {
+      el.textContent = tahunSekarang;
+      clearInterval(cekTahun);
+    }
+  }, 100);
+});
 
 // Fungsi navigasi ke berbagai link
 function Home() {
