@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Fungsi navigasi ke berbagai link
 function Home() {
-   window.open("../../../", "_self");
+   window.open("/", "_self");
  }
  
  function Channel() {
