@@ -43,17 +43,20 @@ function Home() {
 function bukaLink() {
    window.open("https://github.com", "_blank");
  }
+ function bukaGoogle() {
+   window.open("https://www.google.com", "_self");
+ }
  
   // Menyisipkan file html secara dinamis
-  fetch('components/headers.html')
+  fetch('components/header.html')
     .then(response => response.text())
     .then(data => {
-      document.getElementById("header").innerHTML = data;
+      document.getElementById("header-container").innerHTML = data;
     })
   fetch('components/footer.html')
     .then(response => response.text())
     .then(data => {
-      document.getElementById("footer").innerHTML = data;
+      document.getElementById("footer-container").innerHTML = data;
     })
     .catch(error => {
       console.error("Gagal memuat konten:", error);
