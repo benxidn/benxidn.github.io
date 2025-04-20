@@ -1,8 +1,14 @@
 // Menghapus ".html" dari URL di address bar (jika ada)
-if (window.location.pathname.endsWith('.html')) {
-  const newUrl = window.location.pathname.replace(/\.html$/, '');
-  window.history.replaceState(null, '', newUrl);
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname;
+
+  if (path.endsWith('.html')) {
+    const cleanPath = path.replace(/\.html$/, '');
+    const newUrl = cleanPath + window.location.search + window.location.hash;
+
+    window.history.replaceState(null, '', newUrl);
+  }
+});
 
 // Menyisipkan file HTML secara dinamis ke dalam elemen header dan footer
 fetch('../../../components/header.html')
