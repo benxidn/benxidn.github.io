@@ -1,29 +1,56 @@
-  // Menyisipkan file html secara dinamis
-  fetch('components/header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    })
-  fetch('components/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer").innerHTML = data;
-    })
-    .catch(error => {
-      console.error("Gagal memuat konten:", error);
-    });
+//   // Menyisipkan file html secara dinamis
+//   fetch('components/header.html')
+//     .then(response => response.text())
+//     .then(data => {
+//       document.getElementById("header").innerHTML = data;
+//     })
+//   fetch('components/footer.html')
+//     .then(response => response.text())
+//     .then(data => {
+//       document.getElementById("footer").innerHTML = data;
+//     })
+//     .catch(error => {
+//       console.error("Gagal memuat konten:", error);
+//     });
 
-  // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
-      document.addEventListener("DOMContentLoaded", () => {
-        const tahunSekarang = new Date().getFullYear();
-        const cekTahun = setInterval(() => {
-          const el = document.getElementById("tahun");
-          if (el) {
-            el.textContent = tahunSekarang;
-            clearInterval(cekTahun);
-          }
-        }, 100);
-      });
+//   // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
+//       document.addEventListener("DOMContentLoaded", () => {
+//         const tahunSekarang = new Date().getFullYear();
+//         const cekTahun = setInterval(() => {
+//           const el = document.getElementById("tahun");
+//           if (el) {
+//             el.textContent = tahunSekarang;
+//             clearInterval(cekTahun);
+//           }
+//         }, 100);
+//       });
+
+function loadComponent(id, path) {
+   fetch(path)
+     .then(response => response.text())
+     .then(data => {
+       document.getElementById(id).innerHTML = data;
+     })
+     .catch(error => {
+       console.error(`Gagal memuat komponen ${id}:`, error);
+     });
+ }
+ 
+ document.addEventListener("DOMContentLoaded", () => {
+   loadComponent("header", "components/header.html");
+   loadComponent("footer", "components/footer.html");
+ 
+   // Menyisipkan tahun saat ini
+   const tahunSekarang = new Date().getFullYear();
+   const cekTahun = setInterval(() => {
+     const el = document.getElementById("tahun");
+     if (el) {
+       el.textContent = tahunSekarang;
+       clearInterval(cekTahun);
+     }
+   }, 100);
+ });
+ 
 
 // Fungsi buka link
 function Home() {
@@ -64,29 +91,3 @@ function Home() {
     navigator.clipboard.writeText(stringText);
     }
  let stringText2  = 'SUBSCRIBE';
-
-
-
-// // Fungsi untuk membuka link
-// function bukaLink() {
-//    window.open("https://github.com", "_blank");
-//  }
-//  function bukaGoogle() {
-//    window.open("https://www.google.com", "_self");
-//  }
- 
-//   // Menyisipkan file html secara dinamis
-//   fetch('components/header.html')
-//     .then(response => response.text())
-//     .then(data => {
-//       document.getElementById("header-container").innerHTML = data;
-//     })
-//   fetch('components/footer.html')
-//     .then(response => response.text())
-//     .then(data => {
-//       document.getElementById("footer-container").innerHTML = data;
-//     })
-//     .catch(error => {
-//       console.error("Gagal memuat konten:", error);
-//     });
- 
