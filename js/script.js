@@ -46,7 +46,7 @@ function bukaLink() {
  
  // Fungsi untuk load komponen header
  document.addEventListener("DOMContentLoaded", function () {
-   fetch("components/header.html")
+   fetch("components/headers.html")
      .then(response => response.text())
      .then(data => {
        document.getElementById("header-container").innerHTML = data;
