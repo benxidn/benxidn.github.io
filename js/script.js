@@ -44,13 +44,18 @@ function bukaLink() {
    window.open("https://github.com", "_blank");
  }
  
- // Fungsi untuk load komponen header
- document.addEventListener("DOMContentLoaded", function () {
-   fetch("../components/headers.html")
-     .then(response => response.text())
-     .then(data => {
-       document.getElementById("header-container").innerHTML = data;
-     })
-     .catch(error => console.error("Gagal memuat header:", error));
- });
+  // Menyisipkan file html secara dinamis
+  fetch('components/headers.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    })
+  fetch('components/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch(error => {
+      console.error("Gagal memuat konten:", error);
+    });
  
