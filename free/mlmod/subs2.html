@@ -4,8 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <title>Dexter Modz</title>
-  <link href="../../css/unlock.css" rel="stylesheet">
-  <link href="../../file/logo.png" rel="shortcut icon">
+  <link href="/web/css/unlock.css" rel="stylesheet">
+  <link href="/web/file/logo.png" rel="shortcut icon">
 </head>
 <body>
   <div id="header2"></div>
@@ -32,7 +32,7 @@
 
 <script>
   // Menyisipkan header2.html secara dinamis
-  fetch('../../links/header2.html')
+  fetch('/web/links/header2.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById("header2").innerHTML = data;
@@ -40,7 +40,7 @@
     .catch(error => {
       console.error("Gagal memuat konten:", error);
     });
-  fetch('../../links/subs-up.html')
+  fetch('/web/links/subs-up.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById("subs-up").innerHTML = data;
@@ -48,7 +48,7 @@
     .catch(error => {
       console.error("Gagal memuat konten:", error);
     });
-  fetch('../../links/subs-down.html')
+  fetch('/web/links/subs-down.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById("subs-down").innerHTML = data;
