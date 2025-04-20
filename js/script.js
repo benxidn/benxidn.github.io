@@ -10,6 +10,18 @@ fetch('../../../components/footer.html')
   .then(data => {
     document.getElementById("footer").innerHTML = data;
   })
+
+fetch('../../../components/tutor-download.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("download").innerHTML = data;
+  })
+
+fetch('../../../components/free.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("free").innerHTML = data;
+  })
   .catch(error => {
     console.error("Gagal memuat konten:", error);
   });
