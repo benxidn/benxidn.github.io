@@ -1,2 +1,187 @@
-<h1>INI HALAMAN KE-2</h1>
-<a href="/unlock.html">Kembali</a>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unlock Link</title>
+  <!-- Menambahkan Font Awesome untuk ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #0f0f0f;
+      --card-dark: #1c1c1c;
+      --text: #fff;
+      --btn: #ff0000;
+      --btn-hover: #cc0000;
+      --btn-disabled: #ff0000;
+      --success: #00c853;
+      --btn-clicked: #555;
+      --btn-last: #003d33;
+      --btn-last-text: #01DF72;
+      --btn-transparent: rgba(255, 255, 255, 0.2);
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg-dark);
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    /* Header Styling */
+    .header {
+      background: var(--bg-dark);
+      padding: 15px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      box-sizing: border-box;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      color: #fff;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .header .btn-subscribe {
+      background: var(--btn);
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .header .btn-subscribe:hover {
+      background: var(--btn-hover);
+    }
+
+    /* Main Content Container */
+    .container {
+      background: var(--card-dark);
+      border-radius: 10px;
+      padding: 20px;
+      width: 100%;
+      max-width: 320px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 13px;
+      margin-bottom: 16px;
+      color: #ccc;
+    }
+
+    .btn {
+      background: var(--btn-last);
+      color: var(--btn-last-text);
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn:hover:enabled {
+      background: #002c26;
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .progress-text {
+      font-size: 13px;
+      margin: 12px 0 4px;
+      color: #aaa;
+    }
+
+    .progress-container {
+      background: #333;
+      border-radius: 4px;
+      height: 8px;
+      margin-bottom: 12px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: var(--success);
+      transition: width 0.4s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <a href="https://benxidn.github.io" style="text-decoration: none;">
+      <h1>Dexter Modz</h1>
+    </a>
+    <button class="btn-subscribe" onclick="window.open('https://www.youtube.com/@dextertod', '_blank')">Subscribe</button>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h2>Unlock Link</h2>
+    <p>Complete the actions and unlock the link.</p>
+
+    <!-- Progress Bar -->
+    <div class="progress-text" id="progressText">Unlock Progress: 0/1</div>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Tombol Unlock Link dengan ikon -->
+    <button id="btn5" class="btn btn-success btn-last" onclick="goToContent()">
+      <i class="fas fa-lock"></i> Unlock Link <i class="fas fa-link"></i>
+    </button>
+  </div>
+
+  <script>
+    let stepsDone = 0;
+
+    // Fungsi untuk mengarahkan ke URL ketika tombol di-klik
+    function goToContent() {
+      window.location.href = "https://benxidn.github.io/unlock.html";  // Arahkan ke halaman baru
+      stepsDone = 1; // Menandakan bahwa progres sudah selesai
+      updateProgress(); // Update progres
+    }
+
+    function updateProgress() {
+      const percent = (stepsDone / 1) * 100;  // Progres 1/1
+      document.getElementById('progressBar').style.width = percent + '%';
+      document.getElementById('progressText').textContent = `Unlock Progress: ${stepsDone}/1`; // Progres 1
+    }
+  </script>
+
+</body>
+</html>
