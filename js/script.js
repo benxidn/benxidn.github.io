@@ -1,9 +1,6 @@
 function Home() {
     window.open("https://benxidn.github.io","_self");
     }
-function 404() {
-    window.open("https://benxidn.github.io/","_self");
-    }
  function Channel() {
     window.open("https://dexter.rf.gd/1/channel1","_self");
     }
