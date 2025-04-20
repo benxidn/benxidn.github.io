@@ -1,23 +1,18 @@
-// Menghapus ".html" dari URL di address bar (jika ada)
+// Menghapus Ekstensi .html dari URL di Address Bar
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.pathname;
 
-  // Hapus "/index.html" → "/"
   if (path.endsWith('/index.html')) {
     const newPath = path.replace('/index.html', '/');
     const newUrl = newPath + window.location.search + window.location.hash;
     window.history.replaceState(null, '', newUrl);
-  }
 
-  // Hapus "/index" → "/"
-  else if (path.endsWith('/index')) {
+  } else if (path.endsWith('/index')) {
     const newPath = path.replace('/index', '/');
     const newUrl = newPath + window.location.search + window.location.hash;
     window.history.replaceState(null, '', newUrl);
-  }
 
-  // Jika hanya ".html" di akhir (misal: about.html → about)
-  else if (path.endsWith('.html')) {
+  } else if (path.endsWith('.html')) {
     const newPath = path.replace(/\.html$/, '');
     const newUrl = newPath + window.location.search + window.location.hash;
     window.history.replaceState(null, '', newUrl);
@@ -25,31 +20,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Menyisipkan file HTML secara dinamis ke dalam elemen header dan footer
-fetch('../../../components/header.html')
+fetch('/components/header.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
   });
 
-fetch('../../../components/footer.html')
+fetch('/components/footer.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById("footer").innerHTML = data;
   })
 
-fetch('../../../components/tutor-download.html')
+fetch('/components/tutor-download.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById("download").innerHTML = data;
   })
 
-fetch('../../../components/free.html')
+fetch('/components/free.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById("free").innerHTML = data;
   })
 
-fetch('../../../components/key.html')
+fetch('/components/key.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById("key").innerHTML = data;
