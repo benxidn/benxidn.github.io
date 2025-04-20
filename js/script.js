@@ -22,6 +22,12 @@ fetch('../../../components/free.html')
   .then(data => {
     document.getElementById("free").innerHTML = data;
   })
+
+fetch('../../../components/key.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("key").innerHTML = data;
+  })
   .catch(error => {
     console.error("Gagal memuat konten:", error);
   });

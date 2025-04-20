@@ -38,46 +38,7 @@
   <div class="footer">
     <div id="footer"></div>
   </div>
-  
-  <script>
-    // Menyisipkan file html secara dinamis
-    fetch('../../../components/header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-      })
-    fetch('../../../components/footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer").innerHTML = data;
-      })
-    fetch('../../../components/free.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("free").innerHTML = data;
-      })
-    fetch('../../../components/tutor-download.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("download").innerHTML = data;
-      })
-      .catch(error => {
-        console.error("Gagal memuat konten:", error);
-      });
-  </script>
-  <script>
-    // Setelah halaman dimuat, tunggu hingga elemen #tahun muncul
-        document.addEventListener("DOMContentLoaded", () => {
-          const tahunSekarang = new Date().getFullYear();
-          const cekTahun = setInterval(() => {
-            const el = document.getElementById("tahun");
-            if (el) {
-              el.textContent = tahunSekarang;
-              clearInterval(cekTahun);
-            }
-          }, 100);
-        });
-  </script>
+
 <script src="../../../js/script.js">
 </script>
 </body>
