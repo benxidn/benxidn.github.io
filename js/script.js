@@ -73,9 +73,12 @@ function Home() {
  
  // Fungsi salin teks
  let stringText = '000';
- let stringText2 = 'SUBSCRIBE';
- 
  function copyBtn() {
-   navigator.clipboard.writeText(stringText);
- }
+    navigator.clipboard.writeText(stringText);
+    }
+
+ let stringText2  = 'SUBSCRIBE';
+ function copyBtn2() {
+    navigator.clipboard.writeText(stringText2);
+    }
  
