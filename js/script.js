@@ -36,21 +36,11 @@ function Home() {
     navigator.clipboard.writeText(stringText);
     }
  let stringText2  = 'SUBSCRIBE';
- function copyBtn2() {
-    navigator.clipboard.writeText(stringText2);
-    }
 
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const Homes = document.getElementById("Home");
-      const Channels = document.getElementById("Channel");
-    
-      Homes.addEventListener("click", function () {
-        window.open("../../","_self");
-      });
-    
-      Channels.addEventListener("click", function () {
-        window.open("https://dexter.rf.gd/1/channel1", "_self");
-      });
-    });
-    
+
+ function bukaLink() {
+   // Ganti URL di bawah dengan link tujuan yang diinginkan
+   window.open("https://github.com", "_blank");
+ }
+ 
