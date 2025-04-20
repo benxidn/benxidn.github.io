@@ -40,7 +40,7 @@ function Home() {
 
 
  function bukaLink() {
-   window.open("https://github.com", "_blank");
+   window.open("https://github.com", "_self");
  }
 //  document.addEventListener("DOMContentLoaded", function () {
 //    const button = document.getElementById("myButton");
