@@ -44,3 +44,10 @@ function Home() {
    window.open("https://github.com", "_blank");
  }
  
+ document.addEventListener("DOMContentLoaded", function () {
+   const btn = document.getElementById("openBtn");
+   btn.addEventListener("click", function () {
+     window.open("https://github.com", "_blank");
+   });
+ });
+ 
