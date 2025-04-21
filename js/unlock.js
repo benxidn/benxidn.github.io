@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   // Ganti URL ke nama domain saat halaman dimuat
   window.onload = function () {
     const rootURL = window.location.origin + '/';
@@ -6,8 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // Menetapkan URL untuk "Dexter Modz" dan "Subscribe"
-  document.getElementById('titleLink').href = '/';
-  document.getElementById('subscribeLink').href = '/redirect/channel1.html';
+  const subscribeLink = document.getElementById('subscribeLink');
+  if (subscribeLink) {
+    subscribeLink.href = '/redirect/channel1.html';
+  }
 
   // Array untuk link YouTube
   const youtubeLinks = [
@@ -29,10 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const progressBar = document.getElementById('progressBar');
 
   let currentProgress = 0;
-  const totalProgress = subscribeButtons.length;
+  const totalProgress = subscribeButtons.filter(Boolean).length;
 
   // Event listener untuk tombol subscribe
   subscribeButtons.forEach((button, index) => {
+    if (!button) return;
     button.addEventListener('click', (e) => {
       e.preventDefault();
       if (index !== currentProgress) return;
@@ -59,16 +63,35 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Cegah klik jika progress belum lengkap
-  goButton.addEventListener('click', (e) => {
-    if (currentProgress < totalProgress) {
-      e.preventDefault();
-    }
-  });
+  if (goButton) {
+    goButton.addEventListener('click', (e) => {
+      if (currentProgress < totalProgress) {
+        e.preventDefault();
+      }
+    });
+  }
 
   // Fungsi untuk update progress
   function updateProgress() {
-    progressText.textContent = `Unlock progress: ${currentProgress}/${totalProgress}`;
-    const percent = (currentProgress / totalProgress) * 100;
-    progressBar.style.width = `${percent}%`;
+    if (progressText && progressBar) {
+      progressText.textContent = `Unlock progress: ${currentProgress}/${totalProgress}`;
+      const percent = (currentProgress / totalProgress) * 100;
+      progressBar.style.width = `${percent}%`;
+    }
   }
+
+  // Anti klik tahan / klik kanan / drag
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousedown', function(e) {
+    if (e.which === 1) {
+      e.preventDefault();
+    }
+  });
 });
