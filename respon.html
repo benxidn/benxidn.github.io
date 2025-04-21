@@ -144,7 +144,7 @@
 
         @media (max-width: 480px) {
             .downloads {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(1, 1fr);
             }
 
             header h1 {
@@ -162,14 +162,34 @@
             footer p {
                 font-size: 0.8em;
             }
+
+            /* Untuk membuat tombol dan teks header tampil secara horizontal di mobile */
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .downloads {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 10px;
+                margin-top: 20px;
+            }
+
+            .download-item {
+                width: 30%; /* Agar item tersusun horizontal dengan jarak yang baik */
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Selamat Datang di Halaman Kami</h1>
-        <a href="#" class="header-button">Klik Di Sini</a>
+        <h1>Dexter Modz</h1>
+        <a href="#" class="header-button">SUBSCRIBE</a>
     </header>
 
     <div class="content">
