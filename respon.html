@@ -149,29 +149,22 @@
 
         @media (max-width: 480px) {
             .downloads {
-                grid-template-columns: repeat(1, 1fr);
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
 
-            header h1 {
-                font-size: 1.5em;
-            }
-
-            .content h2 {
-                font-size: 1.5em;
-            }
-
-            .content p {
+            .download-item {
+                padding: 10px;
                 font-size: 0.9em;
             }
 
-            footer p {
-                font-size: 0.8em;
+            .download-item h3 {
+                font-size: 1.2em;
             }
 
-            /* Mengubah ukuran tombol dan teks di header */
-            .header-button {
-                font-size: 0.9em;
-                padding: 6px 12px;
+            .download-item a {
+                font-size: 1em;
+                padding: 8px 16px;
             }
 
             header h1 {
@@ -206,8 +199,8 @@
             }
 
             .download-item {
-                width: 30%; /* Agar item tersusun horizontal dengan jarak yang baik */
-                padding: 10px;
+                width: 100%; /* Menyesuaikan ukuran dengan layar mobile */
+                padding: 8px;
             }
         }
     </style>
