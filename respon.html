@@ -28,8 +28,9 @@
             padding: 20px;
         }
 
-        header h1 {
-            font-size: 2.5em;
+        header img {
+            max-width: 150px;  /* Sesuaikan ukuran gambar */
+            height: auto;
         }
 
         .header-button {
@@ -129,8 +130,8 @@
                 padding: 15px;
             }
 
-            header h1 {
-                font-size: 2em;
+            header img {
+                max-width: 120px;
             }
 
             .content h2 {
@@ -155,52 +156,28 @@
 
             .download-item {
                 padding: 8px;
-                font-size: 0.8em;  /* Menurunkan ukuran font item download */
+                font-size: 0.8em;
             }
 
             .download-item h3 {
-                font-size: 1.1em;  /* Menurunkan ukuran font judul */
+                font-size: 1.1em;
             }
 
             .download-item a {
-                font-size: 0.9em;  /* Menurunkan ukuran font tombol */
-                padding: 6px 12px;  /* Mengurangi padding tombol */
+                font-size: 0.9em;
+                padding: 6px 12px;
+            }
+
+            header img {
+                max-width: 100px;  /* Ukuran gambar lebih kecil di mobile */
             }
 
             header h1 {
-                font-size: 1.5em;
-            }
-
-            .content h2 {
-                font-size: 1.5em;
-            }
-
-            .content p {
-                font-size: 0.9em;
+                display: none; /* Menghapus teks header */
             }
 
             footer p {
                 font-size: 0.8em;
-            }
-
-            /* Untuk membuat tombol dan teks header tampil secara horizontal di mobile */
-            header {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .downloads {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                gap: 10px;
-                margin-top: 20px;
-            }
-
-            .download-item {
-                width: 100%; /* Menyesuaikan ukuran dengan layar mobile */
-                padding: 8px;
             }
         }
     </style>
@@ -208,7 +185,7 @@
 <body>
 
     <header>
-        <h1>Dexter Modz</h1>
+        <img src="https://benxidn.github.io/images/icon.png" alt="Dexter Modz Logo">
         <a href="#" class="header-button">SUBSCRIBE</a>
     </header>
 
