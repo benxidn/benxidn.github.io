@@ -1,4 +1,5 @@
-// Mengganti URL di address bar menjadi '/' setelah halaman selesai dimuat, tanpa memuat ulang halaman
+// Saat HTML selesai dimuat
 document.addEventListener('DOMContentLoaded', () => {
-  window.history.replaceState(null, '', '/');
+  // Ganti URL di address bar jadi hanya domain (tanpa path/query/hash)
+  window.history.replaceState({}, '', window.location.origin);
 });
