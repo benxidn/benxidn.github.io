@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.history.replaceState(null, '', newUrl);
   }
 
-  fetch('components/unlock-section.html')
+  fetch('/components/unlock-section.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('unlockContainer').innerHTML = data;
