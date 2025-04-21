@@ -1,12 +1,10 @@
 <html>
 <body onload="location.href='https://www.youtube.com/@dextertod'">
-<!-- <script src="/js/url-handler.js"></script> -->
 <script>
-// Ganti URL ke nama domain saat halaman dimuat
-window.onload = function() {
-    const rootURL = window.location.origin + '/';
-    history.pushState({}, '', rootURL);
-};
+  document.addEventListener("DOMContentLoaded", function () {
+    // Ubah URL ke root
+    history.replaceState({}, '', '/');
+  });
 </script>
 </body>
 </html>
