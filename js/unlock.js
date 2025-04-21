@@ -1,4 +1,23 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Menghapus Ekstensi .html dari URL di Address Bar
+document.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname;
+
+  if (path.endsWith('/index.html')) {
+    const newPath = path.replace('/index.html', '/');
+    const newUrl = newPath + window.location.search + window.location.hash;
+    window.history.replaceState(null, '', newUrl);
+
+  } else if (path.endsWith('/index')) {
+    const newPath = path.replace('/index', '/');
+    const newUrl = newPath + window.location.search + window.location.hash;
+    window.history.replaceState(null, '', newUrl);
+
+  } else if (path.endsWith('.html')) {
+    const newPath = path.replace(/\.html$/, '');
+    const newUrl = newPath + window.location.search + window.location.hash;
+    window.history.replaceState(null, '', newUrl);
+  }
+
   // Load komponen dari unlock-section.html
   fetch('/components/unlock-section.html')
     .then(response => response.text())
