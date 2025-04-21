@@ -3,76 +3,24 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dexter Modz</title>
-  
+
   <!-- Fonts & Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="/css/unlock.css">
-  <link rel="shortcut icon" href="/images/logo.png">
+  <link rel="stylesheet" href="/css/unlock.css" />
+  <link rel="shortcut icon" href="/images/logo.png" />
 </head>
 
 <body>
+  <!-- Container to load unlock component -->
+  <div id="unlockContainer"></div>
 
-  <!-- Header -->
-  <header>
-    <a class="title" href="/">Dexter Modz</a>
-    <a class="header-subscribe" href="#" id="subscribeLink">Subscribe</a>
-  </header>
-
-  <!-- Main Content -->
-  <div class="wrapper">
-    <div class="container">
-      
-      <!-- Section Title -->
-      <div class="section-title">
-        <h2>Unlock Link</h2>
-        <p>Complete the actions and unlock the link</p>
-      </div>
-
-      <!-- Subscribe Buttons -->
-      <a id="btn1" class="button" href="#">
-        <i class="fab fa-youtube"></i>
-        Subscribe On YouTube
-        <i class="fas fa-chevron-right icon-right"></i>
-      </a>
-      <a id="btn2" class="button" href="#">
-        <i class="fab fa-youtube"></i>
-        Subscribe On YouTube
-        <i class="fas fa-chevron-right icon-right"></i>
-      </a>
-      <a id="btn3" class="button" href="#">
-        <i class="fab fa-youtube"></i>
-        Subscribe On YouTube
-        <i class="fas fa-chevron-right icon-right"></i>
-      </a>
-      <a id="btn4" class="button" href="#">
-        <i class="fab fa-youtube"></i>
-        Subscribe On YouTube
-        <i class="fas fa-chevron-right icon-right"></i>
-      </a>
-
-      <!-- Progress Display -->
-      <div class="progress-text" id="progressText">Unlock progress: 0/4</div>
-      <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
-      </div>
-
-      <!-- Unlock Button -->
-      <a id="goBtn" class="button go-button" href="unlock-2.html">
-        <i class="fas fa-lock"></i>
-        Unlock Link
-        <i class="fas fa-link icon-right"></i>
-      </a>      
-      
-    </div>
-  </div>
-
-  <!-- Script -->
+  <!-- JavaScript -->
   <script src="/js/unlock.js"></script>
-  
 </body>
+
 </html>
