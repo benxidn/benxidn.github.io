@@ -1,16 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Menetapkan URL untuk "Dexter Modz" dan "Subscribe"
-  document.getElementById('titleLink').href = 'https://benxidn.github.io';
+  document.getElementById('titleLink').href = '/';
   document.getElementById('subscribeLink').href = '/redirect/channel1.html';
 
-  // Array untuk link YouTube dan halaman untuk unlock
+  // Array untuk link YouTube
   const youtubeLinks = [
     "/redirect/channel1.html",
     "/redirect/channel2.html",
     "/redirect/channel3.html",
     "/redirect/channel4.html"
   ];
-  const goLink = "sub2.html";
   
   const subscribeButtons = [
     document.getElementById('btn1'),
@@ -48,13 +47,12 @@ document.addEventListener("DOMContentLoaded", function() {
   
         if (currentProgress === totalProgress) {
           goButton.classList.add('active');
-          goButton.href = goLink;
         }
       }, 3000);
     });
   });
   
-  // Event listener untuk tombol unlock
+  // Cegah klik jika progress belum lengkap
   goButton.addEventListener('click', (e) => {
     if (currentProgress < totalProgress) {
       e.preventDefault();
@@ -67,4 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const percent = (currentProgress / totalProgress) * 100;
     progressBar.style.width = `${percent}%`;
   }
+
+  // Ubah URL di address bar ke domain root saat halaman dimuat
+  history.replaceState(null, '', '/');
 });
