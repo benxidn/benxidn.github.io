@@ -4,25 +4,17 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.text())
     .then(data => {
       document.getElementById('unlockContainer').innerHTML = data;
-
-      // Jalankan semua logika setelah konten dimuat
-      initUnlockLogic();
+      initUnlockLogic(); // Jalankan semua logika setelah konten dimuat
     });
 
   function initUnlockLogic() {
-    // Ganti URL ke nama domain saat halaman dimuat
-    window.onload = function () {
-      const rootURL = window.location.origin + '/';
-      history.pushState({}, '', rootURL);
-    };
-
-    // Menetapkan URL untuk "Subscribe"
+    // Set URL untuk tombol Subscribe utama
     const subscribeLink = document.getElementById('subscribeLink');
     if (subscribeLink) {
       subscribeLink.href = '/redirect/channel1.html';
     }
 
-    // Array link YouTube
+    // Daftar link redirect YouTube
     const youtubeLinks = [
       "/redirect/channel1.html",
       "/redirect/channel2.html",
@@ -30,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "/redirect/channel4.html"
     ];
 
+    // Tombol subscribe individual
     const subscribeButtons = [
       document.getElementById('btn1'),
       document.getElementById('btn2'),
@@ -37,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById('btn4')
     ];
 
+    // Elemen tombol GO dan progress
     const goButton = document.getElementById('goBtn');
     const progressText = document.getElementById('progressText');
     const progressBar = document.getElementById('progressBar');
@@ -44,9 +38,19 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentProgress = 0;
     const totalProgress = subscribeButtons.filter(Boolean).length;
 
-    // Event listener tombol subscribe
+    // Fungsi update progress bar dan teks
+    function updateProgress() {
+      if (progressText && progressBar) {
+        progressText.textContent = `Unlock progress: ${currentProgress}/${totalProgress}`;
+        const percent = (currentProgress / totalProgress) * 100;
+        progressBar.style.width = `${percent}%`;
+      }
+    }
+
+    // Event tombol Subscribe
     subscribeButtons.forEach((button, index) => {
       if (!button) return;
+
       button.addEventListener('click', (e) => {
         e.preventDefault();
         if (index !== currentProgress) return;
@@ -71,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Cegah klik sebelum unlock selesai
+    // Cegah klik pada tombol GO jika belum lengkap
     if (goButton) {
       goButton.addEventListener('click', (e) => {
         if (currentProgress < totalProgress) {
@@ -80,28 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Fungsi untuk update progress
-    function updateProgress() {
-      if (progressText && progressBar) {
-        progressText.textContent = `Unlock progress: ${currentProgress}/${totalProgress}`;
-        const percent = (currentProgress / totalProgress) * 100;
-        progressBar.style.width = `${percent}%`;
-      }
-    }
-
-    // Anti klik kanan, drag, dan tahan mouse
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    });
-
-    document.addEventListener('dragstart', function(e) {
-      e.preventDefault();
-    });
-
-    document.addEventListener('mousedown', function(e) {
-      if (e.which === 1) {
-        e.preventDefault();
-      }
+    // Nonaktifkan klik kanan, drag, dan tahan mouse kiri
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+    document.addEventListener('dragstart', (e) => e.preventDefault());
+    document.addEventListener('mousedown', (e) => {
+      if (e.which === 1) e.preventDefault();
     });
   }
 });
