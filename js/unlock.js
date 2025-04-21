@@ -1,4 +1,10 @@
-const youtubeLinks = [
+document.addEventListener("DOMContentLoaded", function() {
+  // Menetapkan URL untuk "Dexter Modz" dan "Subscribe"
+  document.getElementById('titleLink').href = 'https://benxidn.github.io';
+  document.getElementById('subscribeLink').href = '/redirect/channel1.html';
+
+  // Array untuk link YouTube dan halaman untuk unlock
+  const youtubeLinks = [
     "/redirect/channel1.html",
     "/redirect/channel2.html",
     "/redirect/channel3.html",
@@ -20,16 +26,19 @@ const youtubeLinks = [
   let currentProgress = 0;
   const totalProgress = subscribeButtons.length;
   
+  // Event listener untuk tombol subscribe
   subscribeButtons.forEach((button, index) => {
     button.addEventListener('click', (e) => {
       e.preventDefault();
       if (index !== currentProgress) return;
-  
+
+      // Buka link YouTube dalam tab baru
       window.open(youtubeLinks[index], '_blank');
   
       const iconRight = button.querySelector('.icon-right');
       iconRight.className = 'fas fa-spinner fa-spin icon-right';
   
+      // Simulasikan waktu untuk proses
       setTimeout(() => {
         iconRight.className = 'fas fa-check-circle icon-right';
         button.classList.add('clicked');
@@ -45,15 +54,17 @@ const youtubeLinks = [
     });
   });
   
+  // Event listener untuk tombol unlock
   goButton.addEventListener('click', (e) => {
     if (currentProgress < totalProgress) {
       e.preventDefault();
     }
   });
   
+  // Fungsi untuk update progress
   function updateProgress() {
     progressText.textContent = `Unlock progress: ${currentProgress}/${totalProgress}`;
     const percent = (currentProgress / totalProgress) * 100;
     progressBar.style.width = `${percent}%`;
   }
-  
+});
