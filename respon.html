@@ -72,8 +72,9 @@
 
         /* Grid untuk Link Download */
         .downloads {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr); /* Menampilkan 6 item per baris di desktop */
+            display: flex;  /* Menggunakan flexbox untuk menyusun item secara horizontal */
+            justify-content: space-between;
+            flex-wrap: wrap; /* Membuat item tetap fleksibel */
             gap: 20px;
             margin-top: 40px;
         }
@@ -83,9 +84,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            flex: 1 1 16%; /* Membuat item memiliki lebar yang fleksibel, 16% untuk setiap item di desktop */
             text-align: center;
         }
 
@@ -109,12 +108,6 @@
             background-color: #e68900;
         }
 
-        .download-item p {
-            font-size: 1em;
-            margin-top: 10px;
-            color: #666;
-        }
-
         /* Footer */
         footer {
             background-color: #333;
@@ -133,10 +126,12 @@
         /* Responsivitas */
         @media (max-width: 768px) {
             .downloads {
-                grid-template-columns: repeat(3, 1fr); /* Menampilkan 3 item per baris di tablet */
+                flex-direction: row; /* Menyusun item secara horizontal pada tablet */
+                justify-content: space-evenly;
             }
 
             .download-item {
+                flex: 1 1 22%; /* Mengatur ukuran item pada tablet */
                 padding: 15px;
             }
 
@@ -160,11 +155,13 @@
 
         @media (max-width: 480px) {
             .downloads {
-                grid-template-columns: repeat(3, 1fr);  /* Menampilkan 3 item per baris di mobile */
-                gap: 15px;
+                flex-direction: row; /* Menyusun item secara horizontal pada mobile */
+                justify-content: space-evenly;
+                gap: 10px;
             }
 
             .download-item {
+                flex: 1 1 30%; /* Mengatur ukuran item di mobile */
                 padding: 10px;
                 font-size: 0.8em; /* Kecilkan ukuran teks pada item */
             }
@@ -182,29 +179,8 @@
                 height: 40px;  /* Kecilkan gambar pada mobile */
             }
 
-            header h1 {
-                display: none; /* Menghapus teks header */
-            }
-
             footer p {
                 font-size: 0.8em;
-            }
-
-            /* Susun item secara horizontal di mobile dan desktop */
-            .downloads {
-                display: flex;
-                flex-wrap: wrap;  /* Membuat item bisa melipat ke baris berikutnya */
-                justify-content: space-between;
-                gap: 10px;
-                margin-top: 20px;
-            }
-
-            .download-item {
-                width: 32%; /* Menyesuaikan lebar item di mobile dengan 3 kolom */
-                padding: 8px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
             }
         }
     </style>
@@ -222,40 +198,28 @@
         <p>Ini adalah paragraf yang menjelaskan lebih lanjut tentang halaman ini. Halaman ini responsif di desktop dan mobile.</p>
 
         <div class="downloads">
-            <!-- Item 1 -->
             <div class="download-item">
                 <h3>Link Download 1</h3>
-                <p>Ini adalah deskripsi singkat untuk link download 1.</p> <!-- Teks tambahan di bawah judul -->
                 <a href="#">Download 1</a>
             </div>
-            <!-- Item 2 -->
             <div class="download-item">
                 <h3>Link Download 2</h3>
-                <p>Ini adalah deskripsi singkat untuk link download 2.</p> <!-- Teks tambahan di bawah judul -->
                 <a href="#">Download 2</a>
             </div>
-            <!-- Item 3 -->
             <div class="download-item">
                 <h3>Link Download 3</h3>
-                <p>Ini adalah deskripsi singkat untuk link download 3.</p> <!-- Teks tambahan di bawah judul -->
                 <a href="#">Download 3</a>
             </div>
-            <!-- Item 4 -->
             <div class="download-item">
                 <h3>Link Download 4</h3>
-                <p>Ini adalah deskripsi singkat untuk link download 4.</p> <!-- Teks tambahan di bawah judul -->
                 <a href="#">Download 4</a>
             </div>
-            <!-- Item 5 -->
             <div class="download-item">
                 <h3>Link Download 5</h3>
-                <p>Ini adalah deskripsi singkat untuk link download 5.</p> <!-- Teks tambahan di bawah judul -->
                 <a href="#">Download 5</a>
             </div>
-            <!-- Item 6 -->
             <div class="download-item">
                 <h3>Link Download 6</h3>
-                <p>Ini adalah deskripsi singkat untuk link download 6.</p> <!-- Teks tambahan di bawah judul -->
                 <a href="#">Download 6</a>
             </div>
         </div>
