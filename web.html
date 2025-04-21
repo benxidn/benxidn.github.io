@@ -7,243 +7,267 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Style umum */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #100027; /* Background baru */
-    color: white; /* Warna teks putih */
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #100027; /* Background baru */
+            color: white; /* Warna teks putih */
+        }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #fff; /* Warna header putih */
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-sizing: border-box;
-}
-header img {
-    width: 150px; /* Ukuran icon diperbesar */
-    height: auto; /* Tinggi menyesuaikan */
-    object-fit: contain;
-}
-header button {
-    background-color: red; /* Warna tombol subscribe merah */
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 50px; /* Membuat tombol bulat */
-    color: white; /* Warna teks tombol putih */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Efek transisi halus */
-}
-header button:hover {
-    background-color: #7735D5; /* Warna tombol berubah saat hover */
-    color: white; /* Teks tetap putih */
-}
-header button:active {
-    background-color: #7735D5; /* Warna tombol berubah saat klik */
-    color: white;
-}
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #fff; /* Warna header putih */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        header img {
+            width: 150px; /* Ukuran icon diperbesar */
+            height: auto; /* Tinggi menyesuaikan */
+            object-fit: contain;
+        }
+        header button {
+            background-color: red; /* Warna tombol subscribe merah */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50px; /* Membuat tombol bulat */
+            color: white; /* Warna teks tombol putih */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Efek transisi halus */
+        }
+        header button:hover {
+            background-color: #7735D5; /* Warna tombol berubah saat hover */
+            color: white; /* Teks tetap putih */
+        }
+        header button:active {
+            background-color: #7735D5; /* Warna tombol berubah saat klik */
+            color: white;
+        }
 
-/* Konten Intro */
-.intro {
-    margin-top: 120px; /* Menambahkan jarak lebih besar antara intro dan header */
-    text-align: left;
-    padding: 0 40px; /* Menambahkan padding kiri dan kanan untuk konsistensi */
-}
-.intro img {
-    width: 100%; /* Lebar gambar penuh layar */
-    height: auto; /* Tinggi menyesuaikan proporsional */
-    object-fit: cover; /* Gambar tetap proporsional dengan crop yang sesuai */
-    border-radius: 20px; /* Menambahkan radius pada gambar */
-    margin-bottom: 20px; /* Menambahkan jarak bawah pada gambar */
-}
-.intro h1 {
-    font-size: 36px;
-}
-.intro p {
-    font-size: 18px;
-    color: #7735D5; /* Warna teks intro */
-}
+        /* Konten Intro */
+        .intro {
+            margin-top: 120px; /* Menambahkan jarak lebih besar antara intro dan header */
+            text-align: left;
+            padding: 0 40px; /* Menambahkan padding kiri dan kanan untuk konsistensi */
+        }
+        .intro img {
+            width: 100%; /* Lebar gambar penuh layar */
+            height: auto; /* Tinggi menyesuaikan proporsional */
+            object-fit: cover; /* Gambar tetap proporsional dengan crop yang sesuai */
+            border-radius: 20px; /* Menambahkan radius pada gambar */
+            margin-bottom: 20px; /* Menambahkan jarak bawah pada gambar */
+        }
+        .intro h1 {
+            font-size: 36px;
+        }
+        .intro p {
+            font-size: 18px;
+            color: #7735D5; /* Warna teks intro */
+        }
 
-/* Box Donasi */
-.donation-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #3E2D5A; /* Warna box donasi */
-    padding: 20px;
-    margin: 20px 40px;
-    border-radius: 10px;
-    margin-top: 40px; /* Menambahkan jarak antara donasi dan konten sebelumnya */
-}
-.donation-box img {
-    width: 150px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 10px;
-}
-.donation-box .donation-text {
-    color: white;
-    margin-left: 20px;
-    flex-grow: 1;
-}
-.donation-box .donation-text h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-.donation-box .donation-text p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-.donation-box button {
-    background-color: #009DF8; /* Warna tombol di box donasi */
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    color: white; /* Warna teks tombol putih */
-    transition: background-color 0.3s ease;
-}
-.donation-box button:hover {
-    background-color: #7735D5; /* Tombol donasi berubah warna saat hover */
-}
+        /* Box Donasi */
+        .donation-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3E2D5A; /* Warna box donasi */
+            padding: 20px;
+            margin: 20px 40px;
+            border-radius: 10px;
+            margin-top: 40px; /* Menambahkan jarak antara donasi dan konten sebelumnya */
+        }
+        .donation-box img {
+            width: 150px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+        .donation-box .donation-text {
+            color: white;
+            margin-left: 20px;
+            flex-grow: 1;
+        }
+        .donation-box .donation-text h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .donation-box .donation-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .donation-box button {
+            background-color: #009DF8; /* Warna tombol di box donasi */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            color: white; /* Warna teks tombol putih */
+            transition: background-color 0.3s ease;
+        }
+        .donation-box button:hover {
+            background-color: #7735D5; /* Tombol donasi berubah warna saat hover */
+        }
 
-/* Link Download (Format box dan susun horizontal) */
-.downloads-section {
-    margin: 40px 40px; /* Menambahkan jarak antara section dan footer */
-    text-align: left; /* Rata kiri */
-}
-.downloads-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: white; /* Warna h2 menjadi putih */
-}
-/* Link Download (Format box dan susun horizontal) */
-.downloads-container {
-    display: flex; /* Flexbox untuk menyusun item secara horizontal */
-    gap: 20px; /* Jarak antar item */
-    flex-wrap: wrap; /* Membuat item membungkus ke baris berikutnya jika ruang terbatas */
-}
-/* Link Download (Format box dan susun horizontal) */
-.download-item {
-    background-color: #fff; /* Warna box item menjadi putih */
-    color: black; /* Warna teks box item menjadi hitam */
-    border-radius: 10px;
-    padding: 10px; /* Padding dikurangi */
-    width: 200px; /* Lebar box lebih ramping */
-    height: 350px; /* Height box disesuaikan lebih tinggi */
-    display: flex;
-    flex-direction: column; /* Mengatur elemen di dalam box secara vertikal */
-    justify-content: center; /* Mengatur elemen di dalam box agar rata tengah */
-    align-items: center; /* Menyusun item agar gambar dan konten ada di tengah */
-    text-align: center;
-    box-sizing: border-box;
-}
-.download-item img {
-    width: 100px; /* Ukuran gambar menjadi lebih kecil */
-    height: auto; /* Tinggi tetap proporsional */
-    object-fit: cover; /* Menjaga proporsi gambar */
-    border-radius: 10px;
-    margin-bottom: 10px; /* Menambahkan jarak bawah gambar */
-}
-.download-item h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-.download-item p {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-.download-item button {
-    background-color: #7735D5; /* Warna tombol download */
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: auto; /* Menempelkan tombol ke bawah */
-    width: 100%; /* Membuat tombol memenuhi lebar box */
-    color: white; /* Warna teks tombol putih */
-    transition: background-color 0.3s ease;
-}
-.download-item button:hover {
-    background-color: #5a29c7; /* Warna tombol saat hover */
-}
+        /* Link Download */
+        .downloads-section {
+            margin: 40px 40px; /* Menambahkan jarak antara section dan footer */
+            text-align: left; /* Rata kiri */
+        }
+        .downloads-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: white; /* Warna h2 menjadi putih */
+        }
 
-/* Footer */
-footer {
-    padding: 20px;
-    background-color: #fff; /* Warna footer putih */
-    color: #000; /* Warna teks footer hitam */
-    margin-bottom: 0; /* Menghilangkan margin bawah */
-    margin-top: 60px; /* Menambahkan margin atas untuk jarak dengan download-section */
-}
-footer img {
-    width: 150px; /* Ukuran icon diperbesar */
-    height: auto;
-    vertical-align: middle;
-    object-fit: contain;
-}
-footer h2 {
-    margin-top: 10px;
-}
-.social-icons {
-    margin-top: 10px;
-}
-.social-icons i {
-    margin-right: 10px;
-    font-size: 24px;
-    color: #000; /* Warna ikon sosial media hitam */
-    transition: color 0.3s ease;
-}
-.social-icons i:hover {
-    color: #7735D5; /* Ikon sosial media berubah warna saat hover */
-}
+        .downloads-container {
+            display: flex; /* Flexbox untuk menyusun item secara horizontal */
+            gap: 20px; /* Jarak antar item */
+            flex-wrap: wrap; /* Membuat item membungkus ke baris berikutnya jika ruang terbatas */
+        }
 
-/* Copyright Section */
-.copyright {
-    background-color: #7735D5; /* Background copyright menjadi #7735D5 */
-    color: white; /* Warna teks copyright menjadi putih */
-    text-align: center;
-    padding: 10px;
-}
+        .download-item {
+            background-color: #fff; /* Warna box item menjadi putih */
+            color: black; /* Warna teks box item menjadi hitam */
+            border-radius: 10px;
+            padding: 10px; /* Padding dikurangi */
+            width: 200px; /* Lebar box lebih ramping */
+            height: 350px; /* Height box disesuaikan lebih tinggi */
+            display: flex;
+            flex-direction: column; /* Mengatur elemen di dalam box secara vertikal */
+            justify-content: center; /* Mengatur elemen di dalam box agar rata tengah */
+            align-items: center; /* Menyusun item agar gambar dan konten ada di tengah */
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .download-item img {
+            width: 100px; /* Ukuran gambar menjadi lebih kecil */
+            height: auto; /* Tinggi tetap proporsional */
+            object-fit: cover; /* Menjaga proporsi gambar */
+            border-radius: 10px;
+            margin-bottom: 10px; /* Menambahkan jarak bawah gambar */
+        }
+        .download-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .download-item p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .download-item button {
+            background-color: #7735D5; /* Warna tombol download */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: auto; /* Menempelkan tombol ke bawah */
+            width: 100%; /* Membuat tombol memenuhi lebar box */
+            color: white; /* Warna teks tombol putih */
+            transition: background-color 0.3s ease;
+        }
+        .download-item button:hover {
+            background-color: #5a29c7; /* Warna tombol saat hover */
+        }
 
-/* Responsif untuk layar kecil */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-    header button {
-        margin-top: 10px;
-    }
-    /* .downloads-container {
-        flex-direction: column; Menyusun item vertikal pada layar kecil
-        align-items: center;
-    } */
-    .downloads-container {
-        justify-content: center; /* Menyusun item agar rata tengah */
-    }
-    
-    .download-item {
-        width: 30%; /* Membatasi lebar item untuk 3 item per baris */
-    }
-    
-    /* Mengatur tampilan item untuk lebih dari 3 item */
-    .download-item:nth-child(n+4) {
-        margin-top: 20px; /* Memberikan jarak pada item yang tampil di baris berikutnya */
-    }
-}
+        /* Footer */
+        footer {
+            padding: 20px;
+            background-color: #fff; /* Warna footer putih */
+            color: #000; /* Warna teks footer hitam */
+            margin-bottom: 0; /* Menghilangkan margin bawah */
+            margin-top: 60px; /* Menambahkan margin atas untuk jarak dengan download-section */
+        }
+        footer img {
+            width: 150px; /* Ukuran icon diperbesar */
+            height: auto;
+            vertical-align: middle;
+            object-fit: contain;
+        }
+        footer h2 {
+            margin-top: 10px;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons i {
+            margin-right: 10px;
+            font-size: 24px;
+            color: #000; /* Warna ikon sosial media hitam */
+            transition: color 0.3s ease;
+        }
+        .social-icons i:hover {
+            color: #7735D5; /* Ikon sosial media berubah warna saat hover */
+        }
 
+        /* Copyright Section */
+        .copyright {
+            background-color: #7735D5; /* Background copyright menjadi #7735D5 */
+            color: white; /* Warna teks copyright menjadi putih */
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            header img {
+                width: 120px; /* Mengurangi ukuran gambar header pada perangkat kecil */
+            }
+            header button {
+                margin-top: 10px;
+                font-size: 14px;
+            }
+
+            .intro img {
+                width: 100%; /* Gambar tetap lebar penuh */
+                height: auto; /* Menjaga proporsi gambar */
+            }
+
+            .donation-box {
+                flex-direction: column; /* Donasi box menjadi kolom di perangkat kecil */
+                align-items: center;
+            }
+            .donation-box img {
+                width: 100px; /* Menyesuaikan ukuran gambar */
+            }
+
+            .downloads-section h2 {
+                font-size: 24px;
+            }
+            .downloads-container {
+                flex-direction: column;
+            }
+            .download-item {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+                height: auto; /* Menyesuaikan tinggi box */
+            }
+            .download-item button {
+                width: 100%;
+            }
+
+            footer {
+                text-align: center; /* Rata tengah footer */
+            }
+            .social-icons i {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
