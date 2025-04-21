@@ -154,7 +154,7 @@
 
         @media (max-width: 480px) {
             .downloads {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(3, 1fr);  /* Susun 3 item per baris di mobile */
                 gap: 15px;
             }
 
@@ -187,14 +187,14 @@
             /* Susun item secara horizontal di mobile dan desktop */
             .downloads {
                 display: flex;
-                flex-direction: row;
+                flex-wrap: wrap;  /* Membungkus item di bawah */
                 justify-content: space-between;
                 gap: 10px;
                 margin-top: 20px;
             }
 
             .download-item {
-                width: 100%; /* Menyesuaikan lebar item di mobile */
+                width: 31%; /* Menyesuaikan lebar item di mobile */
                 padding: 8px;
                 display: flex;
                 flex-direction: column;
@@ -227,6 +227,18 @@
             <div class="download-item">
                 <h3>Link Download 3</h3>
                 <a href="#">Download 3</a>
+            </div>
+            <div class="download-item">
+                <h3>Link Download 4</h3>
+                <a href="#">Download 4</a>
+            </div>
+            <div class="download-item">
+                <h3>Link Download 5</h3>
+                <a href="#">Download 5</a>
+            </div>
+            <div class="download-item">
+                <h3>Link Download 6</h3>
+                <a href="#">Download 6</a>
             </div>
         </div>
     </div>
