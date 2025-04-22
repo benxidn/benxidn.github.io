@@ -44,10 +44,10 @@ fetch('/components/free.html')
     document.getElementById("free").innerHTML = data;
   });
 
-fetch('/components/key.html')
+fetch('/components/key-allert.html')
   .then(response => response.text())
   .then(data => {
-    document.getElementById("key").innerHTML = data;
+    document.getElementById("key-allert").innerHTML = data;
   })
   .catch(error => {
     console.error("Gagal memuat konten:", error);
