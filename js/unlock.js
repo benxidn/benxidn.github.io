@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(html => document.body.insertAdjacentHTML('afterbegin', html));
 
   // Deteksi halaman unlock-2 (dengan 1 tombol)
-  const isUnlockPage = path.includes('unlock-2');
+  const isUnlockPage = path.includes('unlock-1');
 
   // Load tombol subscribe sesuai halaman
   const subscribeFile = isUnlockPage
