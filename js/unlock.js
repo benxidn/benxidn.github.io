@@ -1,16 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const path = window.location.pathname;
+  // Ganti URL di address bar jadi hanya domain (tanpa path/query/hash)
+  window.history.replaceState({}, '', window.location.origin);
 
-  // Bersihkan URL dari index.html atau .html
-  // if (path.endsWith('/index.html') || path.endsWith('/index')) {
-  //   const newPath = path.replace(/\/index(\.html)?$/, '/');
-  //   const newUrl = newPath + window.location.search + window.location.hash;
-  //   window.history.replaceState(null, '', newUrl);
-  // } else if (path.endsWith('.html')) {
-  //   const newPath = path.replace(/\.html$/, '');
-  //   const newUrl = newPath + window.location.search + window.location.hash;
-  //   window.history.replaceState(null, '', newUrl);
-  // }
+  const path = window.location.pathname;
 
   // Load header
   fetch('/components/new-header.html')
