@@ -251,6 +251,10 @@ html, body {
   font-style: italic;
   border-radius: 10px;
 }
+.action-in p.pass-key {
+  display: flex;
+  padding: 0;
+}
 .action-in span {
   width: 100%;
   margin: 15px;
