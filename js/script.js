@@ -30,19 +30,19 @@ fetch('/components/footer.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById("footer").innerHTML = data;
-  })
+  });
 
 fetch('/components/tutor-download.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById("download").innerHTML = data;
-  })
+  });
 
 fetch('/components/free.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById("free").innerHTML = data;
-  })
+  });
 
 fetch('/components/key.html')
   .then(response => response.text())
@@ -53,7 +53,7 @@ fetch('/components/key.html')
     console.error("Gagal memuat konten:", error);
   });
 
-// Setelah halaman dimuat, tunggu hingga elemen #tahun tersedia, lalu sisipkan tahun saat ini
+// Sisipkan tahun saat ini ke elemen dengan ID #tahun
 document.addEventListener("DOMContentLoaded", () => {
   const tahunSekarang = new Date().getFullYear();
   const cekTahun = setInterval(() => {
@@ -67,66 +67,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Fungsi navigasi ke berbagai link
 function Home() {
-   window.open("/", "_self");
- }
- 
- function Channel() {
-   window.open("/redirect/channel1", "_self");
- }
- 
- function Whatsapp() {
-   window.open("https://chat.whatsapp.com/CrqhFjhKUEM7LMGqx8m8sU", "_self");
- }
- 
- function AntiBan() {
-   window.open("https://youtu.be/szocEpRmGTI", "_blank");
- }
- 
- function Download() {
-   window.open("https://youtu.be/Hl3Gu1IejBg", "_blank");
- }
- 
- function InstallAPK() {
-   window.open("https://youtu.be/gyDQEhZl4es", "_blank");
- }
- 
- function AddScript() {
-   window.open("https://youtu.be/6aqGQwdazVg", "_blank");
- }
- 
- function Server5K() {
-   window.open("https://youtu.be/EoyTJI0PyRU", "_blank");
- }
- 
- function BeliAkun() {
-   window.open("https://wa.me/6281338214136?text=Halo+min+saya+mau+beli+AKUN+ML+SERVER+5K+harga+5K+!!!", "_blank");
- }
- 
- function Drone() {
-   window.open("/redirect/channel1", "_self");
- }
- 
- function Fakecez() {
-   window.open("/redirect/channel1", "_self");
- }
- 
- function Dexter() {
-   window.open("/redirect/channel1", "_self");
- }
- 
- // Fungsi salin teks
- let stringText = '000';
- function copyBtn() {
-    navigator.clipboard.writeText(stringText);
-    }
+  window.open("/", "_self");
+}
 
- let stringText2  = 'SUBSCRIBE';
- function copyBtn2() {
-    navigator.clipboard.writeText(stringText2);
-    }
+function Channel() {
+  window.open("/redirect/channel1", "_self");
+}
 
-    let stringText3  = '1234';
-    function copyBtn3() {
-       navigator.clipboard.writeText(stringText3);
-       }
- 
+function Whatsapp() {
+  window.open("https://chat.whatsapp.com/CrqhFjhKUEM7LMGqx8m8sU", "_self");
+}
+
+function AntiBan() {
+  window.open("https://youtu.be/szocEpRmGTI", "_blank");
+}
+
+function Download() {
+  window.open("https://youtu.be/Hl3Gu1IejBg", "_blank");
+}
+
+function InstallAPK() {
+  window.open("https://youtu.be/gyDQEhZl4es", "_blank");
+}
+
+function AddScript() {
+  window.open("https://youtu.be/6aqGQwdazVg", "_blank");
+}
+
+function Server5K() {
+  window.open("https://youtu.be/EoyTJI0PyRU", "_blank");
+}
+
+function BeliAkun() {
+  window.open("https://wa.me/6281338214136?text=Halo+min+saya+mau+beli+AKUN+ML+SERVER+5K+harga+5K+!!!", "_blank");
+}
+
+function Drone() {
+  window.open("/redirect/channel1", "_self");
+}
+
+function Fakecez() {
+  window.open("/redirect/channel1", "_self");
+}
+
+function Dexter() {
+  window.open("/redirect/channel1", "_self");
+}
+
+// Fungsi untuk copy teks dari elemen dengan ID tertentu
+function copy(id) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    alert(`${id === 'pass' ? 'Password' : 'Key Login'} dicopy!`);
+  });
+}
