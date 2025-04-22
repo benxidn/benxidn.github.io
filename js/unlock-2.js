@@ -1,15 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
   
-    if (path.endsWith('/index.html')) {
-      const newPath = path.replace('/index.html', '/');
-      const newUrl = newPath + window.location.search + window.location.hash;
-      window.history.replaceState(null, '', newUrl);
-    } else if (path.endsWith('/index')) {
-      const newPath = path.replace('/index', '/');
-      const newUrl = newPath + window.location.search + window.location.hash;
-      window.history.replaceState(null, '', newUrl);
-    } else if (path.endsWith('.html')) {
+    // Ganti URL agar path tidak mengandung .html
+    if (path.endsWith('.html')) {
       const newPath = path.replace(/\.html$/, '');
       const newUrl = newPath + window.location.search + window.location.hash;
       window.history.replaceState(null, '', newUrl);
@@ -25,17 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function initUnlockLogic() {
       const subscribeLink = document.getElementById('subscribeLink');
       if (subscribeLink) {
-        subscribeLink.href = '/redirect/channel1.html';
+        subscribeLink.href = '/redirect/channel1.html';  // Sesuaikan URL tujuan
       }
   
-      const youtubeLinks = ["/redirect/channel1.html"];
-      const subscribeButtons = [document.getElementById('btn1')];
+      const subscribeButton = document.getElementById('btn1');  // Hanya satu tombol subscribe
       const goButton = document.getElementById('goBtn');
       const progressText = document.getElementById('progressText');
       const progressBar = document.getElementById('progressBar');
   
       let currentProgress = 0;
-      const totalProgress = 1;
+      const totalProgress = 1;  // Hanya satu progress
   
       function updateProgress() {
         if (progressText && progressBar) {
@@ -45,22 +37,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
   
-      subscribeButtons.forEach((button, index) => {
-        if (!button) return;
-  
-        button.addEventListener('click', (e) => {
+      if (subscribeButton) {
+        subscribeButton.addEventListener('click', (e) => {
           e.preventDefault();
-          window.open(youtubeLinks[index], '_blank');
-          const iconRight = button.querySelector('.icon-right');
   
-          if (!button.classList.contains('counted')) {
+          // Buka link YouTube
+          window.open('/redirect/channel1.html', '_blank');
+  
+          const iconRight = subscribeButton.querySelector('.icon-right');
+          if (!subscribeButton.classList.contains('counted')) {
             iconRight.className = 'fas fa-spinner fa-spin icon-right';
   
             setTimeout(() => {
               iconRight.className = 'fas fa-check-circle icon-right';
-              button.classList.add('counted');
-              button.style.backgroundColor = '#333';
-              button.style.color = '#aaa';
+              subscribeButton.classList.add('counted');
+              subscribeButton.style.backgroundColor = '#333';
+              subscribeButton.style.color = '#aaa';
               iconRight.style.color = '#aaa';
   
               currentProgress++;
@@ -74,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             iconRight.className = 'fas fa-check-circle icon-right';
           }
         });
-      });
+      }
   
       if (goButton) {
         goButton.addEventListener('click', (e) => {
