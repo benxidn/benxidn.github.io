@@ -404,15 +404,3 @@ body,
   font-size: 25px;
   background: #FF0000;
 }
-
-/* PASSWOR OR KEY */
-
-.pass-area {
-  display: flex;
-  padding: 0;
-  font-style: normal;
-}
-.password {
-  width: 100%;
-  margin: 15px;
-}
