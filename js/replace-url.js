@@ -1,5 +1,5 @@
-// Saat HTML selesai dimuat
+// Fungsi ini akan mengganti URL di address bar menjadi hanya domain tanpa path, query, atau hash
+// Ketika halaman selesai dimuat, URL akan diubah menjadi hanya origin (domain) tanpa memuat ulang halaman.
 document.addEventListener('DOMContentLoaded', () => {
-  // Ganti URL di address bar jadi hanya domain (tanpa path/query/hash)
   window.history.replaceState({}, '', window.location.origin);
 });
