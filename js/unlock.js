@@ -1,8 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Ganti URL di address bar jadi hanya domain (tanpa path/query/hash)
-  window.history.replaceState({}, '', window.location.origin);
-
   const path = window.location.pathname;
+
+  // Bersihkan URL dari index.html atau .html
+  // if (path.endsWith('/index.html') || path.endsWith('/index')) {
+  //   const newPath = path.replace(/\/index(\.html)?$/, '/');
+  //   const newUrl = newPath + window.location.search + window.location.hash;
+  //   window.history.replaceState(null, '', newUrl);
+  // } else if (path.endsWith('.html')) {
+  //   const newPath = path.replace(/\.html$/, '');
+  //   const newUrl = newPath + window.location.search + window.location.hash;
+  //   window.history.replaceState(null, '', newUrl);
+  }
 
   // Load header
   fetch('/components/new-header.html')
