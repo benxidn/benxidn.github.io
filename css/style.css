@@ -237,7 +237,7 @@ html, body {
   font-size: 12px;
 }
 .btn-action.copy {
-  width: auto;
+  width: 25%;
   margin: 0;
   border-radius: 0 9px 9px 0;
 }
