@@ -124,4 +124,9 @@ function Home() {
  function copyBtn2() {
     navigator.clipboard.writeText(stringText2);
     }
+
+    let stringText3  = '1234';
+    function copyBtn3() {
+       navigator.clipboard.writeText(stringText3);
+       }
  
