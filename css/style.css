@@ -251,6 +251,11 @@ html, body {
   font-style: italic;
   border-radius: 10px;
 }
+.action-in span {
+  width: 100%;
+  margin: 15px;
+  font-style: normal;
+}
 
 /*COLOR & MORE*/
 
