@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.pathname;
 
-  // Hilangkan .html atau /index dari URL
   if (path.endsWith('/index.html')) {
     const newPath = path.replace('/index.html', '/');
     const newUrl = newPath + window.location.search + window.location.hash;
@@ -16,24 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.history.replaceState(null, '', newUrl);
   }
 
-  // Fungsi umum untuk load komponen
-  function loadComponent(url, containerId) {
-    fetch(url)
-      .then(response => response.text())
-      .then(data => {
-        const container = document.getElementById(containerId);
-        if (container) {
-          container.innerHTML = data;
-          initUnlockLogic();
-        }
-      });
-  }
+  fetch('/components/unlock-section.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('unlockContainer').innerHTML = data;
+      initUnlockLogic();
+    });
 
-  // Muat dua bagian unlock
-  loadComponent('/components/unlock-section.html', 'unlockContainer');
-  loadComponent('/components/unlock-section-new.html', 'unlockContainerNew');
-
-  // Fungsi logika interaktif setelah load
   function initUnlockLogic() {
     const subscribeLink = document.getElementById('subscribeLink');
     if (subscribeLink) {
@@ -74,10 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       button.addEventListener('click', (e) => {
         e.preventDefault();
+
+        // Buka link YouTube
         window.open(youtubeLinks[index], '_blank');
 
         const iconRight = button.querySelector('.icon-right');
 
+        // Jika belum diklik sebelumnya (belum dihitung)
         if (!button.classList.contains('counted')) {
           iconRight.className = 'fas fa-spinner fa-spin icon-right';
 
@@ -91,11 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
             currentProgress++;
             updateProgress();
 
-            if (currentProgress === totalProgress && goButton) {
+            if (currentProgress === totalProgress) {
               goButton.classList.add('active');
             }
           }, 3000);
         } else {
+          // Jika sudah diklik sebelumnya, langsung tampil centang
           iconRight.className = 'fas fa-check-circle icon-right';
         }
       });
@@ -109,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Anti klik kanan & drag
     document.addEventListener('contextmenu', (e) => e.preventDefault());
     document.addEventListener('dragstart', (e) => e.preventDefault());
     document.addEventListener('mousedown', (e) => {

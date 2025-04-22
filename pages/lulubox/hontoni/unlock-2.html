@@ -16,8 +16,38 @@
 </head>
 
 <body>
-  <!-- Container to load unlock component -->
-  <div id="unlockContainerNew"></div>
+
+  <!-- Header -->
+  <header>
+    <a class="title" href="/">Dexter Modz</a>
+    <a class="header-subscribe" href="#" id="subscribeLink">Subscribe</a>
+  </header>
+
+  <!-- Main Content -->
+  <div class="wrapper">
+    <div class="container">
+
+      <!-- Section Title -->
+      <div class="section-title">
+        <h2>Unlock Link</h2>
+        <p>Complete the action and unlock the link</p>
+      </div>
+
+      <!-- Progress Display -->
+      <div class="progress-text" id="progressText">Unlock progress: 1/1</div>
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar" style="width: 100%;"></div>
+      </div>
+
+      <!-- Unlock Button -->
+      <a id="goBtn" class="button go-button active" href="url-1.html">
+        <i class="fas fa-lock"></i>
+        Unlock Link
+        <i class="fas fa-link icon-right"></i>
+      </a>
+
+    </div>
+  </div>
 
   <!-- Script -->
   <script src="/js/unlock.js"></script>
