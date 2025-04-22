@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Ganti URL di address bar jadi hanya domain (tanpa path/query/hash)
+  window.history.replaceState({}, '', window.location.origin);
+
   const path = window.location.pathname;
 
   // Load header
@@ -55,25 +58,19 @@ document.addEventListener('DOMContentLoaded', () => {
     subscribeButtons.forEach((button, index) => {
       button.addEventListener('click', e => {
         e.preventDefault();
-
         if (index > 0 && !subscribeButtons[index - 1].classList.contains('counted')) return;
-
         window.open(youtubeLinks[index], '_blank');
         const icon = button.querySelector('.icon-right');
-
         if (!button.classList.contains('counted')) {
           icon.className = 'fas fa-spinner fa-spin icon-right';
-
           setTimeout(() => {
             icon.className = 'fas fa-check-circle icon-right';
             button.classList.add('counted');
             button.style.backgroundColor = '#333';
             button.style.color = '#aaa';
             icon.style.color = '#aaa';
-
             currentProgress++;
             updateProgress();
-
             if (currentProgress === totalButtons && goBtn) {
               goBtn.classList.add('active');
             }
