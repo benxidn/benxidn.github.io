@@ -1,12 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.pathname;
 
-  if (path.endsWith('/index.html')) {
-    const newPath = path.replace('/index.html', '/');
-    const newUrl = newPath + window.location.search + window.location.hash;
-    window.history.replaceState(null, '', newUrl);
-  } else if (path.endsWith('/index')) {
-    const newPath = path.replace('/index', '/');
+  // Bersihkan URL dari index.html atau .html
+  if (path.endsWith('/index.html') || path.endsWith('/index')) {
+    const newPath = path.replace(/\/index(\.html)?$/, '/');
     const newUrl = newPath + window.location.search + window.location.hash;
     window.history.replaceState(null, '', newUrl);
   } else if (path.endsWith('.html')) {
@@ -15,17 +12,38 @@ document.addEventListener('DOMContentLoaded', () => {
     window.history.replaceState(null, '', newUrl);
   }
 
-  fetch('/components/unlock-section.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('unlockContainer').innerHTML = data;
-      initUnlockLogic();
+  // Load header
+  fetch('/components/new-header.html')
+    .then(res => res.text())
+    .then(html => document.body.insertAdjacentHTML('afterbegin', html));
+
+  // Deteksi halaman unlock baru (dengan 1 tombol)
+  const isUnlockPage = path.includes('unlock-new');
+
+  // Load tombol subscribe sesuai halaman
+  const subscribeFile = isUnlockPage
+    ? '/components/btn-subscribe-single.html'
+    : '/components/btn-subscribe.html';
+
+  fetch(subscribeFile)
+    .then(res => res.text())
+    .then(html => {
+      const container = document.getElementById('subscribeButtonsContainer');
+      if (container) {
+        container.innerHTML = html;
+        initUnlockLogic(isUnlockPage ? 1 : 4);
+      }
     });
 
-  function initUnlockLogic() {
-    const subscribeLink = document.getElementById('subscribeLink');
-    if (subscribeLink) {
-      subscribeLink.href = '/redirect/channel1.html';
+  function initUnlockLogic(totalButtons) {
+    const goBtn = document.getElementById('goBtn');
+    const progressText = document.getElementById('progressText');
+    const progressBar = document.getElementById('progressBar');
+
+    const subscribeButtons = [];
+    for (let i = 1; i <= totalButtons; i++) {
+      const btn = document.getElementById(`btn${i}`);
+      if (btn) subscribeButtons.push(btn);
     }
 
     const youtubeLinks = [
@@ -35,72 +53,57 @@ document.addEventListener('DOMContentLoaded', () => {
       "/redirect/channel4.html"
     ];
 
-    const subscribeButtons = [
-      document.getElementById('btn1'),
-      document.getElementById('btn2'),
-      document.getElementById('btn3'),
-      document.getElementById('btn4')
-    ];
-
-    const goButton = document.getElementById('goBtn');
-    const progressText = document.getElementById('progressText');
-    const progressBar = document.getElementById('progressBar');
-
     let currentProgress = 0;
-    const totalProgress = subscribeButtons.filter(Boolean).length;
 
     function updateProgress() {
       if (progressText && progressBar) {
-        progressText.textContent = `Unlock progress: ${currentProgress}/${totalProgress}`;
-        const percent = (currentProgress / totalProgress) * 100;
+        progressText.textContent = `Unlock progress: ${currentProgress}/${totalButtons}`;
+        const percent = (currentProgress / totalButtons) * 100;
         progressBar.style.width = `${percent}%`;
       }
     }
 
     subscribeButtons.forEach((button, index) => {
-      if (!button) return;
-
-      button.addEventListener('click', (e) => {
+      button.addEventListener('click', e => {
         e.preventDefault();
 
-        // Hanya izinkan klik jika index sebelumnya sudah counted
-        if (index === 0 || subscribeButtons[index - 1].classList.contains('counted')) {
-          window.open(youtubeLinks[index], '_blank');
+        if (index > 0 && !subscribeButtons[index - 1].classList.contains('counted')) return;
 
-          const iconRight = button.querySelector('.icon-right');
+        window.open(youtubeLinks[index], '_blank');
+        const icon = button.querySelector('.icon-right');
 
-          if (!button.classList.contains('counted')) {
-            iconRight.className = 'fas fa-spinner fa-spin icon-right';
+        if (!button.classList.contains('counted')) {
+          icon.className = 'fas fa-spinner fa-spin icon-right';
 
-            setTimeout(() => {
-              iconRight.className = 'fas fa-check-circle icon-right';
-              button.classList.add('counted');
-              button.style.backgroundColor = '#333';
-              button.style.color = '#aaa';
-              iconRight.style.color = '#aaa';
+          setTimeout(() => {
+            icon.className = 'fas fa-check-circle icon-right';
+            button.classList.add('counted');
+            button.style.backgroundColor = '#333';
+            button.style.color = '#aaa';
+            icon.style.color = '#aaa';
 
-              currentProgress++;
-              updateProgress();
+            currentProgress++;
+            updateProgress();
 
-              if (currentProgress === totalProgress) {
-                goButton.classList.add('active');
-              }
-            }, 3000);
-          } else {
-            iconRight.className = 'fas fa-check-circle icon-right';
-          }
+            if (currentProgress === totalButtons && goBtn) {
+              goBtn.classList.add('active');
+            }
+          }, 3000);
         }
       });
     });
 
-    if (goButton) {
-      goButton.addEventListener('click', (e) => {
-        if (currentProgress < totalProgress) {
+    if (goBtn) {
+      goBtn.addEventListener('click', (e) => {
+        if (currentProgress < totalButtons) {
           e.preventDefault();
         }
       });
     }
 
+    updateProgress();
+
+    // Blok klik kanan dan drag
     document.addEventListener('contextmenu', (e) => e.preventDefault());
     document.addEventListener('dragstart', (e) => e.preventDefault());
     document.addEventListener('mousedown', (e) => {
