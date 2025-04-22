@@ -294,7 +294,8 @@ body,
   background: #7735D5;
   opacity: 1;
 }
-.btn-action.main {
+.btn-action.main,
+.btn-action.copy {
   color: #FFFFFF;
   background: #00CF5E;
   border: 1.25px solid #00CF5E;
