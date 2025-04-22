@@ -63,32 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // Buka link YouTube
-        window.open(youtubeLinks[index], '_blank');
+        // Hanya izinkan klik jika index sebelumnya sudah counted
+        if (index === 0 || subscribeButtons[index - 1].classList.contains('counted')) {
+          window.open(youtubeLinks[index], '_blank');
 
-        const iconRight = button.querySelector('.icon-right');
+          const iconRight = button.querySelector('.icon-right');
 
-        // Jika belum diklik sebelumnya (belum dihitung)
-        if (!button.classList.contains('counted')) {
-          iconRight.className = 'fas fa-spinner fa-spin icon-right';
+          if (!button.classList.contains('counted')) {
+            iconRight.className = 'fas fa-spinner fa-spin icon-right';
 
-          setTimeout(() => {
+            setTimeout(() => {
+              iconRight.className = 'fas fa-check-circle icon-right';
+              button.classList.add('counted');
+              button.style.backgroundColor = '#333';
+              button.style.color = '#aaa';
+              iconRight.style.color = '#aaa';
+
+              currentProgress++;
+              updateProgress();
+
+              if (currentProgress === totalProgress) {
+                goButton.classList.add('active');
+              }
+            }, 3000);
+          } else {
             iconRight.className = 'fas fa-check-circle icon-right';
-            button.classList.add('counted');
-            button.style.backgroundColor = '#333';
-            button.style.color = '#aaa';
-            iconRight.style.color = '#aaa';
-
-            currentProgress++;
-            updateProgress();
-
-            if (currentProgress === totalProgress) {
-              goButton.classList.add('active');
-            }
-          }, 3000);
-        } else {
-          // Jika sudah diklik sebelumnya, langsung tampil centang
-          iconRight.className = 'fas fa-check-circle icon-right';
+          }
         }
       });
     });
