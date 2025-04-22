@@ -16,11 +16,39 @@
 </head>
 
 <body>
-  <!-- Container to load unlock component -->
-  <div id="unlockContainer"></div>
+  <!-- Header will be injected here -->
+  
+  <!-- Main Content -->
+  <div class="wrapper">
+    <div class="container">
+      
+      <!-- Section Title -->
+      <div class="section-title">
+        <h2>Unlock Link</h2>
+        <p>Complete the actions and unlock the link</p>
+      </div>
 
-  <!-- JavaScript -->
-  <script src="/js/unlock-2.js"></script>
+      <!-- Subscribe Buttons Container (content loaded via JS) -->
+      <div id="subscribeButtonsContainer"></div>
+
+      <!-- Progress Display -->
+      <div class="progress-text" id="progressText">Unlock progress: 0/4</div>
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <!-- Unlock Button -->
+      <a id="goBtn" class="button go-button" href="https://adlinksumo.com/x0HCy" target="_blank">
+        <i class="fas fa-lock"></i>
+        Unlock Link
+        <i class="fas fa-link icon-right"></i>
+      </a>      
+
+    </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="/js/unlock.js"></script>
 </body>
 
 </html>
