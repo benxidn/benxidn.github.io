@@ -1,151 +1,169 @@
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0a0a0a;
-    color: #fff;
-  }
-  
-  header {
-    background-color: #0a0a0a;
-    padding: 12px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  header .title {
-    font-size: 18px;
-    font-weight: 400;
-    text-decoration: none;
-    color: #fff;
-  }
-  
-  .header-subscribe {
-    background: #ff0000;
-    border: none;
-    color: #fff;
-    font-size: 12px;
-    padding: 6px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 20px 10px;
-    margin-top: 120px;
-  }
-  
-  .container {
-    background: #232323;
-    border-radius: 6px;
-    padding: 20px;
-    max-width: 310px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    box-sizing: border-box;
-  }
-  
-  .section-title {
-    text-align: center;
-  }
-  
-  .section-title h2 {
-    margin: 0;
-    font-size: 21px;
-    font-weight: 600;
-  }
-  
-  .section-title p {
-    margin-top: 4px;
-    color: #ccc;
-    font-size: 12px;
-  }
-  
-  .button {
-    background: #ff0000;
-    color: #fff;
-    border: none;
-    font-size: 13px;
-    font-weight: 500;
-    border-radius: 3px;
-    cursor: pointer;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.3s;
-    padding: 5px 12px;
-    text-decoration: none;
-    height: 40px;
-    box-sizing: border-box;
-  }
-  
-  .button i {
-    font-size: 17px;
-  }
-  
-  .button .icon-right.fa-chevron-right {
-    font-size: 11px;
-    font-weight: 600;
-  }
-  
-  .button i.fa-spinner {
-    font-size: 17px;
-  }
-  
-  .button i.fa-check-circle {
-    font-size: 17px;
-  }
-  
-  .button.clicked {
-    background: #333;
-    color: #aaa;
-    pointer-events: none;
-  }
-  
-  .button.clicked i {
-    color: #aaa !important;
-  }
-  
-  .go-button {
-    background: #1c3421;
-    color: #01DF72;
-  }
-  
-  .go-button i {
-    color: #767676;
-  }
-  
-  .go-button.active i {
-    color: #01DF72;
-  }
-  
-  .progress-text {
-    font-size: 10px;
-    color: #ccc;
-    text-align: center;
-    margin-top: 6px;
-  }
-  
-  .progress-container {
-    width: 100%;
-    height: 6px;
-    background-color: #23562e;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  
-  .progress-bar {
-    height: 100%;
-    width: 0%;
-    background: #00ff75;
-    transition: width 0.4s ease;
-  }
-  
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+header {
+  background-color: #0a0a0a;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header .title {
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #fff;
+}
+
+.header-subscribe {
+  background: #ff0000;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px 10px;
+  margin-top: 120px;
+}
+
+.container {
+  background: #232323;
+  border-radius: 6px;
+  padding: 20px;
+  max-width: 310px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.section-title p {
+  margin-top: 4px;
+  color: #ccc;
+  font-size: 12px;
+}
+
+.button {
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  padding: 5px 12px;
+  text-decoration: none;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.button i {
+  font-size: 17px;
+}
+
+.button .icon-right.fa-chevron-right {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.button i.fa-spinner {
+  font-size: 17px;
+}
+
+.button i.fa-check-circle {
+  font-size: 17px;
+}
+
+.button.clicked {
+  background: #333;
+  color: #aaa;
+  pointer-events: none;
+}
+
+.button.clicked i {
+  color: #aaa !important;
+}
+
+.go-button {
+  background: #333;
+  color: #aaa;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  padding: 5px 12px;
+  text-decoration: none;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.go-button i {
+  color: #aaa !important;
+}
+
+.go-button.active {
+  background: #1c3421;
+  color: #01DF72;
+}
+
+.go-button.active i {
+  color: #01DF72 !important;
+}
+
+.progress-text {
+  font-size: 10px;
+  color: #ccc;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 6px;
+  background-color: #23562e;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #00ff75;
+  transition: width 0.4s ease;
+}
