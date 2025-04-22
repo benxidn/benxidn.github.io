@@ -68,6 +68,7 @@ header .title {
   font-size: 12px;
 }
 
+/* === BUTTON STYLE === */
 .button {
   background: #ff0000;
   color: #fff;
@@ -104,6 +105,11 @@ header .title {
   font-size: 17px;
 }
 
+/* Jarak antar tombol */
+.button:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 .button.clicked {
   background: #333;
   color: #aaa;
@@ -114,6 +120,7 @@ header .title {
   color: #aaa !important;
 }
 
+/* === GO BUTTON === */
 .go-button {
   background: #333;
   color: #aaa;
@@ -146,6 +153,7 @@ header .title {
   color: #01DF72 !important;
 }
 
+/* === PROGRESS === */
 .progress-text {
   font-size: 10px;
   color: #ccc;
