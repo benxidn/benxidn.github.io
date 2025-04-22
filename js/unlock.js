@@ -1,17 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.pathname;
 
-  // Bersihkan URL dari index.html atau .html
-  if (path.endsWith('/index.html') || path.endsWith('/index')) {
-    const newPath = path.replace(/\/index(\.html)?$/, '/');
-    const newUrl = newPath + window.location.search + window.location.hash;
-    window.history.replaceState(null, '', newUrl);
-  } else if (path.endsWith('.html')) {
-    const newPath = path.replace(/\.html$/, '');
-    const newUrl = newPath + window.location.search + window.location.hash;
-    window.history.replaceState(null, '', newUrl);
-  }
-
   // Load header
   fetch('/components/new-header.html')
     .then(res => res.text())
