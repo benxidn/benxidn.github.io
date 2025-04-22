@@ -251,6 +251,12 @@ html, body {
   font-style: italic;
   border-radius: 10px;
 }
+.action-in.pass-key {
+  width: 100%;
+  border-radius: 7.5px 0 0 7.5px;
+  padding: 10px;
+  font-style: normal;
+}
 
 /*COLOR & MORE*/
 
@@ -293,6 +299,9 @@ body,
 .btn-donate.blue:hover {
   background: #7735D5;
   opacity: 1;
+}
+.action-in.pass-key {
+  border: 1.25px solid #00CF5E;
 }
 .btn-action.main,
 .btn-action.copy {
