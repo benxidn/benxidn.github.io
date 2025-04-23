@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dexter Modz</title>
+  <link href="/images/logo.png" rel="shortcut icon">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f8bbd0);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #222;
+      text-transform: uppercase;
+    }
+
+    .copy-btn {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 14px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    .btn-komentar { background-color: #ef5350; }
+    .btn-mlmod    { background-color: #42a5f5; }
+    .btn-lulubox  { background-color: #66bb6a; }
+    .btn-drone    { background-color: #ab47bc; }
+    .btn-script   { background-color: #ffa726; }
+
+    .copy-btn:hover {
+      transform: scale(1.03);
+      opacity: 0.9;
+    }
+
+    .popup-success {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 999;
+      animation: slideDownFade 2s ease-in-out forwards;
+      text-transform: none;
+    }
+
+    @keyframes slideDownFade {
+      0% { opacity: 0; transform: translate(-50%, -10px); }
+      10%, 90% { opacity: 1; transform: translate(-50%, 0); }
+      100% { opacity: 0; transform: translate(-50%, -10px); }
+    }
+
+    .hidden-text {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+    }
+
+    @media (max-width: 400px) {
+      h2 {
+        font-size: 18px;
+      }
+      .copy-btn {
+        padding: 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="popup-success" id="popupSukses">Teks berhasil disalin!</div>
+
+  <div class="container">
+    <h2>BUTTON COPY PASTE</h2>
+
+    <textarea id="pesan2" class="hidden-text" readonly>
+🔴 LINK DOWNLOAD ADA DI BALASAN KOMENTAR INI‼
+🔴 DOWNLOAD LINK IS IN THE REPLY TO THIS COMMENT‼
+    </textarea>
+    <button class="copy-btn btn-komentar" onclick="salinTeks('pesan2')">SALIN TEKS KOMENTAR</button>
+
+    <textarea id="pesan1" class="hidden-text" readonly>
+𝗝𝗔𝗡𝗚𝗔𝗡 𝗟𝗨𝗣𝗔 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗗𝗨𝗟𝗨 𝗕𝗜𝗔𝗥 𝗪𝗢𝗥𝗞 𝗖𝗨𝗬❗
+
+( NO PASSWORD )
+" 𝗪𝗢𝗥𝗞𝗜𝗡𝗚 𝟭𝟬𝟬% "
+
+🔰 𝗟𝗜𝗡𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗔𝗣𝗞
+https://sprl.in/mlmod
+
+📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠
+https://t.me/dextermodzz
+📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣
+https://sprl.in/dextermodz
+
+𝗧𝗛𝗔𝗡𝗞𝗦 𝗕𝗨𝗔𝗧 𝗞𝗔𝗟𝗜𝗔𝗡 𝗬𝗔𝗡𝗚 𝗨𝗗𝗔𝗛 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗖𝗨𝗬❗
+    </textarea>
+    <button class="copy-btn btn-mlmod" onclick="salinTeks('pesan1')">SALIN TEKS ML MOD</button>
+
+    <textarea id="pesan3" class="hidden-text" readonly>
+𝗝𝗔𝗡𝗚𝗔𝗡 𝗟𝗨𝗣𝗔 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗗𝗨𝗟𝗨 𝗕𝗜𝗔𝗥 𝗪𝗢𝗥𝗞 𝗖𝗨𝗬❗
+
+( NO PASSWORD )
+" 𝗪𝗢𝗥𝗞𝗜𝗡𝗚 𝟭𝟬𝟬% "
+
+🔰 𝗟𝗜𝗡𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗔𝗣𝗞
+https://sprl.in/lulubox
+
+📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠
+https://t.me/dextermodzz
+📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣
+https://sprl.in/dextermodz
+
+𝗧𝗛𝗔𝗡𝗞𝗦 𝗕𝗨𝗔𝗧 𝗞𝗔𝗟𝗜𝗔𝗡 𝗬𝗔𝗡𝗚 𝗨𝗗𝗔𝗛 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗖𝗨𝗬❗
+    </textarea>
+    <button class="copy-btn btn-lulubox" onclick="salinTeks('pesan3')">SALIN TEKS LULUBOX</button>
+
+    <textarea id="pesan4" class="hidden-text" readonly>
+𝗝𝗔𝗡𝗚𝗔𝗡 𝗟𝗨𝗣𝗔 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗗𝗨𝗟𝗨 𝗕𝗜𝗔𝗥 𝗪𝗢𝗥𝗞 𝗖𝗨𝗬❗
+
+( NO PASSWORD )
+" 𝗪𝗢𝗥𝗞𝗜𝗡𝗚 𝟭𝟬𝟬% "
+
+🔰 𝗟𝗜𝗡𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗗𝗥𝗢𝗡𝗘
+https://sprl.in/drone
+
+📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠
+https://t.me/dextermodzz
+📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣
+https://sprl.in/dextermodz
+
+𝗧𝗛𝗔𝗡𝗞𝗦 𝗕𝗨𝗔𝗧 𝗞𝗔𝗟𝗜𝗔𝗡 𝗬𝗔𝗡𝗚 𝗨𝗗𝗔𝗛 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗖𝗨𝗬❗
+    </textarea>
+    <button class="copy-btn btn-drone" onclick="salinTeks('pesan4')">SALIN TEKS DRONE</button>
+
+    <textarea id="pesan5" class="hidden-text" readonly>
+𝗝𝗔𝗡𝗚𝗔𝗡 𝗟𝗨𝗣𝗔 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗗𝗨𝗟𝗨 𝗕𝗜𝗔𝗥 𝗪𝗢𝗥𝗞 𝗖𝗨𝗬❗
+
+( NO PASSWORD )
+" 𝗪𝗢𝗥𝗞𝗜𝗡𝗚 𝟭𝟬𝟬% "
+
+🔰 𝗟𝗜𝗡𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗦𝗖𝗥𝗜𝗣𝗧
+https://sprl.in/damage
+
+📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠
+https://t.me/dextermodzz
+📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣
+https://sprl.in/dextermodz
+
+𝗧𝗛𝗔𝗡𝗞𝗦 𝗕𝗨𝗔𝗧 𝗞𝗔𝗟𝗜𝗔𝗡 𝗬𝗔𝗡𝗚 𝗨𝗗𝗔𝗛 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗖𝗨𝗬❗
+    </textarea>
+    <button class="copy-btn btn-script" onclick="salinTeks('pesan5')">SALIN TEKS SCRIPT</button>
+
+  </div>
+
+  <script>
+    function salinTeks(idPesan) {
+      const teks = document.getElementById(idPesan);
+      const popup = document.getElementById("popupSukses");
+
+      navigator.clipboard.writeText(teks.value).then(() => {
+        popup.style.display = "block";
+        popup.style.animation = "slideDownFade 2s ease-in-out forwards";
+
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
+  <!-- <script src="/js/replace-url.js"></script> -->
+
+</body>
+</html>
