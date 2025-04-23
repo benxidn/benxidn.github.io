@@ -1,0 +1,39 @@
+📂 archive/ (File lama / backup)
+Kalau kamu suka simpen file lama daripada dihapus, bisa simpan di sini.
+
+📂 drafts/ (Draf awal, versi sebelum final)
+Untuk file konsep awal, wireframe HTML, atau prototipe.
+
+📂 misc/ (Miscellaneous / Campur-campur)
+Untuk file yang gak cocok di tempat lain tapi pengen disimpan.
+
+📂 playground/ (Area eksperimen bebas)
+Mirip sandbox, cocok buat kamu atau tim "main-main" di situ tanpa takut ngacak file utama.
+
+📂 sandbox/ (Eksperimen lokal)
+Tempat bebas buat ngetes ide, komponen aneh, atau kode coba-coba.
+
+📂 temp/ (Temporary files)
+Untuk file sementara, hasil generate otomatis, cache, atau draft.
+
+Nama Folder	Kesan & Kegunaan
+
+misc/	General-purpose, "campur aduk", cocok banget buat file acak
+
+miscellaneous/	Versi panjang misc/, lebih formal dikit
+
+stuff/	Santai, kasual. Buat nyimpen "segala macam"
+
+junk/	Buat file gak penting atau buat dibuang nanti
+
+random/	Kalau isinya benar-benar acak, random gitu aja
+
+etc/	Buat hal-hal yang nggak jelas kategorinya (kayak di Linux)
+
+chaos/	Nama lucu buat folder beneran isinya kekacauan 😆
+
+bin/	Bisa juga dipakai buat “tempat pembuangan”, kadang mirip trash/
+
+unsorted/	Semua file yang belum diklasifikasi
+
+dropzone/	Tempat naruh file sebelum diproses / ditaruh ke tempat bener
