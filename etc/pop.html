@@ -13,12 +13,16 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
+    html, body {
+      height: 100%;
+    }
+
     body {
       background: linear-gradient(135deg, #1e1e2f, #34345e);
       color: #fff;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
+      min-height: 100dvh;
     }
 
     header {
@@ -93,20 +97,17 @@
 
     .button-container {
       display: flex;
+      flex-direction: column;
       gap: 0.75rem;
-      justify-content: center;
-      flex-wrap: wrap;
     }
 
     .card a.download, .card button.cancel {
-      flex: 1 1 140px;
-      max-width: 180px;
-      text-align: center;
+      width: 100%;
       background-color: #2980b9;
       color: white;
-      padding: 0.6rem 1rem;
+      padding: 0.75rem 1rem;
       border-radius: 6px;
-      font-size: 0.95rem;
+      font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s;
       text-decoration: none;
