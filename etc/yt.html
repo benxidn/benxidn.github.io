@@ -22,34 +22,30 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+    .header {
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.75rem 1.5rem;
-      background: none;
-      z-index: 1000;
+      padding: 1rem;
+      background: transparent;
+      position: relative;
+      z-index: 999;
     }
-    header a {
+    .header a {
       text-decoration: none;
       color: #fff;
       font-weight: 300;
       font-size: 1rem;
     }
-    header a button {
+    .header .subscribe-link {
       background-color: #ff0000;
       color: #fff;
-      padding: 0.4rem 0.8rem;
-      border-radius: 2px;
+      padding: 0.5rem 1rem;
       border: none;
-      cursor: pointer;
+      border-radius: 2px;
       font-size: 0.9rem;
     }
     .card {
@@ -140,12 +136,6 @@
       text-decoration: none;
     }
     @media (max-width: 600px) {
-      header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.75rem 1rem;
-      }
       .card {
         padding: 1rem;
       }
@@ -153,18 +143,19 @@
   </style>
 </head>
 <body>
-  <header>
-    <div><a href="/">Dexter Modz</a></div>
-    <div><a href="/redirect/channel1"><button>Subscribe</button></a></div>
-  </header>
+  <div class="header">
+    <a href="/">Dexter Modz</a>
+    <a href="/redirect/channel1" class="subscribe-link">Subscribe</a>
+  </div>
+
   <div class="card">
     <h2>Unlock Link</h2>
     <p>Complete the actions and unlock the link</p>
     <div class="subscribe-buttons">
-      <button class="subscribe-btn" id="sub1" data-url="https://example.com/1"><i class="fa-brands fa-youtube"></i> Subscribe On Youtube 1 <i class="fa-solid fa-angle-right"></i></button>
-      <button class="subscribe-btn" id="sub2" data-url="https://example.com/2" disabled><i class="fa-brands fa-youtube"></i> Subscribe On Youtube 2 <i class="fa-solid fa-angle-right"></i></button>
-      <button class="subscribe-btn" id="sub3" data-url="https://example.com/3" disabled><i class="fa-brands fa-youtube"></i> Subscribe On Youtube 3 <i class="fa-solid fa-angle-right"></i></button>
-      <button class="subscribe-btn" id="sub4" data-url="https://example.com/4" disabled><i class="fa-brands fa-youtube"></i> Subscribe On Youtube 4 <i class="fa-solid fa-angle-right"></i></button>
+      <button class="subscribe-btn" id="sub1" data-url="https://example.com/1"><i class="fa-brands fa-youtube"></i> Subscribe On Youtube <i class="fa-solid fa-angle-right"></i></button>
+      <button class="subscribe-btn" id="sub2" data-url="https://example.com/2" disabled><i class="fa-brands fa-youtube"></i> Subscribe On Youtube <i class="fa-solid fa-angle-right"></i></button>
+      <button class="subscribe-btn" id="sub3" data-url="https://example.com/3" disabled><i class="fa-brands fa-youtube"></i> Subscribe On Youtube <i class="fa-solid fa-angle-right"></i></button>
+      <button class="subscribe-btn" id="sub4" data-url="https://example.com/4" disabled><i class="fa-brands fa-youtube"></i> Subscribe On Youtube <i class="fa-solid fa-angle-right"></i></button>
     </div>
     <p class="progress-text" id="progressText">unlock progress 0/4</p>
     <div class="progress">
