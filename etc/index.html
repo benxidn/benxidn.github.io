@@ -19,6 +19,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      min-height: 100dvh; /* Tambahan agar address bar tidak memotong tampilan */
       padding-top: 90px;
     }
 
@@ -47,7 +48,7 @@
     }
 
     header .subscribe-btn {
-      background-color: #ef5350;
+      background-color: #ff0400;
       color: white;
       font-size: 17px;
       padding: 10px 20px;
@@ -82,7 +83,7 @@
       display: block;
       width: 100%;
       margin: 15px 0;
-      padding: 17px 10px;
+      padding: 15px 10px;
       font-size: 17px;
       font-weight: bold;
       border: none;
@@ -106,7 +107,7 @@
 
     .popup-success {
       position: fixed;
-      top: 90px; /* muncul di bawah header */
+      top: 90px;
       left: 50%;
       transform: translateX(-50%);
       background-color: #4caf50;
@@ -133,6 +134,13 @@
     }
 
     @media (max-width: 400px) {
+      body {
+        padding-top: 110px;
+        align-items: flex-start;
+        min-height: 100vh;
+        min-height: 100dvh; /* Tetap pakai ini juga di mobile */
+      }
+
       header {
         flex-direction: row;
         flex-wrap: wrap;
@@ -146,14 +154,21 @@
       }
 
       header .subscribe-btn {
-        padding: 8px 15px;
+        padding: 10px 15px;
         font-size: 15px;
       }
+
+      .container {
+        padding: 20px 15px;
+        max-width: 95%;
+      }
+
       h2 {
         font-size: 18px;
       }
+
       .copy-btn {
-        padding: 14px 10px;
+        padding: 12px 10px;
         font-size: 14px;
         margin: 12px 0;
       }
