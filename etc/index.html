@@ -18,9 +18,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       min-height: 100vh;
-      min-height: 100dvh; /* Tambahan agar address bar tidak memotong tampilan */
-      padding-top: 90px;
+      min-height: 100dvh;
     }
 
     header {
@@ -48,7 +48,7 @@
     }
 
     header .subscribe-btn {
-      background-color: #ff0400;
+      background-color: #ef5350;
       color: white;
       font-size: 17px;
       padding: 10px 20px;
@@ -69,6 +69,7 @@
       max-width: 400px;
       width: 80%;
       text-align: center;
+      margin-top: 90px; /* memberi jarak dari header */
     }
 
     h2 {
@@ -134,13 +135,6 @@
     }
 
     @media (max-width: 400px) {
-      body {
-        padding-top: 110px;
-        align-items: flex-start;
-        min-height: 100vh;
-        min-height: 100dvh; /* Tetap pakai ini juga di mobile */
-      }
-
       header {
         flex-direction: row;
         flex-wrap: wrap;
