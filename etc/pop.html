@@ -48,14 +48,16 @@
       border: none;
       padding: 0.5rem 1.2rem;
       font-size: 1rem;
-      border-radius: 8px;
+      border-radius: 50px;
       cursor: pointer;
       text-decoration: none;
       transition: background 0.3s;
+      text-transform: uppercase;
+      font-weight: bold;
     }
 
     .subscribe-button:hover {
-      background-color: #c82333;
+      background-color: #d62839;
     }
 
     .card-container {
@@ -101,28 +103,29 @@
       gap: 0.75rem;
     }
 
-    .card a.download, .card button.cancel {
-      width: 100%;
+    .card a.download, .card a.cancel {
       background-color: #2980b9;
       color: white;
-      padding: 0.75rem 1rem;
+      padding: 0.75rem 1.25rem;
+      width: 100%;
       border-radius: 6px;
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s;
       text-decoration: none;
       border: none;
+      text-transform: capitalize;$1
     }
 
     .card a.download:hover {
       background-color: #216a94;
     }
 
-    .card button.cancel {
+    .card a.cancel {
       background-color: #7f8c8d;
     }
 
-    .card button.cancel:hover {
+    .card a.cancel:hover {
       background-color: #636e72;
     }
 
@@ -151,7 +154,7 @@
 <body>
   <header>
     <a href="/">Dexter Modz</a>
-    <a class="subscribe-button" href="/redirect/channel1">Subscribe</a>
+    <button class="subscribe-button" onclick="redirectChannel()">SUBSCRIBE</button>
   </header>
 
   <div class="card-container">
@@ -160,20 +163,16 @@
       <p>Dikarenakan script drone view masih dalam proses perbaikan, silakan download aplikasi pada link dibawah jika ingin tetap menggunakan fitur drone view.</p>
       <div class="button-container">
         <a class="download" href="https://youtu.be/b66EcgBwq0w" target="_blank">Download Aplikasi</a>
-        <button class="cancel" onclick="tryClose()">Cancel</button>
+        <a class="cancel" href="#" onclick="redirectChannel()">Cancel</a>
       </div>
     </div>
   </div>
 
   <!-- <script src="/js/replace-url.js"></script> -->
+  
   <script>
-    function tryClose() {
-      window.close();
-      setTimeout(() => {
-        if (!window.closed) {
-          document.getElementById('maintenance-card').style.display = 'none';
-        }
-      }, 100);
+    function redirectChannel() {
+      window.location.href = "/redirect/channel1";
     }
   </script>
 </body>
