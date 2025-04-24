@@ -19,10 +19,11 @@
       font-family: sans-serif;
     }
     body {
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+      justify-content: center;
     }
     .header {
       width: 100%;
@@ -30,9 +31,10 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem;
-      background: transparent;
-      position: relative;
+      position: fixed;
+      top: 0;
       z-index: 999;
+      background: transparent;
     }
     .header a {
       text-decoration: none;
@@ -51,7 +53,7 @@
     .card {
       width: 90%;
       max-width: 300px;
-      margin-top: 4rem;
+      margin-top: 6rem;
       padding: 1.5rem;
       background-color: #232323;
       border-radius: 4px;
@@ -100,10 +102,10 @@
       border-radius: 999px;
       overflow: hidden;
       margin-bottom: 1.2rem;
-      height: 10px;
+      height: 8px;
     }
     .progress-bar {
-      height: 10px;
+      height: 8px;
       width: 0%;
       background-color: #00ff75;
       transition: width 0.3s ease;
