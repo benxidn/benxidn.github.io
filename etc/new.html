@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dexter Modz</title>
+  <link href="/images/logo.png" rel="shortcut icon">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f8bbd0);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    header a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .logo {
+      font-size: 20px;
+      color: #222;
+    }
+
+    .subscribe-btn {
+      background-color: #ff5252;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #222;
+      text-transform: uppercase;
+    }
+
+    .copy-btn {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 14px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    .btn-komentar { background-color: #ef5350; }
+    .btn-mlmod    { background-color: #42a5f5; }
+    .btn-lulubox  { background-color: #66bb6a; }
+    .btn-drone    { background-color: #ab47bc; }
+    .btn-script   { background-color: #ffa726; }
+
+    .copy-btn:hover {
+      transform: scale(1.03);
+      opacity: 0.9;
+    }
+
+    .popup-success {
+      position: fixed;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 999;
+      animation: slideDownFade 2s ease-in-out forwards;
+      text-transform: none;
+    }
+
+    @keyframes slideDownFade {
+      0% { opacity: 0; transform: translate(-50%, -10px); }
+      10%, 90% { opacity: 1; transform: translate(-50%, 0); }
+      100% { opacity: 0; transform: translate(-50%, -10px); }
+    }
+
+    .hidden-text {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+    }
+
+    @media (max-width: 400px) {
+      h2 {
+        font-size: 18px;
+      }
+      .copy-btn {
+        padding: 12px;
+        font-size: 13px;
+      }
+      .subscribe-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/" class="logo">Dexter Modz</a>
+    <a href="/redirect/channel1.html" class="subscribe-btn">Subscribe</a>
+  </header>
+
+  <div class="popup-success" id="popupSukses">Teks berhasil disalin!</div>
+
+  <div class="container">
+    <h2>BUTTON COPY PASTE</h2>
+
+    <!-- Semua textarea dan button salin tetap sama seperti sebelumnya -->
+    <!-- ... (tidak diubah) ... -->
+
+  </div>
+
+  <script>
+    function salinTeks(idPesan) {
+      const teks = document.getElementById(idPesan);
+      const popup = document.getElementById("popupSukses");
+
+      navigator.clipboard.writeText(teks.value).then(() => {
+        popup.style.display = "block";
+        popup.style.animation = "slideDownFade 2s ease-in-out forwards";
+
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
