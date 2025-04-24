@@ -160,11 +160,21 @@
       <p>Dikarenakan script drone view masih dalam proses perbaikan, silakan download aplikasi pada link dibawah jika ingin tetap menggunakan fitur drone view.</p>
       <div class="button-container">
         <a class="download" href="https://youtu.be/b66EcgBwq0w" target="_blank">Download Aplikasi</a>
-        <button class="cancel" onclick="window.close();">Cancel</button>
+        <button class="cancel" onclick="tryClose()">Cancel</button>
       </div>
     </div>
   </div>
 
   <!-- <script src="/js/replace-url.js"></script> -->
+  <script>
+    function tryClose() {
+      window.close();
+      setTimeout(() => {
+        if (!window.closed) {
+          document.getElementById('maintenance-card').style.display = 'none';
+        }
+      }, 100);
+    }
+  </script>
 </body>
 </html>
