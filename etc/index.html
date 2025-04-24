@@ -1,266 +1,160 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Dexter Modz</title>
-  <link href="/images/logo.png" rel="shortcut icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #f8bbd0);
       margin: 0;
-      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.5);
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      padding-top: 90px; /* untuk beri ruang di bawah header */
+      z-index: 9999;
+      padding: 1rem;
     }
 
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-    }
-
-    header a {
-      text-decoration: none;
-      font-size: 27px;
-      font-weight: bold;
-    }
-
-    header .logo {
-      color: #333;
-    }
-
-    header .subscribe-btn {
-      background-color: #ef5350;
-      color: white;
-      font-size: 15px;
-      padding: 10px 20px;
-      border-radius: 50px;
-      transition: 0.3s;
-    }
-
-    header .subscribe-btn:hover {
-      opacity: 0.9;
-      transform: scale(1.05);
-    }
-
-    .container {
-      background: #fff;
+    .modal {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      padding: 2rem;
       border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      max-width: 400px;
-      width: 80%;
-      text-align: center;
-    }
-
-    h2 {
-      margin-bottom: 30px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #222;
-      text-transform: uppercase;
-    }
-
-    .copy-btn {
-      display: block;
       width: 100%;
-      margin: 15px 0;
-      padding: 20px 15px;
-      font-size: 15px;
-      font-weight: bold;
+      max-width: 600px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.5s ease-out;
+    }
+
+    .modal h1 {
+      font-size: 1.8rem;
+      color: #ff4444;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .modal p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #f2f2f2;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.75rem 2rem;
       border: none;
-      border-radius: 10px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
       cursor: pointer;
       transition: 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn.ok {
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
       color: white;
-      text-transform: uppercase;
     }
 
-    .btn-komentar { background-color: #ef5350; }
-    .btn-mlmod    { background-color: #42a5f5; }
-    .btn-lulubox  { background-color: #66bb6a; }
-    .btn-drone    { background-color: #ab47bc; }
-    .btn-script   { background-color: #ffa726; }
-
-    .copy-btn:hover {
-      transform: scale(1.03);
-      opacity: 0.9;
+    .btn.ok:hover {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
     }
 
-    .popup-success {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #4caf50;
+    .btn.cancel {
+      background: #ffffff33;
       color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      display: none;
-      z-index: 999;
-      animation: slideDownFade 2s ease-in-out forwards;
-      text-transform: none;
+      border: 1px solid #fff;
     }
 
-    @keyframes slideDownFade {
-      0% { opacity: 0; transform: translate(-50%, -10px); }
-      10%, 90% { opacity: 1; transform: translate(-50%, 0); }
-      100% { opacity: 0; transform: translate(-50%, -10px); }
+    .btn.cancel:hover {
+      background: #ffffff55;
     }
 
-    .hidden-text {
-      position: absolute;
-      left: -9999px;
-      opacity: 0;
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    @media (max-width: 400px) {
-      h2 {
-        font-size: 18px;
-      }
-      .copy-btn {
-        padding: 17px 10px;
-        font-size: 13px;
-        margin: 12px 0;
-      }
-      header {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 15px 20px;
+    @media (max-width: 480px) {
+      .modal {
+        padding: 1.5rem 1rem;
       }
 
-      header a {
-        font-size: 23px;
-        margin: 4px 0;
+      .modal h1 {
+        font-size: 1.4rem;
       }
 
-      header .subscribe-btn {
-        padding: 8px 15px;
-        font-size: 12px;
+      .modal p {
+        font-size: 0.95rem;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+        width: 100%;
+      }
+
+      .buttons {
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <a href="/" class="logo">Dexter Modz</a>
-    <a href="/redirect/channel1.html" class="subscribe-btn">SUBSCRIBE</a>
-  </header>
-
-  <div class="popup-success" id="popupSukses">Teks berhasil disalin!</div>
-
-  <div class="container">
-    <h2>BUTTON COPY PASTE</h2>
-
-    <textarea id="pesan2" class="hidden-text" readonly>
-🔴 LINK DOWNLOAD ADA DI BALASAN KOMENTAR INI‼
-🔴 DOWNLOAD LINK IS IN THE REPLY TO THIS COMMENT‼</textarea>
-    <button class="copy-btn btn-komentar" onclick="salinTeks('pesan2')">SALIN TEKS KOMENTAR</button>
-
-    <textarea id="pesan1" class="hidden-text" readonly>
-𝗝𝗔𝗡𝗚𝗔𝗡 𝗟𝗨𝗣𝗔 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗗𝗨𝗟𝗨 𝗕𝗜𝗔𝗥 𝗪𝗢𝗥𝗞 𝗖𝗨𝗬❗
-
-( NO PASSWORD )
-" 𝗪𝗢𝗥𝗞𝗜𝗡𝗚 𝟭𝟬𝟬% "
-
-🔰 𝗟𝗜𝗡𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗔𝗣𝗞
-https://sprl.in/mlmod
-
-📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠
-https://t.me/dextermodzz
-📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣
-https://sprl.in/dextermodz
-
-𝗧𝗛𝗔𝗡𝗞𝗦 𝗕𝗨𝗔𝗧 𝗞𝗔𝗟𝗜𝗔𝗡 𝗬𝗔𝗡𝗚 𝗨𝗗𝗔𝗛 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗖𝗨𝗬❗</textarea>
-    <button class="copy-btn btn-mlmod" onclick="salinTeks('pesan1')">SALIN TEKS ML MOD</button>
-
-    <textarea id="pesan3" class="hidden-text" readonly>
-𝗝𝗔𝗡𝗚𝗔𝗡 𝗟𝗨𝗣𝗔 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗗𝗨𝗟𝗨 𝗕𝗜𝗔𝗥 𝗪𝗢𝗥𝗞 𝗖𝗨𝗬❗
-
-( NO PASSWORD )
-" 𝗪𝗢𝗥𝗞𝗜𝗡𝗚 𝟭𝟬𝟬% "
-
-🔰 𝗟𝗜𝗡𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗔𝗣𝗞
-https://sprl.in/lulubox
-
-📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠
-https://t.me/dextermodzz
-📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣
-https://sprl.in/dextermodz
-
-𝗧𝗛𝗔𝗡𝗞𝗦 𝗕𝗨𝗔𝗧 𝗞𝗔𝗟𝗜𝗔𝗡 𝗬𝗔𝗡𝗚 𝗨𝗗𝗔𝗛 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗖𝗨𝗬❗</textarea>
-    <button class="copy-btn btn-lulubox" onclick="salinTeks('pesan3')">SALIN TEKS LULUBOX</button>
-
-    <textarea id="pesan4" class="hidden-text" readonly>
-𝗝𝗔𝗡𝗚𝗔𝗡 𝗟𝗨𝗣𝗔 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗗𝗨𝗟𝗨 𝗕𝗜𝗔𝗥 𝗪𝗢𝗥𝗞 𝗖𝗨𝗬❗
-
-( NO PASSWORD )
-" 𝗪𝗢𝗥𝗞𝗜𝗡𝗚 𝟭𝟬𝟬% "
-
-🔰 𝗟𝗜𝗡𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗗𝗥𝗢𝗡𝗘
-https://sprl.in/drone
-
-📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠
-https://t.me/dextermodzz
-📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣
-https://sprl.in/dextermodz
-
-𝗧𝗛𝗔𝗡𝗞𝗦 𝗕𝗨𝗔𝗧 𝗞𝗔𝗟𝗜𝗔𝗡 𝗬𝗔𝗡𝗚 𝗨𝗗𝗔𝗛 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗖𝗨𝗬❗</textarea>
-    <button class="copy-btn btn-drone" onclick="salinTeks('pesan4')">SALIN TEKS DRONE</button>
-
-    <textarea id="pesan5" class="hidden-text" readonly>
-𝗝𝗔𝗡𝗚𝗔𝗡 𝗟𝗨𝗣𝗔 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗗𝗨𝗟𝗨 𝗕𝗜𝗔𝗥 𝗪𝗢𝗥𝗞 𝗖𝗨𝗬❗
-
-( NO PASSWORD )
-" 𝗪𝗢𝗥𝗞𝗜𝗡𝗚 𝟭𝟬𝟬% "
-
-🔰 𝗟𝗜𝗡𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗦𝗖𝗥𝗜𝗣𝗧
-https://sprl.in/damage
-
-📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠
-https://t.me/dextermodzz
-📌 𝗝𝗢𝗜𝗡 𝗚𝗥𝗨𝗣 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣
-https://sprl.in/dextermodz
-
-𝗧𝗛𝗔𝗡𝗞𝗦 𝗕𝗨𝗔𝗧 𝗞𝗔𝗟𝗜𝗔𝗡 𝗬𝗔𝗡𝗚 𝗨𝗗𝗔𝗛 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗖𝗨𝗬❗</textarea>
-    <button class="copy-btn btn-script" onclick="salinTeks('pesan5')">SALIN TEKS SCRIPT</button>
+<div class="overlay" id="popup">
+  <div class="modal">
+    <h1>PERHATIAN !!!</h1>
+    <p>Dikarenakan script drone view masih dalam proses perbaikan, silakan download aplikasi ini agar tetap dapat menggunakan fitur drone view. Tekan OK untuk melanjutkan atau Cancel untuk batal.</p>
+    <div class="buttons">
+      <button class="btn ok" onclick="goToYoutube()">OK</button>
+      <button class="btn cancel" onclick="closePage()">Cancel</button>
+    </div>
   </div>
+</div>
 
-  <script>
-    function salinTeks(idPesan) {
-      const teks = document.getElementById(idPesan);
-      const popup = document.getElementById("popupSukses");
+<script>
+  function goToYoutube() {
+    window.location.href = "https://youtu.be/b66EcgBwq0w";
+  }
 
-      navigator.clipboard.writeText(teks.value).then(() => {
-        popup.style.display = "block";
-        popup.style.animation = "slideDownFade 2s ease-in-out forwards";
-
-        setTimeout(() => {
-          popup.style.display = "none";
-        }, 2000);
-      });
-    }
-  </script>
+  function closePage() {
+    window.close();
+  }
+</script>
+<script src="/js/replace-url.js"></script>
 
 </body>
 </html>
