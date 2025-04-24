@@ -1,161 +1,182 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dexter Modz</title>
   <link href="/images/logo.png" rel="shortcut icon">
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
     }
 
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      height: 100vh;
-      overflow: hidden;
+      background: linear-gradient(135deg, #1e1e2f, #34345e);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
     }
 
-    .overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      backdrop-filter: blur(8px);
-      background: rgba(0, 0, 0, 0.5);
+    header {
+      background-color: #111;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .subscribe-button {
+      background-color: #e63946;
+      color: white;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .subscribe-button:hover {
+      background-color: #d62839;
+    }
+
+    .card-container {
+      flex-grow: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 9999;
-      padding: 1rem;
-    }
-
-    .modal {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(12px);
       padding: 2rem;
-      border-radius: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      color: #222;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
       width: 100%;
-      max-width: 600px;
       text-align: center;
-      color: white;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-      animation: slideUp 0.5s ease-out;
+      animation: fadeIn 1s ease-in;
     }
 
-    .modal h1 {
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card h1 {
       font-size: 1.8rem;
-      color: #ff4444;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
+      color: #d35400;
+      margin-bottom: 0.75rem;
     }
 
-    .modal p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #f2f2f2;
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      color: #444;
     }
 
-    .buttons {
-      margin-top: 2rem;
+    .button-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
-    .btn {
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 50px;
-      font-weight: 600;
+    .card a.download, .card a.cancel {
+      background-color: #2980b9;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      width: 100%;
+      border-radius: 6px;
       font-size: 1rem;
       cursor: pointer;
-      transition: 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s;
+      text-decoration: none;
+      border: none;
+      text-transform: capitalize;$1
     }
 
-    .btn.ok {
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-      color: white;
+    .card a.download:hover {
+      background-color: #216a94;
     }
 
-    .btn.ok:hover {
-      background: linear-gradient(135deg, #0072ff, #00c6ff);
+    .card a.cancel {
+      background-color: #7f8c8d;
     }
 
-    .btn.cancel {
-      background: #ffffff33;
-      color: white;
-      border: 1px solid #fff;
+    .card a.cancel:hover {
+      background-color: #636e72;
     }
 
-    .btn.cancel:hover {
-      background: #ffffff55;
-    }
-
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
+    @media (max-width: 600px) {
+      .subscribe-button {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      header {
+        padding: 1rem 1rem;
       }
-    }
-
-    @media (max-width: 480px) {
-      .modal {
-        padding: 1.5rem 1rem;
+      header a {
+        font-size: 1.2rem;
       }
 
-      .modal h1 {
-        font-size: 1.4rem;
+      .card {
+        padding: 1.2rem;
       }
 
-      .modal p {
-        font-size: 0.95rem;
+      .card h1 {
+        font-size: 1.5rem;
       }
 
-      .btn {
+      .card p {
         font-size: 0.9rem;
-        padding: 0.6rem 1.2rem;
-        width: 100%;
-      }
-
-      .buttons {
-        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
+  <header>
+    <a href="/">Dexter Modz</a>
+    <button class="subscribe-button" onclick="redirectChannel()">SUBSCRIBE</button>
+  </header>
 
-<div class="overlay" id="popup">
-  <div class="modal">
-    <h1>PERHATIAN !!!</h1>
-    <p>Dikarenakan script drone view masih dalam proses perbaikan, silakan download aplikasi ini agar tetap dapat menggunakan fitur drone view. Tekan OK untuk melanjutkan atau Cancel untuk batal.</p>
-    <div class="buttons">
-      <button class="btn ok" onclick="goToYoutube()">OK</button>
-      <button class="btn cancel" onclick="closePage()">Cancel</button>
+  <div class="card-container">
+    <div class="card" id="maintenance-card">
+      <h1>MAINTENANCE !!!</h1>
+      <p>Dikarenakan script drone view masih dalam proses perbaikan, silakan download aplikasi pada link dibawah jika ingin tetap menggunakan fitur drone view.</p>
+      <div class="button-container">
+        <a class="download" href="https://youtu.be/b66EcgBwq0w" target="_blank">Download Aplikasi</a>
+        <a class="cancel" href="#" onclick="redirectChannel()">Cancel</a>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  function goToYoutube() {
-    window.location.href = "https://youtu.be/b66EcgBwq0w";
-  }
-
-  function closePage() {
-    window.close();
-  }
-</script>
-<script src="/js/replace-url.js"></script>
-
+  <script src="/js/replace-url.js"></script>
+  <script>
+    function redirectChannel() {
+      window.location.href = "/redirect/channel1";
+    }
+  </script>
 </body>
 </html>
