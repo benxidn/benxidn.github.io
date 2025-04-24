@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Dexter Modz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #0a0a0a;
+      color: #fff;
+      font-size: 14px;
+      font-family: sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      background: none;
+      z-index: 1000;
+    }
+    header a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 300;
+      font-size: 1rem;
+    }
+    header a button {
+      background-color: #ff0000;
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .card {
+      width: 90%;
+      max-width: 360px;
+      margin-top: 4rem;
+      padding: 1.5rem;
+      background-color: #232323;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+    .card p,
+    .progress-text {
+      color: #cccccc;
+      font-size: 0.9rem;
+    }
+    .subscribe-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .subscribe-buttons button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.4rem 0.8rem;
+      background-color: #ff0000;
+      color: #fff;
+      border-radius: 2px;
+      font-size: 0.9rem;
+    }
+    .subscribe-buttons button.clicked {
+      background-color: #333 !important;
+      color: #777 !important;
+    }
+    .subscribe-buttons button.clicked i {
+      color: #777 !important;
+    }
+    .progress-text {
+      margin-bottom: 0.5rem;
+    }
+    .progress {
+      width: 100%;
+      background: #23562e;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+      height: 10px;
+    }
+    .progress-bar {
+      height: 10px;
+      width: 0%;
+      background-color: #00ff75;
+      transition: width 0.3s ease;
+      border-radius: 999px;
+    }
+    button {
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .continue-btn {
+      background-color: #333;
+      color: #777;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 0.8rem;
+      border-radius: 2px;
+    }
+    .continue-btn.active {
+      background-color: #1c3421 !important;
+      color: #01DF72 !important;
+    }
+    .continue-btn.active i {
+      color: #01DF72 !important;
+    }
+    #continueLink {
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+      }
+      .card {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><a href="/">Dexter Modz</a></div>
+    <div><a href="/redirect/channel1"><button>Subscribe</button></a></div>
+  </header>
+  <div class="card">
+    <h2>Unlock Link</h2>
+    <p>Complete the actions and unlock the link</p>
+    <div class="subscribe-buttons">
+      <button class="subscribe-btn" id="sub1" data-url="https://example.com/1"><i class="fa-brands fa-youtube"></i> Subscribe On Youtube 1 <i class="fa-solid fa-angle-right"></i></button>
+      <button class="subscribe-btn" id="sub2" data-url="https://example.com/2" disabled><i class="fa-brands fa-youtube"></i> Subscribe On Youtube 2 <i class="fa-solid fa-angle-right"></i></button>
+      <button class="subscribe-btn" id="sub3" data-url="https://example.com/3" disabled><i class="fa-brands fa-youtube"></i> Subscribe On Youtube 3 <i class="fa-solid fa-angle-right"></i></button>
+      <button class="subscribe-btn" id="sub4" data-url="https://example.com/4" disabled><i class="fa-brands fa-youtube"></i> Subscribe On Youtube 4 <i class="fa-solid fa-angle-right"></i></button>
+    </div>
+    <p class="progress-text" id="progressText">unlock progress 0/4</p>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button class="continue-btn" id="continue" disabled><i class="fa-solid fa-lock"></i> Unlock Link <i class="fa-solid fa-link"></i></button>
+  </div>
+
+  <script>
+    let currentStep = 0;
+    const totalSteps = 4;
+
+    const buttons = [
+      document.getElementById('sub1'),
+      document.getElementById('sub2'),
+      document.getElementById('sub3'),
+      document.getElementById('sub4')
+    ];
+
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    const continueBtn = document.getElementById('continue');
+
+    buttons.forEach((btn, index) => {
+      btn.addEventListener('click', (e) => {
+        if (index > currentStep) return;
+
+        const url = btn.getAttribute('data-url');
+        window.open(url, '_blank');
+
+        if (index === currentStep) {
+          const icons = btn.querySelectorAll('i');
+          if (icons.length > 1) {
+            icons[1].classList.remove('fa-angle-right');
+            icons[1].classList.add('fa-spinner', 'fa-spin');
+
+            setTimeout(() => {
+              icons[1].classList.remove('fa-spinner', 'fa-spin');
+              icons[1].classList.add('fa-circle-check');
+              btn.classList.add('clicked');
+
+              btn.disabled = false;
+              if (buttons[index + 1]) buttons[index + 1].disabled = false;
+
+              currentStep++;
+              const progressPercent = (currentStep / totalSteps) * 100;
+              progressBar.style.width = progressPercent + '%';
+              progressText.textContent = `unlock progress ${currentStep}/4`;
+
+              if (currentStep === totalSteps) {
+                continueBtn.disabled = false;
+                continueBtn.classList.add('active');
+                continueBtn.addEventListener('click', () => {
+                  window.open('https://example.com', '_blank');
+                });
+              }
+            }, 1500);
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
