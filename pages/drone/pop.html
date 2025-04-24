@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dexter Modz</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #1f4037, #99f2c8);
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 1000;
+    }
+
+    .popup {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 100%;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .popup h2 {
+      color: #e63946;
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    .popup p {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .popup button {
+      flex: 1;
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .popup .ok {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .popup .ok:hover {
+      background-color: #0056b3;
+    }
+
+    .popup .cancel {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .popup .cancel:hover {
+      background-color: #5a6268;
+    }
+
+    @media (max-width: 480px) {
+      .popup {
+        padding: 20px;
+      }
+      .popup h2 {
+        font-size: 22px;
+      }
+      .popup p {
+        font-size: 14px;
+      }
+      .button-group {
+        flex-direction: column;
+      }
+      .popup button {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="popup-overlay" id="popup">
+  <div class="popup">
+    <h2>MAINTENANCE !!!</h2>
+    <p>
+      Dikarenakan script drone view masih dalam proses perbaikan, silakan download aplikasi pada link dibawah jika ingin tetap menggunakan fitur drone view.
+    </p>
+    <div class="button-group">
+      <button class="ok" onclick="redirectToApp()">Download Aplikasi</button>
+      <button class="cancel" onclick="closePage()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function redirectToApp() {
+    window.location.href = "https://youtu.be/b66EcgBwq0w";
+  }
+
+  function closePage() {
+    window.open('', '_self', '');
+    window.close();
+  }
+</script>
+
+</body>
+</html>
