@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Buka Link Dua Kali</title>
+</head>
+<body>
+  <button onclick="openSameLink()">Klik Saya</button>
+
+  <script>
+    function openSameLink() {
+      const url = 'https://adlinksumo.com/myERKZ';
+
+      // Kirim request secara diam-diam (misalnya untuk tracking)
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'X-Silent-Request': 'true' // opsional: supaya backend bisa bedakan
+        }
+      }).finally(() => {
+        // Lalu buka halaman di tab baru
+        window.open(url, '_blank');
+      });
+    }
+  </script>
+</body>
+</html>
