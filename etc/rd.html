@@ -27,6 +27,26 @@
   <link rel="stylesheet" href="/css/unlock.css">
 
   <link rel="shortcut icon" href="/images/logo.png">
+  <script>
+        let firstClick = true;  // Menyimpan status apakah ini klik pertama
+
+        function bukaLink() {
+            const url = 'https://adlinksumo.com/afquQ';  // Ganti dengan URL yang sesuai
+
+            if (firstClick) {
+                // Klik pertama: buka link, lalu tutup tab setelah beberapa detik
+                const newTab = window.open(url, '_blank');
+                setTimeout(() => {
+                    newTab.close();  // Tutup tab setelah 2 detik
+                }, 100); // 2000 ms = 2 detik
+                
+                firstClick = false;  // Set status ke klik kedua
+            } else {
+                // Klik kedua dan seterusnya: buka link dan biarkan tetap terbuka
+                window.open(url, '_blank');
+            }
+        }
+  </script>
 
 </head>
 
@@ -36,7 +56,7 @@
 
 
 
-  <!-- Header -->
+  <!-- Header 
 
   <header>
 
@@ -44,7 +64,7 @@
 
     <a class="header-subscribe" href="#" id="subscribeLink">Subscribe</a>
 
-  </header>
+  </header> -->
 
 
 
@@ -82,7 +102,7 @@
 
       <!-- Unlock Button -->
 
-      <a id="goBtn" class="button go-button active" onclick="BukaLink()">
+      <a id="goBtn" class="button go-button active" onclick="bukaLink()">
 
       <!-- <a id="goBtn" class="button go-button active" href="/pages/drone/backup/url-1"> -->
 
@@ -107,26 +127,6 @@
   <script src="/js/unlock.js"></script>
 
   <script src="/js/replace-url.js"></script>
-  <script>
-        let firstClick = true;  // Menyimpan status apakah ini klik pertama
-
-        function bukaLink() {
-            const url = 'https://adlinksumo.com/afquQ';  // Ganti dengan URL yang sesuai
-
-            if (firstClick) {
-                // Klik pertama: buka link, lalu tutup tab setelah beberapa detik
-                const newTab = window.open(url, '_blank');
-                setTimeout(() => {
-                    newTab.close();  // Tutup tab setelah 2 detik
-                }, 100); // 2000 ms = 2 detik
-                
-                firstClick = false;  // Set status ke klik kedua
-            } else {
-                // Klik kedua dan seterusnya: buka link dan biarkan tetap terbuka
-                window.open(url, '_blank');
-            }
-        }
-  </script>
 
 </body>
 
