@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Link Sekali Klik</title>
+  <script>
+    let clicked = false;
+
+    function handleClick(e) {
+      e.preventDefault();
+      const url = e.currentTarget.href;
+
+      if (!clicked) {
+        clicked = true;
+        const win = window.open(url, '_blank');
+
+        // Tutup tab yang baru setelah beberapa detik
+        setTimeout(() => {
+          win.close();
+        }, 2000); // waktu cukup agar halaman sempat dimuat
+      } else {
+        // Klik selanjutnya: buka seperti biasa
+        window.open(url, '_blank');
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Link Sekali Klik</h2>
+  <a href="https://adlinksumo.com/kCqDk" onclick="handleClick(event)">Kunjungi Contoh</a>
+</body>
+</html>
