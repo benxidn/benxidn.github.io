@@ -1,9 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const subscribeLink = document.getElementById('subscribeLink');
-  if (subscribeLink) {
-    subscribeLink.href = '/redirect/channel1.html';
-  }
-  
   const path = window.location.pathname;
 
   // Load header
