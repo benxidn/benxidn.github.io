@@ -88,12 +88,33 @@ body {
     text-decoration: none;
     height: 40px;
     box-sizing: border-box;
-    cursor: pointer;
   }
   
+  /* Warna default tetap */
   .button {
     background: #ff0000;
     color: #fff;
+    cursor: pointer;
+  }
+  
+  .go-button {
+    background: #333333;
+    color: #aaaaaa;
+    cursor: default;
+  }
+  
+  .go-button i {
+    color: #aaa !important;
+  }
+  
+  .go-button.active {
+    background: #1c3421;
+    color: #01DF72;
+    cursor: pointer;
+  }
+  
+  .go-button.active i {
+    color: #01DF72 !important;
   }
   
   .button i,
@@ -111,45 +132,11 @@ body {
     font-size: 17px;
   }
   
-  /* === STATE TOMBOL INAKTIF === */
-  .button.inactive,
-  .go-button:not(.active) {
-    background: #333;
-    color: #aaa;
+  /* === DISABLE INTERAKSI TANPA UBAH WARNA === */
+  .button.disabled,
+  .go-button.disabled {
     pointer-events: none;
     cursor: default;
-    text-decoration: none;
-  }
-  
-  .button.inactive i,
-  .go-button:not(.active) i {
-    color: #aaa !important;
-  }
-  
-  /* === STATE TOMBOL SELESAI KLIK === */
-  .button.clicked {
-    background: #333;
-    color: #aaa;
-    pointer-events: none;
-  }
-  
-  .button.clicked i {
-    color: #aaa !important;
-  }
-  
-  /* === TOMBOL UNLOCK AKTIF === */
-  .go-button {
-    background: #333333;
-    color: #aaaaaa;
-  }
-  
-  .go-button.active {
-    background: #1c3421;
-    color: #01DF72;
-  }
-  
-  .go-button.active i {
-    color: #01DF72 !important;
   }
   
   /* === JARAK ANTAR TOMBOL === */
