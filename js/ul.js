@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const subscribeLink = document.getElementById('subscribeLink');
+  if (subscribeLink) {
+    subscribeLink.href = '/redirect/channel1.html';
+  }
+  
   const path = window.location.pathname;
 
   // Load header
@@ -9,6 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const match = path.match(/unlock-(\d)(?:\.html)?$/);
   const totalButtons = match ? parseInt(match[1]) : 0;
 
+  const goBtn = document.getElementById('goBtn');
+  const progressText = document.getElementById('progressText');
+  const progressBar = document.getElementById('progressBar');
+
+  // Fungsi update progress bar dan unlock status
+  function updateProgress() {
+    if (progressText && progressBar) {
+      progressText.textContent = `Unlock progress: ${currentProgress}/${totalButtons}`;
+      const percent = (currentProgress / totalButtons) * 100;
+      progressBar.style.width = `${percent}%`;
+    }
+
+    if (currentProgress === totalButtons) {
+      goBtn.classList.add('active');
+      goBtn.classList.remove('disabled');
+    } else {
+      goBtn.classList.remove('active');
+      goBtn.classList.add('disabled');
+    }
+  }
+
+  // Jika halaman unlock
   if (match) {
     const subscribeFile = `/components/btn-subs${match[1]}.html`;
 
@@ -20,20 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
         initUnlockLogic(totalButtons);
       });
   } else {
-    const goBtn = document.getElementById('goBtn');
-    const progressText = document.getElementById('progressText');
-    const progressBar = document.getElementById('progressBar');
-
-    if (goBtn) goBtn.classList.add('active');
+    // Halaman non-unlock: langsung aktifkan tombol
+    if (goBtn) {
+      goBtn.classList.add('active');
+      goBtn.classList.remove('disabled');
+    }
     if (progressText) progressText.textContent = `Unlock progress: 0/0`;
     if (progressBar) progressBar.style.width = `100%`;
   }
 
   function initUnlockLogic(totalButtons) {
-    const goBtn = document.getElementById('goBtn');
-    const progressText = document.getElementById('progressText');
-    const progressBar = document.getElementById('progressBar');
-
     const subscribeButtons = [];
     for (let i = 1; i <= totalButtons; i++) {
       const btn = document.getElementById(`btn${i}`);
@@ -49,24 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentProgress = 0;
 
-    function updateProgress() {
-      if (progressText && progressBar) {
-        progressText.textContent = `Unlock progress: ${currentProgress}/${totalButtons}`;
-        const percent = (currentProgress / totalButtons) * 100;
-        progressBar.style.width = `${percent}%`;
-      }
-    }
-
     subscribeButtons.forEach((button, index) => {
-      if (index !== 0) button.classList.add('inactive');
-
       button.addEventListener('click', e => {
         e.preventDefault();
 
+        // Pastikan urutan subscribe
         if (index > 0 && !subscribeButtons[index - 1].classList.contains('counted')) return;
 
         window.open(youtubeLinks[index], '_blank');
-
         const icon = button.querySelector('.icon-right');
 
         if (!button.classList.contains('counted')) {
@@ -74,31 +87,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
           setTimeout(() => {
             icon.className = 'fas fa-check-circle icon-right';
-            button.classList.add('counted', 'inactive');
+            button.classList.add('counted');
+            button.style.backgroundColor = '#333';
+            button.style.color = '#aaa';
+            icon.style.color = '#aaa';
 
             currentProgress++;
             updateProgress();
-
-            if (subscribeButtons[index + 1]) {
-              subscribeButtons[index + 1].classList.remove('inactive');
-            }
-
-            if (currentProgress === totalButtons && goBtn) {
-              goBtn.classList.add('active');
-            }
           }, 3000);
         }
       });
     });
 
+    // Prevent click if belum lengkap
     if (goBtn) {
+      goBtn.classList.add('disabled'); // initial state
       goBtn.addEventListener('click', (e) => {
-        if (!goBtn.classList.contains('active')) e.preventDefault();
+        if (currentProgress < totalButtons) {
+          e.preventDefault();
+        }
       });
     }
 
     updateProgress();
 
+    // Blok klik kanan dan drag
     document.addEventListener('contextmenu', (e) => e.preventDefault());
     document.addEventListener('dragstart', (e) => e.preventDefault());
     document.addEventListener('mousedown', (e) => {
