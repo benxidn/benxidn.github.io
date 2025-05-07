@@ -88,36 +88,36 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // if (goBtn) {
-    //   goBtn.addEventListener('click', (e) => {
-    //     if (currentProgress < totalButtons) e.preventDefault();
-    //   });
-    // }
-
-    let goBtnClickedOnce = false;
-
     if (goBtn) {
       goBtn.addEventListener('click', (e) => {
-        if (currentProgress < totalButtons) {
-          e.preventDefault();
-          return;
-        }
-
-        if (!goBtnClickedOnce) {
-          e.preventDefault(); // cegah aksi default klik pertama
-          const win = window.open(goBtn.href, '_blank');
-          goBtnClickedOnce = true;
-
-          // Tutup tab setelah 4 detik
-          setTimeout(() => {
-            if (win && !win.closed) {
-              win.close();
-            }
-          }, 4000);
-        }
-        // Klik kedua dan seterusnya: biarkan href bekerja normal
+        if (currentProgress < totalButtons) e.preventDefault();
       });
     }
+
+    // let goBtnClickedOnce = false;
+
+    // if (goBtn) {
+    //   goBtn.addEventListener('click', (e) => {
+    //     if (currentProgress < totalButtons) {
+    //       e.preventDefault();
+    //       return;
+    //     }
+
+    //     if (!goBtnClickedOnce) {
+    //       e.preventDefault(); // cegah aksi default klik pertama
+    //       const win = window.open(goBtn.href, '_blank');
+    //       goBtnClickedOnce = true;
+
+    //       // Tutup tab setelah 4 detik
+    //       setTimeout(() => {
+    //         if (win && !win.closed) {
+    //           win.close();
+    //         }
+    //       }, 4000);
+    //     }
+    //     // Klik kedua dan seterusnya: biarkan href bekerja normal
+    //   });
+    // }
 
     updateProgress();
 
