@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalButtons = match ? parseInt(match[1]) : 0;
 
   if (match) {
-    const subscribeFile = `/components/btn-subs${match[1]}.html`;
+    const subscribeFile = `/components/btn-sub${match[1]}.html`;
 
     fetch(subscribeFile)
       .then(res => res.text())
@@ -20,13 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
         initUnlockLogic(totalButtons);
       });
   } else {
-    // Jika bukan halaman unlock-x.html
     const goBtn = document.getElementById('goBtn');
-    
+
     if (goBtn) {
-      goBtn.removeAttribute('href'); // Mencegah link aktif lebih awal
+      goBtn.removeAttribute('href');
+      goBtn.classList.remove('active');
+      goBtn.style.cursor = 'default';
     }
-    
+
     const progressText = document.getElementById('progressText');
     const progressBar = document.getElementById('progressBar');
 
@@ -43,15 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const subscribeButtons = [];
     for (let i = 1; i <= totalButtons; i++) {
       const btn = document.getElementById(`btn${i}`);
-      if (btn) subscribeButtons.push(btn);
+      if (btn) {
+        subscribeButtons.push(btn);
+        // Setup awal: hanya btn1 aktif
+        btn.style.cursor = i === 1 ? 'pointer' : 'default';
+        btn.style.pointerEvents = i === 1 ? 'auto' : 'none';
+      }
     }
-
-    const youtubeLinks = [
-      "/redirect/channel1.html",
-      "/redirect/channel2.html",
-      "/redirect/channel3.html",
-      "/redirect/channel4.html"
-    ];
 
     let currentProgress = 0;
 
@@ -69,7 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (index > 0 && !subscribeButtons[index - 1].classList.contains('counted')) return;
 
-        window.open(youtubeLinks[index], '_blank');
+        const href = button.dataset.href;
+        if (href) window.open(href, '_blank');
         const icon = button.querySelector('.icon-right');
 
         if (!button.classList.contains('counted')) {
@@ -81,54 +81,40 @@ document.addEventListener('DOMContentLoaded', () => {
             button.style.backgroundColor = '#333';
             button.style.color = '#aaa';
             icon.style.color = '#aaa';
+            button.style.cursor = 'default';
+            button.style.pointerEvents = 'none';
 
             currentProgress++;
             updateProgress();
 
+            // Aktifkan tombol berikutnya
+            if (index + 1 < subscribeButtons.length) {
+              const nextBtn = subscribeButtons[index + 1];
+              nextBtn.style.cursor = 'pointer';
+              nextBtn.style.pointerEvents = 'auto';
+            }
+
             if (currentProgress === totalButtons && goBtn) {
               goBtn.classList.add('active');
-              goBtn.setAttribute('href', goBtn.dataset.href); // Aktifkan href saat selesai
+              goBtn.setAttribute('href', goBtn.dataset.href);
               goBtn.style.cursor = 'pointer';
-            }            
+            }
           }, 3000);
         }
       });
     });
 
     if (goBtn) {
+      goBtn.removeAttribute('href');
+      goBtn.style.cursor = 'default';
       goBtn.addEventListener('click', (e) => {
         if (currentProgress < totalButtons) e.preventDefault();
       });
     }
 
-    // let goBtnClickedOnce = false;
-
-    // if (goBtn) {
-    //   goBtn.addEventListener('click', (e) => {
-    //     if (currentProgress < totalButtons) {
-    //       e.preventDefault();
-    //       return;
-    //     }
-
-    //     if (!goBtnClickedOnce) {
-    //       e.preventDefault(); // cegah aksi default klik pertama
-    //       const win = window.open(goBtn.href, '_blank');
-    //       goBtnClickedOnce = true;
-
-    //       // Tutup tab setelah 4 detik
-    //       setTimeout(() => {
-    //         if (win && !win.closed) {
-    //           win.close();
-    //         }
-    //       }, 4000);
-    //     }
-    //     // Klik kedua dan seterusnya: biarkan href bekerja normal
-    //   });
-    // }
-
     updateProgress();
 
-    // Blok klik kanan dan drag
+    // Blok klik kanan, drag, klik kiri
     document.addEventListener('contextmenu', (e) => e.preventDefault());
     document.addEventListener('dragstart', (e) => e.preventDefault());
     document.addEventListener('mousedown', (e) => {
