@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('/components/new-header.html')
     .then(res => res.text())
     .then(html => document.body.insertAdjacentHTML('afterbegin', html));
+    
+    const subscribeLink = document.getElementById('subscribeLink');
+    if (subscribeLink) {
+      subscribeLink.href = '/redirect/channel1.html';
+    }
 
   const match = path.match(/unlock-(\d)(?:\.html)?$/);
   const totalButtons = match ? parseInt(match[1]) : 0;
