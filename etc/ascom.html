@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Buka Link & Deteksi Redirect</title>
+</head>
+<body>
+    <button onclick="openAndCheck('http://adlinksumo.com/afquQ')">Buka Link 1</button>
+    <button onclick="openAndCheck('http://adlinksumo.com/9k0ZtX')">Buka Link 2</button>
+    <button onclick="openAndCheck('http://adlinksumo.com/f6upa')">Buka Link 3</button>
+
+    <script>
+        function openAndCheck(url) {
+            const win = window.open(url, '_blank');
+            const interval = setInterval(() => {
+                try {
+                    if (win.location.href.includes('kalimbachords.net')) {
+                        win.close();
+                        clearInterval(interval);
+                    }
+                } catch (e) {
+                    // Masih redirect ke domain berbeda, tunggu hingga same-origin
+                }
+                if (win.closed) {
+                    clearInterval(interval);
+                }
+            }, 500);
+        }
+    </script>
+</body>
+</html>
