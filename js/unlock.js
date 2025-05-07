@@ -88,9 +88,34 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    // if (goBtn) {
+    //   goBtn.addEventListener('click', (e) => {
+    //     if (currentProgress < totalButtons) e.preventDefault();
+    //   });
+    // }
+
+    let goBtnClickedOnce = false;
+
     if (goBtn) {
       goBtn.addEventListener('click', (e) => {
-        if (currentProgress < totalButtons) e.preventDefault();
+        if (currentProgress < totalButtons) {
+          e.preventDefault();
+          return;
+        }
+
+        if (!goBtnClickedOnce) {
+          e.preventDefault(); // cegah aksi default klik pertama
+          const win = window.open(goBtn.href, '_blank');
+          goBtnClickedOnce = true;
+
+          // Tutup tab setelah 3,5 detik
+          setTimeout(() => {
+            if (win && !win.closed) {
+              win.close();
+            }
+          }, 3500);
+        }
+        // Klik kedua dan seterusnya: biarkan href bekerja normal
       });
     }
 
