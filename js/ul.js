@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
               if (win && !win.closed) {
                 win.close();
               }
-            }, 1000);
+            }, 3000);
           }
           // Klik kedua dan seterusnya: biarkan href bekerja normal
         });
