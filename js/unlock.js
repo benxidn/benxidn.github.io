@@ -108,12 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
           const win = window.open(goBtn.href, '_blank');
           goBtnClickedOnce = true;
 
-          // Tutup tab setelah 3,5 detik
+          // Tutup tab setelah 4 detik
           setTimeout(() => {
             if (win && !win.closed) {
               win.close();
             }
-          }, 3500);
+          }, 4000);
         }
         // Klik kedua dan seterusnya: biarkan href bekerja normal
       });
