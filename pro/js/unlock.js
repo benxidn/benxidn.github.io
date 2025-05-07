@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(res => res.text())
       .then(html => document.body.insertAdjacentHTML('afterbegin', html));
   
-    const match = path.match(/unlock-(\d)\.html$/);
+    const match = path.match(/unlock-(\d)(?:\.html)?$/);
     const totalButtons = match ? parseInt(match[1]) : 0;
   
     if (match) {
