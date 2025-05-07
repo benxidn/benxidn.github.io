@@ -6,23 +6,29 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(res => res.text())
     .then(html => document.body.insertAdjacentHTML('afterbegin', html));
 
-  // Deteksi halaman unlock-1 (dengan 1 tombol)
-  const isUnlockPage = path.includes('unlock-1');
+  const match = path.match(/unlock-(\d)(?:\.html)?$/);
+  const totalButtons = match ? parseInt(match[1]) : 0;
 
-  // Load tombol subscribe sesuai halaman
-  const subscribeFile = isUnlockPage
-    ? '/components/btn-subscribe-single.html'
-    : '/components/btn-subscribe.html';
+  if (match) {
+    const subscribeFile = `/components/btn-subs${match[1]}.html`;
 
-  fetch(subscribeFile)
-    .then(res => res.text())
-    .then(html => {
-      const container = document.getElementById('subscribeButtonsContainer');
-      if (container) {
-        container.innerHTML = html;
-        initUnlockLogic(isUnlockPage ? 1 : 4);
-      }
-    });
+    fetch(subscribeFile)
+      .then(res => res.text())
+      .then(html => {
+        const container = document.getElementById('subscribeButtonsContainer');
+        if (container) container.innerHTML = html;
+        initUnlockLogic(totalButtons);
+      });
+  } else {
+    // Jika bukan halaman unlock-x.html
+    const goBtn = document.getElementById('goBtn');
+    const progressText = document.getElementById('progressText');
+    const progressBar = document.getElementById('progressBar');
+
+    if (goBtn) goBtn.classList.add('active');
+    if (progressText) progressText.textContent = `Unlock progress: 0/0`;
+    if (progressBar) progressBar.style.width = `100%`;
+  }
 
   function initUnlockLogic(totalButtons) {
     const goBtn = document.getElementById('goBtn');
@@ -84,9 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (goBtn) {
       goBtn.addEventListener('click', (e) => {
-        if (currentProgress < totalButtons) {
-          e.preventDefault();
-        }
+        if (currentProgress < totalButtons) e.preventDefault();
       });
     }
 
