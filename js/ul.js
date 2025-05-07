@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalButtons = match ? parseInt(match[1]) : 0;
 
   if (match) {
-    const subscribeFile = `/components/btn-sub${match[1]}.html`;
+    const subscribeFile = `/components/btn-subs${match[1]}.html`;
 
     fetch(subscribeFile)
       .then(res => res.text())
@@ -21,13 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   } else {
     const goBtn = document.getElementById('goBtn');
-
-    if (goBtn) {
-      goBtn.removeAttribute('href');
-      goBtn.classList.remove('active');
-      goBtn.style.cursor = 'default';
-    }
-
     const progressText = document.getElementById('progressText');
     const progressBar = document.getElementById('progressBar');
 
@@ -44,13 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const subscribeButtons = [];
     for (let i = 1; i <= totalButtons; i++) {
       const btn = document.getElementById(`btn${i}`);
-      if (btn) {
-        subscribeButtons.push(btn);
-        // Setup awal: hanya btn1 aktif
-        btn.style.cursor = i === 1 ? 'pointer' : 'default';
-        btn.style.pointerEvents = i === 1 ? 'auto' : 'none';
-      }
+      if (btn) subscribeButtons.push(btn);
     }
+
+    const youtubeLinks = [
+      "/redirect/channel1.html",
+      "/redirect/channel2.html",
+      "/redirect/channel3.html",
+      "/redirect/channel4.html"
+    ];
 
     let currentProgress = 0;
 
@@ -63,13 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     subscribeButtons.forEach((button, index) => {
+      if (index !== 0) button.classList.add('inactive');
+
       button.addEventListener('click', e => {
         e.preventDefault();
 
         if (index > 0 && !subscribeButtons[index - 1].classList.contains('counted')) return;
 
-        const href = button.dataset.href;
-        if (href) window.open(href, '_blank');
+        window.open(youtubeLinks[index], '_blank');
+
         const icon = button.querySelector('.icon-right');
 
         if (!button.classList.contains('counted')) {
@@ -77,27 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
           setTimeout(() => {
             icon.className = 'fas fa-check-circle icon-right';
-            button.classList.add('counted');
-            button.style.backgroundColor = '#333';
-            button.style.color = '#aaa';
-            icon.style.color = '#aaa';
-            button.style.cursor = 'default';
-            button.style.pointerEvents = 'none';
+            button.classList.add('counted', 'inactive');
 
             currentProgress++;
             updateProgress();
 
-            // Aktifkan tombol berikutnya
-            if (index + 1 < subscribeButtons.length) {
-              const nextBtn = subscribeButtons[index + 1];
-              nextBtn.style.cursor = 'pointer';
-              nextBtn.style.pointerEvents = 'auto';
+            if (subscribeButtons[index + 1]) {
+              subscribeButtons[index + 1].classList.remove('inactive');
             }
 
             if (currentProgress === totalButtons && goBtn) {
               goBtn.classList.add('active');
-              goBtn.setAttribute('href', goBtn.dataset.href);
-              goBtn.style.cursor = 'pointer';
             }
           }, 3000);
         }
@@ -105,16 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (goBtn) {
-      goBtn.removeAttribute('href');
-      goBtn.style.cursor = 'default';
       goBtn.addEventListener('click', (e) => {
-        if (currentProgress < totalButtons) e.preventDefault();
+        if (!goBtn.classList.contains('active')) e.preventDefault();
       });
     }
 
     updateProgress();
 
-    // Blok klik kanan, drag, klik kiri
     document.addEventListener('contextmenu', (e) => e.preventDefault());
     document.addEventListener('dragstart', (e) => e.preventDefault());
     document.addEventListener('mousedown', (e) => {
