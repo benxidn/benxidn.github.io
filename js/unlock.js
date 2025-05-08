@@ -40,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const btn = document.getElementById(`btn${i}`);
       if (btn) subscribeButtons.push(btn);
     }
-
+    
     const youtubeLinks = [
-      "/redirect/channel1.html",
-      "/redirect/channel2.html",
-      "/redirect/channel3.html",
-      "/redirect/channel4.html"
+      "https://sprl.in/subscribe",
+      "https://sprl.in/channel2",
+      "https://sprl.in/channel3",
+      "https://sprl.in/channel4"
     ];
 
     let currentProgress = 0;
