@@ -6,22 +6,14 @@
   <title>AKUN MLBB SERVER 5K</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
+    // Dapatkan nama file konten dari URL
     function getQueryParameter() {
-      const urlParams = window.location.search.substring(1);
-      return urlParams;
+      return window.location.search.substring(1); // Ambil parameter setelah '?'
     }
 
-    window.onload = function() {
-      const content = getQueryParameter();
-      if (content) {
-        loadContent(`${content}.html`);
-      } else {
-        loadContent('/paid/choice/1.html');
-      }
-    };
-
-    function loadContent(contentType) {
-      fetch(contentType)
+    // Muat konten HTML dari folder konten/
+    function loadContent(contentName) {
+      fetch(`konten/${contentName}.html`)
         .then(response => {
           if (!response.ok) {
             window.location.href = "/404.html";
@@ -39,19 +31,19 @@
         });
     }
 
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    });
-
-    document.addEventListener('mousedown', function(e) {
-      if (e.button === 2) {
-        e.preventDefault();
+    window.onload = () => {
+      const param = getQueryParameter();
+      if (param) {
+        loadContent(param);
+      } else {
+        loadContent('1'); // default konten
       }
-    });
+    };
 
-    document.addEventListener('dragstart', function(e) {
-      e.preventDefault();
-    });
+    // Nonaktifkan klik kanan, drag, dan klik tahan
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('mousedown', e => e.button === 2 && e.preventDefault());
+    document.addEventListener('dragstart', e => e.preventDefault());
   </script>
 </head>
 <body class="bg-[#edeef0] color-[#464a4c]">
