@@ -6,13 +6,103 @@
   <title>Dexter Modz</title>
   <link href="/images/logo.png" rel="shortcut icon">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Dapatkan nama file konten dari URL
-    function getQueryParameter() {
-      return window.location.search.substring(1); // Ambil parameter setelah '?'
+  <style>
+    /* Mobile First - default untuk mobile */
+    body {
+      font-size: 16px;
+    }
+    header {
+      padding: 12px;
+      font-size: 20px;
+    }
+    .subscribe {
+      font-size: 14px;
+    }
+    .content-area {
+      padding: 12px;
+    }
+    footer {
+      font-size: 14px;
     }
 
-    // Muat konten HTML dari folder konten/
+    /* Tablet */
+    @media screen and (min-width: 768px) {
+      header {
+        font-size: 22px;
+      }
+      .subscribe {
+        font-size: 16px;
+      }
+      .content-area {
+        padding: 16px;
+      }
+      footer {
+        font-size: 16px;
+      }
+    }
+
+    /* Desktop */
+    @media screen and (min-width: 1024px) {
+      body {
+        font-size: 18px;
+      }
+      header {
+        margin: 0 18px;
+        padding: 18px;
+        font-size: 24px;
+      }
+      .subscribe {
+        font-size: 16px;
+      }
+      .content-area {
+        margin: 0 18px;
+        padding: 20px;
+      }
+      footer {
+        font-size: 16px;
+        max-width: 400px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#edeef0] text-[#464a4c]">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center w-full max-w-6xl mx-auto">
+    <a href="/" class="font-bold hover:text-gray-500">Dexter Modz</a>
+    <a href="/redirect/channel1" class="subscribe bg-red-500 font-semibold text-white px-4 py-2 rounded-md hover:bg-red-700">Subscribe</a>
+  </header>
+
+  <!-- Konten Dinamis -->
+  <div class="w-full max-w-6xl mx-auto">
+    <div class="content-area bg-white rounded-sm">
+        
+      <div id="content" class="space-y-4">
+        <!-- Konten akan dimuat di sini -->
+      </div>
+        
+      <div class="text-[#468847] border-l-4 border-[#46884799] pl-2">
+        <p>Jika ada kendala bisa chat admin via WA berikut !!</p>
+        <a href="https://wa.me/6281338214136" target="_blank">
+          ➥ <span class="text-blue-500 hover:text-blue-900 hover:underline">https://wa.me/WhatsappAdmin</span>
+        </a>
+      </div>
+        
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-3 text-center w-full mx-auto border-t border-gray-300 mt-9">
+    <p class="text-black">Copyright©DexterModz</p>
+  </footer>
+
+  <script>
+    // Fungsi untuk ambil parameter setelah tanda '?'
+    function getQueryParameter() {
+      return window.location.search.substring(1);
+    }
+
+    // Fungsi untuk load konten HTML dinamis dari folder konten/
     function loadContent(contentName) {
       fetch(`${contentName}.html`)
         .then(response => {
@@ -32,6 +122,7 @@
         });
     }
 
+    // Jalankan saat halaman selesai dimuat
     window.onload = () => {
       const param = getQueryParameter();
       if (param) {
@@ -41,35 +132,21 @@
       }
     };
 
-    // Nonaktifkan klik kanan, drag, dan klik tahan
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('mousedown', e => e.button === 2 && e.preventDefault());
-    document.addEventListener('dragstart', e => e.preventDefault());
+    // Matikan klik kanan dan klik tahan pada semua <a>, tapi izinkan klik biasa
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a').forEach(link => {
+        // Cegah klik kanan (context menu)
+        link.addEventListener('contextmenu', e => e.preventDefault());
+
+        // Cegah klik tahan (touch hold) di mobile
+        link.addEventListener('touchstart', e => {
+          if (e.touches.length > 1) {
+            e.preventDefault();
+          }
+        });
+      });
+    });
   </script>
-</head>
-<body class="bg-[#edeef0] color-[#464a4c]">
-
-  <!-- Header -->
-  <header class="px-6 py-4 flex justify-between items-center w-full max-w-6xl mx-auto">
-    <a href="/" class="text-2xl font-bold hover:text-gray-600">Dexter Modz</a>
-    <a href="/redirect/channel1" class="bg-red-500 font-semibold text-white px-4 py-2 rounded-md hover:bg-red-600">Subscribe</a>
-  </header>
-
-  <!-- Konten Dinamis -->
-  <div class="w-full max-w-6xl mx-auto px-6">
-    <div class="bg-white p-6 rounded-sm">
-      
-      <div class="space-y-4" id="content">
-        <!-- Konten akan dimuat di sini -->
-      </div>
-        
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="py-4 px-6 text-center w-full max-w-sm mx-auto border-t border-gray-300 mt-9">
-    <p class="text-black">Copyright©DexterModz</p>
-  </footer>
 
 </body>
 </html>
