@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Halaman Tautan</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe src="" id="linkFrame"></iframe>
+
+  <script>
+    const rawParam = window.location.search.replace("?", "").toLowerCase();
+
+    const links = {
+      mlmod: "https://rentry.co/linkmlmod",
+      lulubox: "https://rentry.co/linklulubox",
+      drone: "https://rentry.co/linkdrone",
+      damage: "https://rentry.co/linkdamage",
+      fps: "https://rentry.co/linkfps",
+      rw: "https://rentry.co/linkrw"
+    };
+
+    const linkFrame = links[rawParam];
+
+    if (linkFrame) {
+      document.getElementById("linkFrame").src = linkFrame;
+    } else {
+      document.body.innerHTML = "<h2 style='text-align:center; margin-top: 20px;'>Link tidak ditemukan.</h2>";
+    }
+  </script>
+  <script src="/js/replace-url.js"></script>
+</body>
+</html>
