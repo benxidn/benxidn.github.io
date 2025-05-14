@@ -1,56 +1,97 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Halaman Tautan</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-    iframe {
-      width: 100vw;
-      height: 100vh;
-      border: none;
-    }
-  </style>
-</head>
-<body>
-  <iframe src="" id="linkFrame"></iframe>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AKUN MLBB SERVER 5K</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    const rawParam = window.location.search.replace("?", "").toLowerCase();
+    function getQueryParameter() {
+      const urlParams = window.location.search.substring(1);
+      return urlParams;
+    }
 
-    const links = {
-      mlmod: "https://rentry.co/linkmlmod",
-      lulubox: "https://rentry.co/linklulubox",
-      drone: "https://rentry.co/linkdrone",
-      damage: "https://rentry.co/linkdamage",
-      fps: "https://rentry.co/linkfps",
-      rw: "https://rentry.co/linkrw",
-      akun1: "https://rentry.co/HBXh01",
-      akun2: "https://rentry.co/FVoB02",
-      akun3: "https://rentry.co/lntq03",
-      akun4: "https://rentry.co/ZkXw04",
-      akun5: "https://rentry.co/CDjx05",
-      akun6: "https://rentry.co/KIPs06",
-      akun7: "https://rentry.co/KUlu07",
-      akun8: "https://rentry.co/FXlo08",
-      akun9: "https://rentry.co/CFpd09",
-      akun10: "https://rentry.co/RkLW10"
+    window.onload = function() {
+      const content = getQueryParameter();
+      if (content) {
+        loadContent(`${content}.html`);
+      } else {
+        loadContent('/paid/choice/1.html');
+      }
     };
 
-    const linkFrame = links[rawParam];
-
-    if (linkFrame) {
-      document.getElementById("linkFrame").src = linkFrame;
-    } else {
-      window.location.href = "404.html";
+    function loadContent(contentType) {
+      fetch(contentType)
+        .then(response => {
+          if (!response.ok) {
+            window.location.href = "/404.html";
+            return;
+          }
+          return response.text();
+        })
+        .then(data => {
+          if (data) {
+            document.getElementById('content').innerHTML = data;
+          }
+        })
+        .catch(() => {
+          window.location.href = "/404.html";
+        });
     }
+
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousedown', function(e) {
+      if (e.button === 2) {
+        e.preventDefault();
+      }
+    });
+
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+    });
   </script>
-  <script src="/js/replace-url.js"></script>
+</head>
+<body class="bg-[#edeef0] color-[#464a4c]">
+
+  <!-- Header -->
+  <header class="px-6 py-4 flex justify-between items-center w-full max-w-6xl mx-auto">
+    <a href="/" class="text-2xl font-bold hover:text-gray-600">Dexter Modz</a>
+    <a href="/redirect/channel1" class="bg-red-500 font-semibold text-white px-4 py-2 rounded-md hover:bg-red-600">Subscribe</a>
+  </header>
+
+  <!-- Konten Dinamis -->
+  <div class="w-full max-w-6xl mx-auto px-6">
+    <div class="bg-white space-y-4 p-6 rounded-sm">
+        <h1 class="text-xl font-bold">🔰AKUN MLBB SERVER 5K🔰</h1>
+        
+        <div id="content">
+            <!-- Konten akan dimuat di sini -->
+        </div>
+        
+        <div class="italic">
+          <p>Nb : Kalo pake cheat jangan lupa setting dns & matikan kredensial hp kalian !!</p>
+          <a href="https://youtu.be/szocEpRmGTI" target="_blank">
+            👉 <span class="text-blue-500 hover:text-blue-900 hover:underline">https://youtu.be/szocEpRmGTI</span>
+          </a>
+        </div>
+        
+        <div class="text-[#468847] border-l-4 border-[#46884799] pl-2">
+          <p>Jika ada kendala bisa chat admin via WA berikut !!</p>
+          <a href="https://wa.me/6281338214136" target="_blank">
+            ➥ <span class="text-blue-500 hover:text-blue-900 hover:underline">https://wa.me/WhatsappAdmin</span>
+          </a>
+        </div>
+        
+      </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-4 px-6 text-center w-full max-w-sm mx-auto border-t border-gray-300 mt-9">
+    <p class="text-black">Copyright©DexterModz</p>
+  </footer>
+
 </body>
 </html>
