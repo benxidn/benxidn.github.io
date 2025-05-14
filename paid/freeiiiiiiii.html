@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dexter Modz</title>
+  <link href="/images/logo.png" rel="shortcut icon">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe src="" id="linkFrame"></iframe>
+
+  <script>
+    const rawParam = window.location.search.replace("?", "").toLowerCase();
+
+    const links = {
+      mlmod: "https://rentry.co/linkmlmod",
+      lulubox: "https://rentry.co/linklulubox",
+      drone: "https://rentry.co/linkdrone",
+      damage: "https://rentry.co/linkdamage",
+      fps: "https://rentry.co/linkfps",
+      rw: "https://rentry.co/linkrw",
+      akun1: "https://rentry.co/HBXh01",
+      akun2: "https://rentry.co/FVoB02",
+      akun3: "https://rentry.co/lntq03",
+      akun4: "https://rentry.co/ZkXw04",
+      akun5: "https://rentry.co/CDjx05",
+      akun6: "https://rentry.co/KIPs06",
+      akun7: "https://rentry.co/KUlu07",
+      akun8: "https://rentry.co/FXlo08",
+      akun9: "https://rentry.co/CFpd09",
+      akun10: "https://rentry.co/RkLW10"
+    };
+
+    const linkFrame = links[rawParam];
+
+    if (linkFrame) {
+      document.getElementById("linkFrame").src = linkFrame;
+    } else {
+      window.location.href = "/404.html";
+    }
+  </script>
+  <script src="/js/replace-url.js"></script>
+</body>
+</html>
