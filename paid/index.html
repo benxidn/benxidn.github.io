@@ -13,7 +13,7 @@
 
     // Muat konten HTML dari folder konten/
     function loadContent(contentName) {
-      fetch(`konten/${contentName}.html`)
+      fetch(`choice/${contentName}.html`)
         .then(response => {
           if (!response.ok) {
             window.location.href = "/404.html";
