@@ -140,19 +140,17 @@
       }
     };
 
-    // Matikan klik kanan dan klik tahan pada semua <a>, tapi izinkan klik biasa
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('a').forEach(link => {
-        // Cegah klik kanan (context menu)
-        link.addEventListener('contextmenu', e => e.preventDefault());
+    // Event delegation: cegah klik kanan & tahan pada semua <a>, termasuk yang dimuat belakangan
+    document.addEventListener('contextmenu', (e) => {
+      if (e.target.closest('a')) {
+        e.preventDefault();
+      }
+    });
 
-        // Cegah klik tahan (touch hold) di mobile
-        link.addEventListener('touchstart', e => {
-          if (e.touches.length > 1) {
-            e.preventDefault();
-          }
-        });
-      });
+    document.addEventListener('touchstart', (e) => {
+      if (e.touches.length > 1 && e.target.closest('a')) {
+        e.preventDefault();
+      }
     });
   </script>
 
