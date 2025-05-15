@@ -63,6 +63,18 @@
         max-width: 400px;
       }
     }
+
+    /* Mencegah klik kanan, long press & drag */
+    a {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      user-drag: none;
+      -webkit-user-drag: none;
+    }
   </style>
 </head>
 <body class="bg-[#edeef0] text-[#464a4c]">
@@ -105,12 +117,12 @@
   </footer>
 
   <script>
-    // Fungsi untuk ambil parameter setelah tanda '?'
+    // Fungsi ambil parameter query setelah tanda '?'
     function getQueryParameter() {
       return window.location.search.substring(1);
     }
 
-    // Fungsi untuk load konten HTML dinamis dari folder konten/
+    // Fungsi load konten HTML dinamis dari folder konten/
     function loadContent(contentName) {
       fetch(`${contentName}.html`)
         .then(response => {
@@ -122,7 +134,13 @@
         })
         .then(data => {
           if (data) {
-            document.getElementById('content').innerHTML = data;
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = data;
+
+            // Tambahkan draggable="false" ke semua <a> baru di konten
+            contentDiv.querySelectorAll('a').forEach(link => {
+              link.setAttribute('draggable', 'false');
+            });
           }
         })
         .catch(() => {
@@ -140,15 +158,23 @@
       }
     };
 
-    // Event delegation: cegah klik kanan & tahan pada semua <a>, termasuk yang dimuat belakangan
+    // Event delegation untuk mencegah klik kanan pada semua link <a>
     document.addEventListener('contextmenu', (e) => {
       if (e.target.closest('a')) {
         e.preventDefault();
       }
     });
 
+    // Event delegation untuk mencegah klik tahan (long press) di mobile pada semua link <a>
     document.addEventListener('touchstart', (e) => {
       if (e.touches.length > 1 && e.target.closest('a')) {
+        e.preventDefault();
+      }
+    });
+
+    // Event delegation untuk mencegah drag (seret) pada semua link <a>
+    document.addEventListener('dragstart', (e) => {
+      if (e.target.closest('a')) {
         e.preventDefault();
       }
     });
