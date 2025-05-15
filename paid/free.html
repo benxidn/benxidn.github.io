@@ -135,17 +135,27 @@
       }
     };
 
-    // Matikan klik kanan dan klik tahan pada semua <a>, tapi izinkan klik biasa
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('a').forEach(link => {
-        // Cegah klik kanan (context menu)
+        // Cegah klik kanan (desktop)
         link.addEventListener('contextmenu', e => e.preventDefault());
 
-        // Cegah klik tahan (touch hold) di mobile
+        // Cegah klik tahan (long press di mobile)
+        let touchTimer;
+
         link.addEventListener('touchstart', e => {
-          if (e.touches.length > 1) {
-            e.preventDefault();
-          }
+          // Mulai timer saat disentuh
+          touchTimer = setTimeout(() => {
+            e.preventDefault(); // Cegah long press
+          }, 500); // 500ms = ambang long press
+        });
+
+        link.addEventListener('touchend', () => {
+          clearTimeout(touchTimer); // Lepas sebelum 500ms = klik biasa
+        });
+
+        link.addEventListener('touchmove', () => {
+          clearTimeout(touchTimer); // Geser saat sentuh = batal
         });
       });
     });
