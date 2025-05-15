@@ -94,6 +94,10 @@ function AddScript() {
   window.open("https://youtu.be/6aqGQwdazVg", "_blank");
 }
 
+function RoomWangi() {
+  window.open("https://youtu.be/@dextertod", "_blank");
+}
+
 function Server5K() {
   window.open("https://youtu.be/EoyTJI0PyRU", "_blank");
 }
