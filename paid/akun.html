@@ -117,6 +117,48 @@
   </footer>
 
   <script>
+  function getQueryParameter() {
+    return window.location.search.substring(1);
+  }
+
+  function loadContent(contentName) {
+    fetch(`${contentName}.html`)
+      .then(response => {
+        if (!response.ok) {
+          window.location.href = "/404.html";
+          return;
+        }
+        return response.text();
+      })
+      .then(data => {
+        if (data) {
+          const contentDiv = document.getElementById('content');
+          contentDiv.innerHTML = data;
+
+          contentDiv.querySelectorAll('a').forEach(link => {
+            link.setAttribute('draggable', 'false');
+          });
+
+          // Hapus parameter dari URL setelah konten selesai dimuat
+          window.history.replaceState({}, '', window.location.origin);
+        }
+      })
+      .catch(() => {
+        window.location.href = "/404.html";
+      });
+  }
+
+  window.onload = () => {
+    const param = getQueryParameter();
+    if (param) {
+      loadContent(param);
+    } else {
+      loadContent('1');
+    }
+  };
+</script>
+
+  <!-- <script>
     // Fungsi ambil parameter query setelah tanda '?'
     function getQueryParameter() {
       return window.location.search.substring(1);
@@ -178,7 +220,7 @@
         e.preventDefault();
       }
     });
-  </script>
+  </script> -->
   <!-- <script src="/js/replace-url.js"></script> -->
 </body>
 </html>
