@@ -117,54 +117,10 @@
   </footer>
 
   <script>
-  function getQueryParameter() {
-    return window.location.search.substring(1);
-  }
-
-  function loadContent(contentName) {
-    fetch(`${contentName}.html`)
-      .then(response => {
-        if (!response.ok) {
-          window.location.href = "/404.html";
-          return;
-        }
-        return response.text();
-      })
-      .then(data => {
-        if (data) {
-          const contentDiv = document.getElementById('content');
-          contentDiv.innerHTML = data;
-
-          contentDiv.querySelectorAll('a').forEach(link => {
-            link.setAttribute('draggable', 'false');
-          });
-
-          // Hapus parameter dari URL setelah konten selesai dimuat
-          window.history.replaceState({}, '', window.location.origin);
-        }
-      })
-      .catch(() => {
-        window.location.href = "/404.html";
-      });
-  }
-
-  window.onload = () => {
-    const param = getQueryParameter();
-    if (param) {
-      loadContent(param);
-    } else {
-      loadContent('1');
-    }
-  };
-</script>
-
-  <!-- <script>
-    // Fungsi ambil parameter query setelah tanda '?'
     function getQueryParameter() {
       return window.location.search.substring(1);
     }
 
-    // Fungsi load konten HTML dinamis dari folder konten/
     function loadContent(contentName) {
       fetch(`${contentName}.html`)
         .then(response => {
@@ -179,10 +135,12 @@
             const contentDiv = document.getElementById('content');
             contentDiv.innerHTML = data;
 
-            // Tambahkan draggable="false" ke semua <a> baru di konten
             contentDiv.querySelectorAll('a').forEach(link => {
               link.setAttribute('draggable', 'false');
             });
+
+            // Hapus parameter dari URL setelah konten selesai dimuat
+            window.history.replaceState({}, '', window.location.origin);
           }
         })
         .catch(() => {
@@ -190,37 +148,14 @@
         });
     }
 
-    // Jalankan saat halaman selesai dimuat
     window.onload = () => {
       const param = getQueryParameter();
       if (param) {
         loadContent(param);
       } else {
-        loadContent('1'); // default konten
+        loadContent('1');
       }
     };
-
-    // Event delegation untuk mencegah klik kanan pada semua link <a>
-    document.addEventListener('contextmenu', (e) => {
-      if (e.target.closest('a')) {
-        e.preventDefault();
-      }
-    });
-
-    // Event delegation untuk mencegah klik tahan (long press) di mobile pada semua link <a>
-    document.addEventListener('touchstart', (e) => {
-      if (e.touches.length > 1 && e.target.closest('a')) {
-        e.preventDefault();
-      }
-    });
-
-    // Event delegation untuk mencegah drag (seret) pada semua link <a>
-    document.addEventListener('dragstart', (e) => {
-      if (e.target.closest('a')) {
-        e.preventDefault();
-      }
-    });
-  </script> -->
-  <!-- <script src="/js/replace-url.js"></script> -->
+  </script>
 </body>
 </html>
