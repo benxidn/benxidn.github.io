@@ -38,6 +38,18 @@ fetch('/components/tutor-download.html')
     document.getElementById("download").innerHTML = data;
   });
 
+fetch('/components/modapk.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("modapk").innerHTML = data;
+  });
+
+fetch('/components/modfree.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("modfree").innerHTML = data;
+  });
+
 fetch('/components/free.html')
   .then(response => response.text())
   .then(data => {
