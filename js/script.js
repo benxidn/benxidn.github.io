@@ -136,6 +136,16 @@ function payLink(button) {
   return false;
 }
 
+// Fungsi untuk popup beli link
+function payDrone(button) {
+  const link = button.getAttribute('data-href');
+  const confirmed = confirm("Untuk mendapatkan link drone view tanpa iklan ini kamu harus bayar Rp. 5000!\nKlik 'OK' untuk bayar, atau 'Cancel' untuk batal!");
+  if (confirmed) {
+    window.open(link, "_blank");
+  }
+  return false;
+}
+
 // Fungsi untuk popup beli akun server 5k
 function payAkun(button) {
   const link = button.getAttribute('data-href');
