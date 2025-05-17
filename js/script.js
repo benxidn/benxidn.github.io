@@ -129,7 +129,7 @@ function copy(id) {
 // Fungsi untuk popup beli link
 function payLink(button) {
   const link = button.getAttribute('data-href');
-  const confirmed = confirm("Untuk mendapatkan link tanpa iklan ini kamu harus bayar Rp. 3000!\nKlik 'OK' untuk bayar, atau 'Cancel' untuk batal!");
+  const confirmed = confirm("Untuk mendapatkan link download tanpa iklan ini kamu harus bayar Rp. 3000!\nKlik 'OK' untuk bayar, atau 'Cancel' untuk batal!");
   if (confirmed) {
     window.open(link, "_blank");
   }
