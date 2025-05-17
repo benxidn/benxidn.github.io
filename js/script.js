@@ -125,3 +125,23 @@ function copy(id) {
     alert(`${id === 'pass' ? 'Password' : 'Key Login'} dicopy!`);
   });
 }
+
+// Fungsi untuk popup beli link
+function payLink(button) {
+  const link = button.getAttribute('data-href');
+  const confirmed = confirm("Untuk mendapatkan link tanpa iklan ini kamu harus bayar Rp. 3000!\nKlik 'OK' untuk bayar, atau 'Cancel' untuk batal!");
+  if (confirmed) {
+    window.open(link, "_blank");
+  }
+  return false;
+}
+
+// Fungsi untuk popup beli akun server 5k
+function payAkun(button) {
+  const link = button.getAttribute('data-href');
+  const confirmed = confirm("Untuk beli akun ML server 5K ini kamu harus bayar Rp. 5000!\nKlik 'OK' untuk bayar, atau 'Cancel' untuk batal!");
+  if (confirmed) {
+    window.open(link, "_blank");
+  }
+  return false;
+}
