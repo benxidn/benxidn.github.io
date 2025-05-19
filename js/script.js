@@ -38,6 +38,18 @@ fetch('/components/tutor-download.html')
     document.getElementById("download").innerHTML = data;
   });
 
+fetch('/components/key-hontoni.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("hontoni").innerHTML = data;
+  });
+
+fetch('/components/key-jhong.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("jhong").innerHTML = data;
+  });
+
 fetch('/components/modapk.html')
   .then(response => response.text())
   .then(data => {
