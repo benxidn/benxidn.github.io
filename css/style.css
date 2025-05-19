@@ -263,7 +263,7 @@ html, body {
 }
 #key {
   display: inline-block;
-  max-width: 100px;
+  max-width: 175px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
