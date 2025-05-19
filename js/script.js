@@ -119,7 +119,7 @@ function AddScript() {
 }
 
 function RoomWangi() {
-  window.open("https://youtu.be/@dextertod", "_blank");
+  window.open("https://youtu.be/XaDsbEZjjrE", "_blank");
 }
 
 function Server5K() {
