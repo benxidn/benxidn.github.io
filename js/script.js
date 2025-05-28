@@ -125,7 +125,7 @@ function AddScript() {
 }
 
 function RoomWangi() {
-  window.open("https://youtu.be/XaDsbEZjjrE", "_blank");
+  window.open("https://youtu.be/qUsnK2vOEiU", "_blank");
 }
 
 function Server5K() {
