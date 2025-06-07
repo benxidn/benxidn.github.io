@@ -128,6 +128,10 @@ function RoomWangi() {
   window.open("https://youtu.be/qUsnK2vOEiU", "_blank");
 }
 
+function VPN() {
+  window.open("https://youtu.be/qUsnK2vOEiU", "_blank");
+}
+
 function Server5K() {
   window.open("https://youtu.be/EoyTJI0PyRU", "_blank");
 }
