@@ -147,13 +147,6 @@ function Dexter() {
 }
 
 // Fungsi untuk copy teks dari elemen dengan ID tertentu
-// function copy(id) {
-//   const text = document.getElementById(id).innerText;
-//   navigator.clipboard.writeText(text).then(() => {
-//     alert(`${id === 'pass' ? 'Password' : 'Key Login'} dicopy!`);
-//   });
-// }
-
 function copy(id) {
   const text = document.getElementById(id).innerText;
   navigator.clipboard.writeText(text).then(() => {
