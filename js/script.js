@@ -56,6 +56,12 @@ fetch('/components/key-jhong.html')
     document.getElementById("jhong").innerHTML = data;
   });
 
+fetch('/components/extra.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("extra").innerHTML = data;
+  });
+
 fetch('/components/modapk.html')
   .then(response => response.text())
   .then(data => {
@@ -153,10 +159,20 @@ function Dexter() {
 }
 
 // Fungsi untuk copy teks dari elemen dengan ID tertentu
+// function copy(id) {
+//   const text = document.getElementById(id).innerText;
+//   navigator.clipboard.writeText(text).then(() => {
+//     alert(`${id === 'pass' ? 'Password' : 'Key Login'} dicopy!`);
+//   });
+// }
+
 function copy(id) {
   const text = document.getElementById(id).innerText;
   navigator.clipboard.writeText(text).then(() => {
-    alert(`${id === 'pass' ? 'Password' : 'Key Login'} dicopy!`);
+    const message = id === 'pass'
+      ? 'Password berhasil dicopy!'
+      : 'Key Login berhasil dicopy!\nJika key expired silakan klik get key di aplikasi langsung!';
+    alert(message);
   });
 }
 
