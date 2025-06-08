@@ -118,6 +118,10 @@ function AddScript() {
   window.open("https://youtu.be/6aqGQwdazVg", "_blank");
 }
 
+function Injector() {
+  window.open("https://youtu.be/an21Fhn9OMQ", "_blank");
+}
+
 function RoomWangi() {
   window.open("https://youtu.be/qUsnK2vOEiU", "_blank");
 }
