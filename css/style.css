@@ -174,7 +174,7 @@ html, body {
   font-size: 27px;
   margin-right: 10px;
 }
-.footer p {
+.footer p.year {
   width: 100%;
   margin: 0;
   padding: 17.5px 0;
@@ -340,7 +340,7 @@ body,
 .btn-unduh,
 .action-area h2,
 .btn-action:hover,
-.footer p {
+.footer p.year {
   background: #7735D5;
 }
 .btn-subs,
@@ -351,7 +351,7 @@ body,
 .btn-unduh,
 .action-area h2,
 .btn-action:hover,
-.footer p {
+.footer p.year {
   color: #FFFFFF;
 }
 .box-in,
