@@ -114,6 +114,14 @@ function InstallAPK() {
   window.open("https://youtu.be/gyDQEhZl4es", "_blank");
 }
 
+function Minipatch() {
+  window.open("https://youtu.be/kh9XvQhpNBQ", "_blank");
+}
+
+function AddScript() {
+  window.open("https://youtu.be/6aqGQwdazVg", "_blank");
+}
+
 function AddScript() {
   window.open("https://youtu.be/6aqGQwdazVg", "_blank");
 }
