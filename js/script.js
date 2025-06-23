@@ -56,6 +56,12 @@ fetch('/components/key-jhong.html')
     document.getElementById("jhong").innerHTML = data;
   });
 
+fetch('/components/key-ui.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("ui").innerHTML = data;
+  });
+
 fetch('/components/extra.html')
   .then(response => response.text())
   .then(data => {
