@@ -121,7 +121,7 @@ function InstallAPK() {
 }
 
 function Minipatch() {
-  window.open("https://youtu.be/kh9XvQhpNBQ", "_blank");
+  window.open("https://youtu.be/3wty6ncvDt4", "_blank");
 }
 
 function AddScript() {
