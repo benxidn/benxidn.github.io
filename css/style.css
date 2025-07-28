@@ -437,3 +437,9 @@ body,
   font-size: 25px;
   background: #FF0000;
 }
+
+/*ADDITIONAL*/
+
+.btn-action.center.v2 {
+  background: #b3b3b3;
+}
