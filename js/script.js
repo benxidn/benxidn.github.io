@@ -62,6 +62,12 @@ fetch('/components/key-ui.html')
     document.getElementById("ui").innerHTML = data;
   });
 
+fetch('/components/key-kxui.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("kxui").innerHTML = data;
+  });
+
 fetch('/components/extra.html')
   .then(response => response.text())
   .then(data => {
