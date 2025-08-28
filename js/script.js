@@ -114,48 +114,45 @@ function Whatsapp() {
   window.open("https://chat.whatsapp.com/CrqhFjhKUEM7LMGqx8m8sU", "_self");
 }
 
+function BeliAkun() {
+  window.open("https://wa.me/6281338214136?text=Halo+min+saya+mau+beli+AKUN+ML+SERVER+5K+harga+5K+!!!", "_blank");
+}
+
+// Link Youtube Tutorial
+function InstallAPK() {
+  window.open("https://youtu.be/NzIINXV1rO0", "_blank");
+}
+
 function AntiBan() {
-  window.open("https://youtu.be/szocEpRmGTI", "_blank");
+  window.open("https://youtu.be/jVzGJqNuJMQ", "_blank");
+}
+
+function Server5K() {
+  window.open("https://youtu.be/6krg7HUPqCw", "_blank");
 }
 
 function Download() {
-  window.open("https://youtu.be/Hl3Gu1IejBg", "_blank");
+  window.open("https://youtu.be/WqLQ11eIvi8", "_blank");
 }
 
-function InstallAPK() {
-  window.open("https://youtu.be/gyDQEhZl4es", "_blank");
+function AddScript() {
+  window.open("https://youtu.be/1KXR0JVAt5A", "_blank");
 }
 
 function Minipatch() {
-  window.open("https://youtu.be/3wty6ncvDt4", "_blank");
+  window.open("https://youtu.be/YvMaHJgEzVk", "_blank");
 }
 
-function AddScript() {
-  window.open("https://youtu.be/6aqGQwdazVg", "_blank");
+function RoomWangi() {
+  window.open("https://youtu.be/JRbI421qYyE", "_blank");
 }
 
-function AddScript() {
-  window.open("https://youtu.be/6aqGQwdazVg", "_blank");
+function VPN() {
+  window.open("https://youtu.be/JRbI421qYyE", "_blank");
 }
 
 function Injector() {
   window.open("https://youtu.be/an21Fhn9OMQ", "_blank");
-}
-
-function RoomWangi() {
-  window.open("https://youtu.be/qUsnK2vOEiU", "_blank");
-}
-
-function VPN() {
-  window.open("https://youtu.be/qUsnK2vOEiU", "_blank");
-}
-
-function Server5K() {
-  window.open("https://youtu.be/EoyTJI0PyRU", "_blank");
-}
-
-function BeliAkun() {
-  window.open("https://wa.me/6281338214136?text=Halo+min+saya+mau+beli+AKUN+ML+SERVER+5K+harga+5K+!!!", "_blank");
 }
 
 function Drone() {
