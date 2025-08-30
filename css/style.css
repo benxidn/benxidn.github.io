@@ -443,3 +443,6 @@ body,
 .btn-action.center.v2 {
   background: #b3b3b3;
 }
+.btn-action:hover.v2 {
+  border: 1.25px solid #7735D5;
+}
