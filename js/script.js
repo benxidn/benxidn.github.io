@@ -120,7 +120,7 @@ function BeliAkun() {
 
 // Link Youtube Tutorial
 function InstallAPK() {
-  window.open("https://youtu.be/NzIINXV1rO0", "_blank");
+  window.open("https://youtu.be/2BjSJtgBR6Q", "_blank");
 }
 
 function AntiBan() {
