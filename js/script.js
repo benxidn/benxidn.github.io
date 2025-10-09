@@ -120,7 +120,8 @@ function BeliAkun() {
 
 // Link Youtube Tutorial
 function InstallAPK() {
-  window.open("https://youtu.be/2BjSJtgBR6Q", "_blank");
+  //window.open("https://youtu.be/2BjSJtgBR6Q", "_blank");
+  window.open("https://youtu.be/6OGsYt9cKfw", "_blank"); // External
 }
 
 function AntiBan() {
@@ -136,23 +137,26 @@ function Download() {
 }
 
 function AddScript() {
-  window.open("https://youtu.be/b1QywYLVTrQ", "_blank");
+  //window.open("https://youtu.be/b1QywYLVTrQ", "_blank");
+  window.open("https://youtu.be/CFvos81CLrE", "_blank"); // External
 }
 
 function Minipatch() {
   window.open("https://youtu.be/YvMaHJgEzVk", "_blank"); // XXXXX
 }
 
-function RoomWangi() {
-  window.open("https://youtu.be/VM1ZRO91DdU", "_blank"); // Same
+function RoomWangi() { // Same
+  //window.open("https://youtu.be/VM1ZRO91DdU", "_blank");
+  window.open("https://youtu.be/axtT3kVyo68", "_blank"); // External
 }
 
-function VPN() {
-  window.open("https://youtu.be/VM1ZRO91DdU", "_blank"); // Same
+function VPN() { // Same
+  //window.open("https://youtu.be/VM1ZRO91DdU", "_blank");
+  window.open("https://youtu.be/axtT3kVyo68", "_blank"); // External
 }
 
 function Injector() {
-  window.open("https://youtu.be/an21Fhn9OMQ", "_blank"); // videos of other people
+  window.open("https://youtu.be/an21Fhn9OMQ", "_blank"); // External
 }
 
 function Drone() {
@@ -207,3 +211,4 @@ function payAkun(button) {
   }
   return false;
 }
+
