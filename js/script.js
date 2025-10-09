@@ -134,7 +134,8 @@ function Server5K() {
 }
 
 function Download() {
-  window.open("https://youtu.be/LxdyvnWkJlA", "_blank");
+  //window.open("https://youtu.be/LxdyvnWkJlA", "_blank");
+  window.open("https://youtu.be/iBg7JTYlb6Y", "_blank"); // External
 }
 
 function AddScript() {
@@ -212,5 +213,6 @@ function payAkun(button) {
   }
   return false;
 }
+
 
 
