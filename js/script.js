@@ -125,7 +125,8 @@ function InstallAPK() {
 }
 
 function AntiBan() {
-  window.open("https://youtu.be/HHwRMx2mNg8", "_blank");
+  //window.open("https://youtu.be/HHwRMx2mNg8", "_blank");
+  window.open("https://youtu.be/IZYrSzOLzW4", "_blank"); // External
 }
 
 function Server5K() {
@@ -213,6 +214,7 @@ function payAkun(button) {
   }
   return false;
 }
+
 
 
 
