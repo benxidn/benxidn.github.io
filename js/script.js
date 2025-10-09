@@ -129,7 +129,8 @@ function AntiBan() {
 }
 
 function Server5K() {
-  window.open("https://youtu.be/JcFwilWGkj0", "_blank");
+  //window.open("https://youtu.be/JcFwilWGkj0", "_blank");
+  window.open("https://youtu.be/U38odYief5k", "_blank"); // External
 }
 
 function Download() {
@@ -211,4 +212,5 @@ function payAkun(button) {
   }
   return false;
 }
+
 
