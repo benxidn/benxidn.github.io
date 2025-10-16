@@ -136,7 +136,7 @@ function Server5K() {
 
 function Unduh() {
   //window.open("https://youtu.be/LxdyvnWkJlA", "_blank");
-  window.open("https://youtu.be/iBg7JTYlb6Y", "_blank"); // External
+  window.open("https://youtu.be/dhh8uEyXImw", "_blank"); // External
 }
 
 function AddScript() {
