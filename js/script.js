@@ -136,8 +136,8 @@ function Server5K() {
 
 function Unduh() {
   //window.open("https://youtu.be/LxdyvnWkJlA", "_blank");
-  window.open("https://youtu.be/dhh8uEyXImw", "_blank"); // External
-  //window.open("https://youtu.be/VR2n8jquK74", "_blank"); // External
+  //window.open("https://youtu.be/dhh8uEyXImw", "_blank"); // External
+  window.open("https://youtu.be/VR2n8jquK74", "_blank"); // External
 }
 
 function AddScript() {
@@ -215,6 +215,7 @@ function payAkun(button) {
   }
   return false;
 }
+
 
 
 
